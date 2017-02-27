@@ -1,0 +1,110 @@
+*BLOCK: TYPE =    0: SUBTYPE =    0: VERSION =    2
+Summary of spectral data.
+Number of spectral bands =    15
+Total number of gaseous absorbers =     6
+Total number of aerosols =     0
+Total number of generalised continua =     2
+List of indexing numbers and absorbers.
+Index       Absorber(identifier and name)
+    1           1       Water Vapour        
+    2           2       Carbon Dioxide      
+    3           4       Dinitrogen Oxide    
+    4           6       Methane             
+    5          13       Nitrogen            
+    6          37       Argon               
+Listing of continuum indexing numbers and gases.
+Index     Gas 1(index and name)              Gas 2(index and name)
+    1         1     Water Vapour                 1     Water Vapour        
+    2         2     Carbon Dioxide               2     Carbon Dioxide      
+List of indexing numbers of aerosols.
+Index       Aerosol(type number and name)
+*END
+*BLOCK: TYPE =    1: SUBTYPE =    0: VERSION =    0
+Specification of spectral intervals
+Limits of spectral intervals (wavelengths in m.)
+Band        Lower limit         Upper limit
+    1        2.000000000E-07     3.200000000E-07
+    2        3.200000000E-07     5.050000000E-07
+    3        5.050000000E-07     6.900000000E-07
+    4        6.900000000E-07     1.200000000E-06
+    5        1.200000000E-06     1.240000000E-06
+    6        1.240000000E-06     1.420000000E-06
+    7        1.420000000E-06     1.460000000E-06
+    8        1.460000000E-06     1.520000000E-06
+    9        1.520000000E-06     1.680000000E-06
+   10        1.680000000E-06     1.780000000E-06
+   11        1.780000000E-06     1.940000000E-06
+   12        1.940000000E-06     2.000000000E-06
+   13        2.000000000E-06     2.140000000E-06
+   14        2.140000000E-06     2.380000000E-06
+   15        2.380000000E-06     2.000000000E-05
+*END
+*BLOCK: TYPE =    4: SUBTYPE =    0: VERSION =    0
+Gaseous absorbers in each interval
+(The number is the indexing number of the species as set out
+ in the summary block 0.)
+A zero indicates that there in no gaseous absorption in the interval.
+Band        Number of active absorbers followed by indexing numbers
+    1           0
+    2           0
+    3           0
+    4           0
+    5           0
+    6           0
+    7           0
+    8           0
+    9           0
+   10           0
+   11           0
+   12           0
+   13           0
+   14           0
+   15           0
+*END
+*BLOCK: TYPE =    8: SUBTYPE =    0: VERSION =    0
+Continuum absorbers in each interval
+(The number is the indexing number of each type as set out
+ in the module rad_pcf.)
+A zero indicates that there is no continuum absorption in the interval.
+Band         Number of active continua followed by indexing numbers
+    1           0
+    2           0
+    3           0
+    4           0
+    5           0
+    6           0
+    7           0
+    8           0
+    9           0
+   10           0
+   11           0
+   12           0
+   13           0
+   14           0
+   15           0
+Indexing numbers of gases for continua:
+     Index of water =     1
+*END
+*BLOCK: TYPE =   18: SUBTYPE =    0: VERSION =    0
+Generalised continua in each interval
+(The number is the indexing number of the continuum as set out
+ in the summary block 0.)
+A zero indicates that there in no generalised continuum absorption in the interval.
+Band        Number of active continua, flag for continuum being major absorber,
+            followed by indexing numbers
+    1           0           F
+    2           0           F
+    3           0           F
+    4           0           F
+    5           0           F
+    6           0           F
+    7           0           F
+    8           0           F
+    9           0           F
+   10           0           F
+   11           0           F
+   12           0           F
+   13           0           F
+   14           0           F
+   15           0           F
+*END

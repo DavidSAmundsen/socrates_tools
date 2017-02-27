@@ -1,0 +1,80 @@
+#!/bin/bash
+
+SP_ID="dsa_ar_lowch4"
+SP_FLDR="dsa_ar"
+SOLAR_SPEC="sun_2.9gyr"
+PT_FILE="pt663"
+
+# Paths
+. set_paths
+
+# Create full path to spectral file
+SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_6_${SP_ID}_${SOLAR_SPEC}"
+
+# Remove old version
+rm -f ${SPEC_FILE}
+rm -f ${SPEC_FILE}_k
+
+# Replace old k-coefficients by new k-coefficients in spectral file
+prep_spec << EOF
+sp_sw_6_${SP_ID}_skel
+n
+${SPEC_FILE}
+5
+${K_COEFF_DIR}/h2o_s6_3l
+5
+y
+${K_COEFF_DIR}/h2o_s6_4l
+5
+y
+${K_COEFF_DIR}/h2o_s6_5l
+5
+y
+${K_COEFF_DIR}/h2o_s6_6l
+9
+${K_COEFF_DIR}/h2o_s6_s
+5
+y
+${K_COEFF_DIR}/co2_s6_4l
+5
+y
+${K_COEFF_DIR}/co2_s6_5l
+5
+y
+${K_COEFF_DIR}/co2_s6_6l
+5
+y
+${K_COEFF_DIR}/ch4_s6_5l
+5
+y
+${K_COEFF_DIR}/ch4_s6_6l
+-1
+EOF
+
+# Add cloud fits to spectral file
+prep_spec << EOF
+${SPEC_FILE}
+a
+10
+5
+${CLD_COEFF_DIR}/fit_sw_drop5_6
+1.50000E-06 5.00000E-05
+12
+8
+${CLD_COEFF_DIR}/fit_sw_ice8_6
+8.00000E-06 3.20000E-04
+-1
+EOF
+
+# Add solar spectrum and Rayleigh scattering coefficients
+prep_spec << EOF
+${SPEC_FILE}
+a
+2
+n
+${SOLAR_SPEC_DIR}/${SOLAR_SPEC}
+y
+3
+a
+-1
+EOF

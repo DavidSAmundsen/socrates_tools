@@ -1,0 +1,122 @@
+#!/bin/bash
+
+# Calculates monochromatic single scattering properties of the
+# aerosols used operationally with GISS modelE.
+
+SCATTER_DIR="/home/damundse/Scatter_data"
+
+# Clear out files from previous run
+# yes | rm ${SCATTER_DIR}/*.mon 2> /dev/null
+
+# Import size information
+source def_size_aerosol
+
+# Dust (ip_dust_like = 2)
+
+echo "Patterson dust"
+for RE in ${RE_DUST}; do
+  if [ ! -s ${SCATTER_DIR}/mie/sdust_${RE}.mon ] ; then
+    DIST=`./convert ${RE} ${VAR_DUST}`
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_sdust \
+             -l -C 2 -M -o ${SCATTER_DIR}/mie/sdust_${RE}.mon \
+             -t 1 -n 1.e8 -m 1.0 ${DIST}
+  fi
+done
+echo "Done"
+
+echo "Sinyuk dust"
+for RE in ${RE_DUST}; do
+  if [ ! -s ${SCATTER_DIR}/mie/sinyukdust_${RE}.mon ] ; then
+    DIST=`./convert ${RE} ${VAR_DUST}`
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_sinyukdust \
+             -l -C 2 -M -o ${SCATTER_DIR}/mie/sinyukdust_${RE}.mon \
+             -t 1 -n 1.e8 -m 1.0 ${DIST}
+  fi
+done
+echo "Done"
+
+# Sulfuric acid (ip_sulphuric = 6)
+
+echo "Sulfuric acid"
+for RE in ${RE_H2SO4}; do
+  if [ ! -s ${SCATTER_DIR}/mie/h2so4_${RE}.mon ] ; then
+    DIST=`./convert ${RE} ${VAR_H2SO4}`
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_h2so4 \
+             -l -C 6 -M -o ${SCATTER_DIR}/mie/h2so4_${RE}.mon \
+             -t 1 -n 1.e8 -m 1.0 ${DIST}
+  fi
+done
+echo "Done"
+
+# Black carbon (soot) (ip_soot = 4)
+
+echo "Black carbon (soot)"
+for RE in ${RE_SOOT}; do
+  if [ ! -s ${SCATTER_DIR}/mie/soot_${RE}.mon ] ; then
+    DIST=`./convert ${RE} ${VAR_SOOT}`
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_soot \
+             -l -C 4 -M -o ${SCATTER_DIR}/mie/soot_${RE}.mon \
+             -t 1 -n 1.e8 -m 1.0 ${DIST}
+  fi
+done
+echo "Done"
+
+# Ammonium sulphate (ip_ammonium_sulphate = 7)
+
+echo "Ammonium sulphate"
+for R in ${R_SULPH}; do
+  if [ ! -s ${SCATTER_DIR}/mie/sulphate_${R}.mon ] ; then
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_sulphate \
+             -l -C 7 -M -o ${SCATTER_DIR}/mie/sulphate_${R}.mon \
+             -h $RAD_DATA/cloud/refract_water $RAD_DATA/aerosol/humidities \
+             -t 1 -n 1.e8 -g 1.0 ${R}e-6 ${SIG_SULPH}
+  fi
+done
+echo "Done"
+
+# Sea salt (ip_sodium_chloride = 14)
+
+echo "Sea salt"
+for R in ${R_NACL}; do
+  if [ ! -s ${SCATTER_DIR}/mie/seasalt_${R}.mon ] ; then
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_seasalt \
+             -l -C 14 -M -o ${SCATTER_DIR}/mie/seasalt_${R}.mon \
+             -h $RAD_DATA/cloud/refract_water $RAD_DATA/aerosol/humidities \
+             -t 1 -n 1.e8 -g 1.0 ${R}e-6 ${SIG_NACL}
+  fi
+done
+echo "Done"
+
+# Ammonium nitrate (ip_nitrate = 30)
+
+echo "Ammonium nitrate"
+for R in ${R_NITR}; do
+  if [ ! -s ${SCATTER_DIR}/mie/antwater_${R}.mon ] ; then
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_antwater \
+             -l -C 30 -M -o ${SCATTER_DIR}/mie/antwater_${R}.mon \
+             -h $RAD_DATA/cloud/refract_water $RAD_DATA/aerosol/humidities \
+             -t 1 -n 1.e8 -g 1.0 ${R}e-6 ${SIG_NITR}
+  fi
+done
+echo "Done"
+
+# Organic carbons (ip_biogenic = 25)
+
+echo "Organic carbons"
+for R in ${R_OC}; do
+  if [ ! -s ${SCATTER_DIR}/mie/organic_${R}.mon ] ; then
+    Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
+             -r ${SCATTER_DIR}/refract/refract_organic \
+             -l -C 25 -M -o ${SCATTER_DIR}/mie/organic_${R}.mon \
+             -h $RAD_DATA/cloud/refract_water $RAD_DATA/aerosol/humidities \
+             -t 1 -n 1.e8 -g 1.0 ${R}e-6 ${SIG_OC}
+  fi
+done
+echo "Done"

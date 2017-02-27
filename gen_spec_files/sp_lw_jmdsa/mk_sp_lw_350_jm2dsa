@@ -1,0 +1,119 @@
+#!/bin/bash
+
+NBANDS="350" # Number of bands
+SP_ID="jm2dsa" # Spectral file ID
+PT_FILE="pt663" # P-T grid
+
+K_COEFF_DIR="/home/damundse/k-coeff/lw_${SP_ID}/${PT_FILE}"
+CLD_DIR="/home/damundse/k-coeff/lw_${SP_ID}/cld"
+SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_lw_ga7"
+
+# Create name of spectral file
+SPEC_FILE="sp_lw_${NBANDS}_${SP_ID}"
+
+mkdir -p ${SPEC_FILE_DIR}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}_k
+
+# Construct spectral file
+
+prep_spec << EOF
+sp_lw_350_jm2dsa_skel
+n
+${SPEC_FILE_DIR}/${SPEC_FILE}
+5
+${K_COEFF_DIR}/h2o_l350_l
+9
+${K_COEFF_DIR}/h2o_l350_s
+5
+y
+${K_COEFF_DIR}/co2_l350_l
+5
+y
+${K_COEFF_DIR}/o3_l350_l
+5
+y
+${K_COEFF_DIR}/n2o_l350_l
+5
+y
+${K_COEFF_DIR}/ch4_l350_l
+5
+y
+${K_COEFF_DIR}/so2_l350_l
+5
+y
+${K_COEFF_DIR}/ocs_l350_l
+5
+y
+${K_COEFF_DIR}/cfc11_l350_l
+5
+y
+${K_COEFF_DIR}/cfc12_l350_l
+5
+y
+${K_COEFF_DIR}/cfc113_l350_l
+5
+y
+${K_COEFF_DIR}/hcfc22_l350_l
+5
+y
+${K_COEFF_DIR}/hfc134a_l350_l
+6
+n
+t
+1 500
+500
+-1
+EOF
+
+# Add cloud optical properties
+prep_spec << EOF
+${SPEC_FILE_DIR}/${SPEC_FILE}
+a
+10
+5
+${CLD_DIR}/fit_lw_drop5_350
+7.60000E-06 5.00000E-05
+12
+8
+${CLD_DIR}/fit_lw_ice8_350
+1.30000E-05 3.10000E-04
+-1
+EOF
+
+# Rearrange so the major gas is listed first for each band and
+# gases are removed from bands where absorption is very weak.
+tidy_90 <<EOF
+${SPEC_FILE_DIR}/${SPEC_FILE}
+o
+1
+2.5e1
+1.0e1
+0.1e-1
+0.5e-2
+0.1e-1
+3.0e-2
+0.1e-4
+0.2e-4
+0.4e-5
+0.6e-5
+0.3e-5
+1.0e-1
+0.999990
+6
+2.5e1
+1.0e1
+0.1e-1
+0.5e-2
+0.1e-1
+3.0e-6
+0.1e-4
+0.2e-4
+0.4e-5
+0.6e-5
+0.3e-5
+1.0e-5
+-1
+EOF
+
+exit 0

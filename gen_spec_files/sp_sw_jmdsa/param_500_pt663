@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Setting for k-coefficient calculation
+SP_ID="dsa"
+SP_ID_SKEL="dsa"
+NBAND="500"
+SOLAR_SPEC="$RAD_DATA/solar/lean_12"
+# SOLAR_SPEC="/home/damundse/Stellar_spectra/proxima_centauri"
+WGT="-u"
+PT_FILE="../pt663"
+BAND_NIR_START="100" # 5.000000000E-07 m
+
+# Path to k-coefficients
+K_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID_SKEL}/${PT_FILE}"
+
+# For molecules with near-IR absorption, the index of the first band for which
+# to calculate absorption
+BAND_FIRST_H2O="73"  # 25710 cm-1 = 3.88953714507973e-07 m
+BAND_FIRST_CO2="149" # 12784 cm-1 = 7.82224331232518e-07 m
+BAND_FIRST_O3="214"  #  6996 cm-1 = 1.42924913767682e-06 m
+BAND_FIRST_N2O="203" #  7796 cm-1 = 1.28260492175448e-06 m
+BAND_FIRST_CH4="160" # 11501 cm-1 = 8.69423652540053e-07 m
+BAND_FIRST_O2="125"   # 15927 cm-1 = 6.27832741304428e-07 m
+BAND_FIRST_SO2="273" #  4092 cm-1 = 2.44322660891126e-06 m
+BAND_FIRST_OCS="270" #  4199 cm-1 = 2.38113868351073e-06 m
+
+# For molecules with UV line absorption, provide band limits
+BAND_RANGE_UVL_O2="1 42" # 1.75353719138403e-07 m -- 2.9399579444895954e-07
+
+# For molecules with continuum UV absorption, provide band limits
+BAND_RANGE_UVC_N2O="1 12" # 1.69618020218468e-07 m -- 2.2259321090706734e-07 m
+BAND_RANGE_UVC_SO2="1 80" # 1.710805447204544e-07 m -- 4.1675349031048133e-07 m
+BAND_RANGE_UVC_O3="1 186" # 1.9499639256673752e-07 m -- 1.0999890001099988e-06 m
+BAND_RANGE_UVC_O2="3 22"  # 2.050020500205002e-07 m -- 2.446183953033268e-07 m
+
+# Column masses for all molecules for k-coefficient calculation
+COL_MASS_K_H2O="1.0e2"  # 1.0e2 for 1.0 bar atm
+COL_MASS_K_CO2="1.0e1"  # 1.0e1 for 1.0 bar atm
+COL_MASS_K_O3="1.0e-2"  # 1.0e-2 for 1.0 bar atm
+COL_MASS_K_N2O="5.0e-3" # 5.0e-3 for 1.0 bar atm
+COL_MASS_K_CH4="1.0e-2" # 1.0e-2 for 1.0 bar atm
+COL_MASS_K_O2="2.3e3"   # 2.3e3 for 1.0 bar atm
+COL_MASS_K_SO2="3.0e-4" # 3.0e-4 for 1.0 bar atm
+COL_MASS_K_OCS="1.0e-3" # 1.0e-3 for 1.0 bar atm
+
+# Column masses for all molecules for eliminating weak absorbers
+COL_MASS_ELIM_H2O="2.5e2"  # 2.5e2 for 1.0 bar atm
+COL_MASS_ELIM_CO2="1.0e1"  # 1.0e1 for 1.0 bar atm
+COL_MASS_ELIM_O3="1.0e-2"  # 1.0e-2 for 1.0 bar atm
+COL_MASS_ELIM_N2O="5.0e-3" # 5.0e-3 for 1.0 bar atm
+COL_MASS_ELIM_CH4="1.0e-2" # 1.0e-2 for 1.0 bar atm
+COL_MASS_ELIM_O2="2.3e3"   # 2.3e3 for 1.0 bar atm
+COL_MASS_ELIM_SO2="3.0e-2" # 3.0e-2 for 1.0 bar atm
+COL_MASS_ELIM_OCS="1.0e-1" # 1.0e-1 for 1.0 bar atm
+
+# Column masses for all molecules for eliminating weak absorbers
+COL_MASS_STMJ_H2O="2.5e1"  # 2.5e2 for 1.0 bar atm
+COL_MASS_STMJ_CO2="1.0e1"  # 1.0e1 for 1.0 bar atm
+COL_MASS_STMJ_O3="1.0e-2"  # 1.0e-2 for 1.0 bar atm
+COL_MASS_STMJ_N2O="5.0e-3" # 5.0e-3 for 1.0 bar atm
+COL_MASS_STMJ_CH4="1.0e-2" # 1.0e-2 for 1.0 bar atm
+COL_MASS_STMJ_O2="2.3e3"   # 2.3e3 for 1.0 bar atm
+COL_MASS_STMJ_SO2="3.0e-6" # 3.0e-6 for 1.0 bar atm
+COL_MASS_STMJ_OCS="1.0e-5" # 1.0e-5 for 1.0 bar atm

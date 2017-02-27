@@ -1,0 +1,9 @@
+#!/bin/bash
+
+HITRAN_DIR="/home/damundse/Line_lists/HITRAN"
+CONT_DIR="/home/damundse/Continua"
+K_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
+SW_DATA="/home/damundse/Abs_coeff"
+SOLAR_SPEC_DIR="/home/damundse/Stellar_spectra"
+CLD_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/cld/${SOLAR_SPEC}"
+SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_sw_${SP_FLDR}"

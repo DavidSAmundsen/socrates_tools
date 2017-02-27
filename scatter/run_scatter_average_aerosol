@@ -1,0 +1,151 @@
+#!/bin/bash
+
+# Averages single scattering properties over bands.
+
+# Paths
+SOLAR_SPEC_DIR="/home/damundse/Stellar_spectra"
+SCATTER_DIR="/home/damundse/Scatter_data"
+SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_sw_ga7"
+
+################################################################################
+# User input
+################################################################################
+
+# SPECTRAL_FILE_NAME="sp_lw_ga7"
+# WGT="-p 250"
+
+# SPECTRAL_FILE_NAME="sp_sw_ga7"
+# SOLAR_SPEC="lean_12"
+
+# SPECTRAL_FILE_NAME="sp_lw_300_jm2"
+
+SPECTRAL_FILE_NAME="sp_sw_260_jm2"
+SOLAR_SPEC="sun"
+
+# SPECTRAL_FILE_NAME="sp_diag"
+# WGT="-u"
+
+################################################################################
+# End user input
+################################################################################
+
+# Create weighting argument and output directory, which depends on spectral
+# region
+if [ "${SPECTRAL_FILE_NAME:3:2}" = "lw" ] ; then
+  WGT="-p 250"
+  SCATTER_OUT_DIR="${SCATTER_DIR}/${SPECTRAL_FILE_NAME}"
+elif [ "${SPECTRAL_FILE_NAME:3:2}" = "sw" ] ; then
+  WGT="-S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
+  SCATTER_OUT_DIR="${SCATTER_DIR}/${SPECTRAL_FILE_NAME}/${SOLAR_SPEC}"
+else
+  echo "Spectral region not recognised."
+  exit
+fi
+
+echo ${WGT}
+
+# Construct spectral file name
+SPECTRAL_FILE="${SPEC_FILE_DIR}/${SPECTRAL_FILE_NAME}"
+
+# Construct paths to directories for scattering input/output data
+SCATTER_IN_DIR="${SCATTER_DIR}"/mie
+
+# Create directory for averaged single scattering properties
+mkdir -p "${SCATTER_OUT_DIR}"
+
+# Import size information
+source def_size_aerosol
+
+# Dust (ip_dust_like = 2)
+
+echo "Patterson dust"
+for RE in ${RE_DUST}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/sdust_${RE}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/sdust_${RE}.avg \
+      ${SCATTER_IN_DIR}/sdust_${RE}.mon
+  fi
+done
+echo "Done"
+
+echo "Sinyuk dust"
+for RE in ${RE_DUST}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/sinyukdust_${RE}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/sinyukdust_${RE}.avg \
+      ${SCATTER_IN_DIR}/sinyukdust_${RE}.mon
+  fi
+done
+echo "Done"
+
+# Sulfuric acid (ip_sulphuric = 6)
+
+echo "Sulfuric acid"
+for RE in ${RE_H2SO4}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/h2so4_${RE}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/h2so4_${RE}.avg \
+      ${SCATTER_IN_DIR}/h2so4_${RE}.mon
+  fi
+done
+echo "Done"
+
+# Black carbon (soot) (ip_soot = 4)
+
+echo "Black carbon (soot)"
+for RE in ${RE_SOOT}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/soot_${RE}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/soot_${RE}.avg \
+      ${SCATTER_IN_DIR}/soot_${RE}.mon
+  fi
+done
+echo "Done"
+
+# Ammonium sulphate (ip_ammonium_sulphate = 7)
+
+echo "Ammonium sulphate"
+for R in ${R_SULPH}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/sulphate_${R}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/sulphate_${R}.avg \
+      ${SCATTER_IN_DIR}/sulphate_${R}.mon
+  fi
+done
+echo "Done"
+
+# Sea salt (ip_sodium_chloride = 14)
+
+echo "Sea salt"
+for R in ${R_NACL}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/seasalt_${R}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/seasalt_${R}.avg \
+      ${SCATTER_IN_DIR}/seasalt_${R}.mon
+  fi
+done
+echo "Done"
+
+# Ammonium nitrate (ip_nitrate = 30)
+
+echo "Ammonium nitrate"
+for R in ${R_NITR}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/antwater_${R}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/antwater_${R}.avg \
+      ${SCATTER_IN_DIR}/antwater_${R}.mon
+  fi
+done
+echo "Done"
+
+# Organic carbons (ip_biogenic = 25)
+
+echo "Organic carbons"
+for R in ${R_OC}; do
+  if [ ! -s ${SCATTER_OUT_DIR}/organic_${R}.avg ] ; then
+    Cscatter_average -s ${SPECTRAL_FILE} -P 1 -w ${WGT} \
+      -a ${SCATTER_OUT_DIR}/organic_${R}.avg \
+      ${SCATTER_IN_DIR}/organic_${R}.mon
+  fi
+done
+echo "Done"

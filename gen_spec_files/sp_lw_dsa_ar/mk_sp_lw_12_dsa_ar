@@ -1,0 +1,173 @@
+#!/bin/bash
+
+NBAND="12" # Number of bands
+SP_ID="dsa_ar" # Spectral file ID
+PT_FILE="pt663" # P-T grid
+
+K_COEFF_DIR="/home/damundse/k-coeff/lw_${SP_ID}/${PT_FILE}"
+SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_lw_${SP_ID}"
+CLD_DIR="/home/damundse/k-coeff/lw_${SP_ID}/cld"
+
+# Create name of spectral file
+SPEC_FILE="sp_lw_${NBAND}_${SP_ID}"
+
+mkdir -p ${SPEC_FILE_DIR}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}_k
+
+# Construct spectral file
+
+prep_spec << EOF
+sp_lw_${NBAND}_${SP_ID}_skel
+n
+${SPEC_FILE_DIR}/${SPEC_FILE}
+5
+${K_COEFF_DIR}/h2o_l${NBAND}_1l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_2l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_3l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_4l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_5l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_6l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_7l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_8l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_9l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_10l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_11l
+5
+y
+${K_COEFF_DIR}/h2o_l${NBAND}_12l
+9
+${K_COEFF_DIR}/h2o_l${NBAND}_s
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_1l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_2l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_3l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_4l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_5l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_6l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_7l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_8l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_9l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_10l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_11l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_12l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_1l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_2l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_3l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_4l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_5l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_6l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_7l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_8l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_9l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_10l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_11l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBAND}_12l
+6
+n
+t
+1 500
+500
+-1
+EOF
+
+# Add ice cloud optical properties only
+prep_spec << EOF
+${SPEC_FILE_DIR}/${SPEC_FILE}
+a
+10
+5
+${CLD_DIR}/fit_lw_drop5_${NBAND}
+1.50000E-06 5.00000E-05
+12
+8
+${CLD_DIR}/fit_lw_ice8_${NBAND}
+8.00000E-06 3.20000E-04
+-1
+EOF
+
+# Rearrange so the major gas is listed first for each band and
+# gases are removed from bands where absorption is very weak.
+tidy_90 << EOF
+${SPEC_FILE_DIR}/${SPEC_FILE}
+o
+1
+2.5e1
+1.6e2
+5.8e1
+0.99990
+6
+2.5e1
+1.6e2
+5.8e1
+-1
+EOF
+
+exit 0

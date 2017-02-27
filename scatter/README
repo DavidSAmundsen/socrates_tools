@@ -1,0 +1,5 @@
+Plase symbolic links to the following SOCRATES source files in this directory
+to use these programs:
+src/radiance_core/rad_pcf.F90
+src/modules_core/realtype_rd.f90
+src/general/aerosol_component.finc

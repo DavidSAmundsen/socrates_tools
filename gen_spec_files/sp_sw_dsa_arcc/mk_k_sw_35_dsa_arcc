@@ -1,0 +1,219 @@
+#!/bin/bash
+
+# Setting for k-coefficient calculation
+SP_ID="dsa_arcc"
+SOLAR_SPEC="pc"
+PT_FILE="pt663"
+
+# Paths
+. set_paths
+
+# This script creates the 6 band SW spectral file sp_sw_6_jm2
+# from scratch using HITRAN database files available in August 2013.
+# The following files (available from www.cfa.harvard.edu/hitran)
+# are required in HITRAN_DIR (set to your local HITRAN directory):
+
+HITRAN_H2O="$HITRAN_DIR/01_hit12.par"
+HITRAN_CO2="$HITRAN_DIR/02_hit12.par"
+HITRAN_CH4="$HITRAN_DIR/06_hit12.par"
+
+# Water vapour continuum uses CAVIAR data contained within the
+# suite ($RAD_DATA/continua).
+
+# Aerosol and cloud parametrisations are those used operationally
+# in the Met Office from GA3.0 (see also $RAD_DIR/examples/aerosols,
+# $RAD_DIR/examples/droplets).
+
+# Note this script should be run after the LbL files have been created
+# by running the script for the 260 band file.
+
+if [ $RAD_BIN ] ; then
+  echo "Using code compiled in "$RAD_BIN
+else
+  echo "Path to code not set."
+  exit 1
+fi
+
+ref_pt_file="$RAD_DATA/gases/ref_pt"
+
+# Create skeleton spectral file
+specfile="sp_sw_35_${SP_ID}_skel"
+rm -f $specfile
+. mk_sp_sw_35_${SP_ID}_skel > /dev/null
+
+# Create directory for k-coefficients
+mkdir -p ${K_COEFF_DIR}
+
+# Construct weight argument
+WGT="+S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
+
+# Hadgem bands ->  220        ->  260 bands:
+#            1 ->    1 -  38  ->  1/6 -  29
+#            2 ->   38 -  91  ->   30 -  66
+#            3 ->   91 - 118  ->   67 - 103
+#            4 ->  118 - 148  ->  104 - 154
+#            5 ->  148 - 188  ->  155 - 214
+#            6 ->  188 - 220  ->  215 - 260
+
+# Gases
+
+echo "Jobs running in background:"
+
+if [ ! -s ${K_COEFF_DIR}/co2_s35_4l ] ; then
+  echo "CO2 band 4"
+  rm -f ${K_COEFF_DIR}/co2_s35_4l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
+    -R 4 9 -c 50000.0 -i 1.0 -l 2 1.6e3 -t 4.0e-3  \
+    -sb gas_fractions -lp 2 \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/co2_s35_4l -m ${K_COEFF_DIR}/co2_s35_4lm \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc > \
+    ${K_COEFF_DIR}/co2_s35_4log \
+    && echo "CO2 band 4 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/co2_s35_5l ] ; then
+  echo "CO2 band 5"
+  rm -f ${K_COEFF_DIR}/co2_s35_5l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
+    -R 10 24 -c 50000.0 -i 1.0 -l 2 1.6e3 -t 3.0e-3  \
+    -sb gas_fractions -lp 2 \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/co2_s35_5l -m ${K_COEFF_DIR}/co2_s35_5lm \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc > \
+    ${K_COEFF_DIR}/co2_s35_5log \
+    && echo "CO2 band 5 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/co2_s35_6l ] ; then
+  echo "CO2 band 6"
+  rm -f ${K_COEFF_DIR}/co2_s35_6l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
+    -R 25 35 -c 50000.0 -i 1.0 -l 2 1.6e3 -t 6.0e-3  \
+    -sb gas_fractions -lp 2 \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/co2_s35_6l -m ${K_COEFF_DIR}/co2_s35_6lm \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc > \
+    ${K_COEFF_DIR}/co2_s35_6log \
+    && echo "CO2 band 6 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/ch4_s35_4l ] ; then
+  echo "CH4 band 4"
+  rm -f ${K_COEFF_DIR}/ch4_s35_4l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 4 9 -c 2500.0 -i 1.0 -l 6 5.8e1 -t 4.0e-3  \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/ch4_s35_4l -m ${K_COEFF_DIR}/ch4_s35_4lm \
+    -L $SW_DATA/ch4_lbl_sw_${PT_FILE}.nc > ${K_COEFF_DIR}/ch4_s35_4log \
+    && echo "CH4 band 4 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/ch4_s35_5l ] ; then
+  echo "CH4 band 5"
+  rm -f ${K_COEFF_DIR}/ch4_s35_5l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 10 24 -c 2500.0 -i 1.0 -l 6 5.8e1 -t 3.0e-3  \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/ch4_s35_5l -m ${K_COEFF_DIR}/ch4_s35_5lm \
+    -L $SW_DATA/ch4_lbl_sw_${PT_FILE}.nc > ${K_COEFF_DIR}/ch4_s35_5log \
+    && echo "CH4 band 5 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/ch4_s35_6l ] ; then
+  echo "CH4 band 6"
+  rm -f ${K_COEFF_DIR}/ch4_s35_6l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 25 35 -c 2500.0 -i 1.0 -l 6 5.8e1 -t 6.0e-3  \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/ch4_s35_6l -m ${K_COEFF_DIR}/ch4_s35_6lm \
+    -L $SW_DATA/ch4_lbl_sw_${PT_FILE}.nc > ${K_COEFF_DIR}/ch4_s35_6log \
+    && echo "CH4 band 6 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/h2o_s35_2l ] || \
+    [ ! -s $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc ] ; then
+  echo "H2O lines band 2"
+  rm -f ${K_COEFF_DIR}/h2o_s35_2l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
+    -R 2 2 -c 2500.0 -i 1.0 -l 1 1.0e2 -n 1 \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/h2o_s35_2l -m ${K_COEFF_DIR}/h2o_s35_2lm \
+    -L $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/h2o_s35_2log && echo "H2O lines band 2 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/h2o_s35_3l ] ; then
+  echo "H2O lines band 3"
+  rm -f ${K_COEFF_DIR}/h2o_s35_3l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
+    -R 3 3 -c 2500.0 -i 1.0 -l 1 1.0e2 -n 2  \
+    -s $specfile ${WGT} -lk \
+    -k -x $RAD_DATA/continua/caviar_frn \
+    -o ${K_COEFF_DIR}/h2o_s35_3l -m ${K_COEFF_DIR}/h2o_s35_3lm \
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_3log \
+    && echo "H2O lines band 3 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/h2o_s35_4l ] ; then
+  echo "H2O lines band 4"
+  rm -f ${K_COEFF_DIR}/h2o_s35_4l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
+    -R 4 9 -c 2500.0 -i 1.0 -l 1 1.0e2 -t 3.0e-3  \
+    -s $specfile ${WGT} -lk \
+    -k -x $RAD_DATA/continua/caviar_frn \
+    -o ${K_COEFF_DIR}/h2o_s35_4l -m ${K_COEFF_DIR}/h2o_s35_4lm \
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_4log \
+    && echo "H2O lines band 4 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/h2o_s35_5l ] ; then
+  echo "H2O lines band 5"
+  rm -f ${K_COEFF_DIR}/h2o_s35_5l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
+    -R 10 24 -c 2500.0 -i 1.0 -l 1 1.0e2 -t 4.0e-3  \
+    -s $specfile ${WGT} -lk \
+    -k -x $RAD_DATA/continua/caviar_frn \
+    -o ${K_COEFF_DIR}/h2o_s35_5l -m ${K_COEFF_DIR}/h2o_s35_5lm \
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_5log \
+    && echo "H2O lines band 5 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/h2o_s35_6l ] ; then
+  echo "H2O lines band 6"
+  rm -f ${K_COEFF_DIR}/h2o_s35_6l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
+    -R 25 35 -c 2500.0 -i 1.0 -l 1 1.0e2 -t 6.0e-3  \
+    -s $specfile ${WGT} -lk \
+    -k -x $RAD_DATA/continua/caviar_frn \
+    -o ${K_COEFF_DIR}/h2o_s35_6l -m ${K_COEFF_DIR}/h2o_s35_6lm \
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_6log \
+    && echo "H2O lines band 6 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s35_3-6c ] ; then
+  echo "H2O self-broadened continuum"
+  rm -f ${K_COEFF_DIR}/h2o-h2o_s35_3-6c*
+  Ccorr_k -F ../pt_cont \
+    -R 3 35 -i 1.0 \
+    -ct 1 1 10.0 -t 1.0e-2 \
+    -e $RAD_DATA/continua/caviar_s296 $RAD_DATA/continua/caviar_s260 \
+    -k -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/h2o-h2o_s35_3-6c \
+    -m ${K_COEFF_DIR}/h2o-h2o_s35_3-6cm \
+    -L $SW_DATA/h2o-h2o_lbl_sw.nc \
+     > ${K_COEFF_DIR}/h2o-h2o_s35_3-6clog \
+     && echo "H2O self-broadened continuum done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/co2-co2_s35_6c ] ; then
+  echo "CO2-CO2 CIA"
+  rm -f ${K_COEFF_DIR}/co2-co2_s35_6c*
+  Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-co2.cia \
+    -R 25 35 -i 1.0 \
+    -ct 2 2 1.0e2 -t 1.0e-2 \
+    -k -s $specfile +p -lk \
+    -o ${K_COEFF_DIR}/co2-co2_s35_6c \
+    -m ${K_COEFF_DIR}/co2-co2_s35_6cm \
+    -L $SW_DATA/co2-co2_lbl_sw.nc \
+     > ${K_COEFF_DIR}/co2-co2_s35_6clog \
+     && echo "CO2-CO2 CIA done" &
+fi
+
+wait
+
+echo "All done"
+
+exit 0
