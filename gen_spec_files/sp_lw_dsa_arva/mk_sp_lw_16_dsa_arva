@@ -4,9 +4,7 @@ NBAND="16" # Number of bands
 SP_ID="dsa_arva" # Spectral file ID
 PT_FILE="pt663" # P-T grid
 
-K_COEFF_DIR="/home/damundse/k-coeff/lw_${SP_ID}/${PT_FILE}"
-SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_lw_${SP_ID}"
-CLD_DIR="/home/damundse/k-coeff/lw_${SP_ID}/cld"
+. ../set_paths_lw
 
 # Create name of spectral file
 SPEC_FILE="sp_lw_${NBAND}_${SP_ID}"

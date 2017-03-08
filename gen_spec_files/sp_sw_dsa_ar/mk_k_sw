@@ -3,8 +3,7 @@
 # Import parameters
 . $1
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Line lists and cross-sections
 HITRAN_H2O="$HITRAN_DIR/01_hit12.par"

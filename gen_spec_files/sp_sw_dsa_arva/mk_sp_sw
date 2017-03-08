@@ -3,11 +3,7 @@
 # Import parameters
 . $1
 
-# Paths
-K_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
-SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_sw_${SP_FLDR}"
-CLD_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/cld/${SOLAR_SPEC}"
-SOLAR_SPEC_DIR="/home/damundse/Stellar_spectra"
+. ../set_paths_sw
 
 # Create full path to spectral file
 SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_${NBAND}_${SP_ID}_${SOLAR_SPEC}"

@@ -6,8 +6,7 @@ NBAND="35"
 SOLAR_SPEC="pc"
 PT_FILE="pt663"
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Create full path to spectral file
 SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_${NBAND}_${SP_ID}_${SOLAR_SPEC}"

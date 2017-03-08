@@ -6,7 +6,8 @@ NBANDS="16" # Number of bands
 SP_ID="dsa_arva" # Spectral file ID
 
 SPECFILE="sp_lw_${NBANDS}_${SP_ID}_skel"
-CLD_COEFF_DIR="/home/damundse/k-coeff/lw_${SP_ID}/cld"
+
+. ../set_paths_lw
 
 mkdir -p ${CLD_COEFF_DIR}
 

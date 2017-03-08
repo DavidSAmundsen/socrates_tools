@@ -3,8 +3,7 @@
 # Import parameters
 . $1
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Create full path to spectral file
 SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_${NBAND}_${SP_ID}_${SOLAR_SPEC}"

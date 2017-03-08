@@ -3,11 +3,7 @@
 # Import parameters
 . $1
 
-# Paths
-HITRAN_DIR="/home/damundse/Line_lists/HITRAN"
-K_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
-SW_DATA="/home/damundse/Abs_coeff"
-SOLAR_SPEC_DIR="/home/damundse/Stellar_spectra"
+. ../set_paths_sw
 
 # Line lists and cross-sections
 HITRAN_H2O="$HITRAN_DIR/01_hit12.par"

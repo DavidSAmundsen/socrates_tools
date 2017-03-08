@@ -7,9 +7,7 @@ CFC113_PT_FILE="$RAD_DATA/gases/pt_cfc113"
 REF_PT_FILE="../ref_pt"
 WGT="-u"
 
-HITRAN_DIR="/home/damundse/Line_lists/HITRAN"
-ABS_COEFF_DIR="/home/damundse/Abs_coeff"
-K_COEFF_DIR="/home/damundse/k-coeff/lw_jm2dsa/${PT_FILE}"
+. ../set_paths_lw
 
 HITRAN_H2O="$HITRAN_DIR/01_hit12.par"
 HITRAN_CO2="$HITRAN_DIR/02_hit12.par"

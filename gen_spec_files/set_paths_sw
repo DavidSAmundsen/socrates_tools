@@ -1,0 +1,16 @@
+#!/bin/bash
+# Defines paths to all needed input and output data for generation of
+# short-wave spectral files.
+
+HITRAN_DIR="/scr2/socrates/hitran"
+CONT_DIR="/scr2/socrates/continua"
+K_COEFF_DIR="/scr2/socrates/data/sp_cmp/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
+SW_DATA="/scr2/socrates/data/abs_coeff"
+SOLAR_SPEC_DIR="/scr2/socrates/stellar_spectra"
+CLD_COEFF_DIR="/scr2/socrates/data/sp_cmp/sw_${SP_ID}/cld/${SOLAR_SPEC}"
+
+if [ -n "${SP_FLDR}" ] ; then
+  SPEC_FILE_DIR="/scr2/socrates/spectral_files/sp_sw_${SP_FLDR}"
+else
+  SPEC_FILE_DIR="/scr2/socrates/spectral_files/sp_sw_${SP_ID}"
+fi

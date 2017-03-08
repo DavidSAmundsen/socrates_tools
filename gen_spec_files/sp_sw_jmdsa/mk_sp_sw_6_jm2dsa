@@ -1,12 +1,11 @@
 #!/bin/bash
 
 SP_ID="jm2dsa"
+SP_FLDR="ga7"
 SOLAR_SPEC="gj876"
 PT_FILE="pt663"
 
-# Paths
-. set_paths
-SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_sw_ga7"
+. ../set_paths_sw
 
 # Create full path to spectral file
 SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_ga7_dsa_${SOLAR_SPEC}"

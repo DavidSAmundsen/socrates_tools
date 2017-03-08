@@ -6,8 +6,7 @@ SOLAR_SPEC="sun_2.9gyr"
 NBAND="6"
 SP_ID="jm2dsa"
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Skeletal spectral file
 SPECFILE="sp_sw_6_jm2dsa_${SOLAR_SPEC}_skel"

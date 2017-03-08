@@ -6,8 +6,7 @@ SOLAR_SPEC="pc"
 NBAND="35"
 SP_ID="dsa_arcc"
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Skeletal spectral file
 SPECFILE="sp_sw_${NBAND}_${SP_ID}_skel"

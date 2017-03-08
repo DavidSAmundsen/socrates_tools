@@ -5,9 +5,7 @@
 # Import parameters
 . $1
 
-# Paths
-CLD_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/cld/${SOLAR_SPEC}"
-SOLAR_SPEC_DIR="/home/damundse/Stellar_spectra"
+. ../set_paths_sw
 
 SPECFILE="sp_sw_${NBAND}_${SP_ID}_skel"
 WGT="-S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"

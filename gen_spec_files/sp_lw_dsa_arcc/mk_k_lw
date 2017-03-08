@@ -15,10 +15,7 @@ COL_CH4="5.8e+01" # 1e4 ppmv in a 1 bar atmosphere
 COL_H2OC="10.0" # 1 bar atmosphere
 COL_CO2C="1.0e2" # 1e5 ppmv in a 1 bar atmosphere
 
-HITRAN_DIR="/home/damundse/Line_lists/HITRAN"
-CONT_DIR="/home/damundse/Continua"
-ABS_COEFF_DIR="/home/damundse/Abs_coeff"
-K_COEFF_DIR="/home/damundse/k-coeff/lw_${SP_ID}/${PT_FILE}"
+. ../set_paths_lw
 
 HITRAN_H2O="${HITRAN_DIR}/01_hit12.par"
 HITRAN_CO2="${HITRAN_DIR}/02_hit12.par"

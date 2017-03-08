@@ -6,12 +6,12 @@
 . $1
 
 SPECFILE="sp_sw_${NBAND}_${SP_ID}_skel"
-CLD_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/cld"
+
+. ../set_paths_sw
 
 # Cscatter_average requires -S as weighting argument, not +S
 WGT_SCTAVG="-${WGT:1}"
 
-CLD_COEFF_DIR="/home/damundse/k-coeff/sw_${SP_ID}/cld"
 mkdir -p ${CLD_COEFF_DIR}
 
 if [ ! -s ${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND} ] ; then

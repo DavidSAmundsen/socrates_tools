@@ -5,8 +5,7 @@ SP_ID="dsa_ar_lowch4"
 SOLAR_SPEC="sun_2.9gyr"
 PT_FILE="pt663"
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # This script creates the 6 band SW spectral file sp_sw_6_jm2
 # from scratch using HITRAN database files available in August 2013.

@@ -9,9 +9,7 @@ COL_CO2="1.6e+02" # 1% CO2 in a 1 bar atmosphere
 COL_CH4="5.8e+01" # 1% CH4 in a 1 bar atmosphere
 COL_TIDY_H2O="2.5e1" # 1 bar atmosphere
 
-K_COEFF_DIR="/home/damundse/k-coeff/lw_${SP_ID}/${PT_FILE}"
-CLD_DIR="/home/damundse/k-coeff/lw_${SP_ID}/cld"
-SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_lw_${SP_ID}"
+. ../set_paths_lw
 
 # Create name of spectral file
 SPEC_FILE="sp_lw_${NBANDS}_${SP_ID}"

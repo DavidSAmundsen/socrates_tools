@@ -5,8 +5,7 @@ SP_ID="dsa_arcc"
 SOLAR_SPEC="pc"
 PT_FILE="pt663"
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # This script creates the 6 band SW spectral file sp_sw_6_jm2
 # from scratch using HITRAN database files available in August 2013.
@@ -146,7 +145,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s35_3l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s35_3l -m ${K_COEFF_DIR}/h2o_s35_3lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_3log \
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/h2o_s35_3log \
     && echo "H2O lines band 3 done" &
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s35_4l ] ; then
@@ -157,8 +157,9 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s35_4l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s35_4l -m ${K_COEFF_DIR}/h2o_s35_4lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_4log \
-    && echo "H2O lines band 4 done" &
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/h2o_s35_4log \
+    && echo "H2O lines band 4 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s35_5l ] ; then
   echo "H2O lines band 5"
@@ -168,7 +169,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s35_5l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s35_5l -m ${K_COEFF_DIR}/h2o_s35_5lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_5log \
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/h2o_s35_5log \
     && echo "H2O lines band 5 done" &
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s35_6l ] ; then
@@ -179,7 +181,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s35_6l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s35_6l -m ${K_COEFF_DIR}/h2o_s35_6lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s35_6log \
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/h2o_s35_6log \
     && echo "H2O lines band 6 done" &
 fi
 
@@ -194,8 +197,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s35_3-6c ] ; then
     -o ${K_COEFF_DIR}/h2o-h2o_s35_3-6c \
     -m ${K_COEFF_DIR}/h2o-h2o_s35_3-6cm \
     -L $SW_DATA/h2o-h2o_lbl_sw.nc \
-     > ${K_COEFF_DIR}/h2o-h2o_s35_3-6clog \
-     && echo "H2O self-broadened continuum done" &
+    > ${K_COEFF_DIR}/h2o-h2o_s35_3-6clog \
+    && echo "H2O self-broadened continuum done" &
 fi
 
 if [ ! -s ${K_COEFF_DIR}/co2-co2_s35_6c ] ; then
@@ -208,8 +211,8 @@ if [ ! -s ${K_COEFF_DIR}/co2-co2_s35_6c ] ; then
     -o ${K_COEFF_DIR}/co2-co2_s35_6c \
     -m ${K_COEFF_DIR}/co2-co2_s35_6cm \
     -L $SW_DATA/co2-co2_lbl_sw.nc \
-     > ${K_COEFF_DIR}/co2-co2_s35_6clog \
-     && echo "CO2-CO2 CIA done" &
+    > ${K_COEFF_DIR}/co2-co2_s35_6clog \
+    && echo "CO2-CO2 CIA done" &
 fi
 
 wait

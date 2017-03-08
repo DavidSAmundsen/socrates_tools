@@ -11,9 +11,7 @@ COL_TIDY_H2O="2.5e1" # 1 bar atmosphere
 COL_H2OC="10.0" # 1 bar atmosphere
 COL_CO2C="1.0e2" # 1e5 ppmv in a 1 bar atmosphere
 
-K_COEFF_DIR="/home/damundse/k-coeff/lw_${SP_ID}/${PT_FILE}"
-CLD_DIR="/home/damundse/k-coeff/lw_${SP_ID}/cld"
-SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_lw_${SP_ID}"
+. ../set_paths_lw
 
 # Create name of spectral file
 SPEC_FILE="sp_lw_${NBANDS}_${SP_ID}"

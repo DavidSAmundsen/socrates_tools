@@ -3,8 +3,7 @@
 # Import parameters
 . $1
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Line lists and cross-sections
 HITRAN_H2O="$HITRAN_DIR/01_hit12.par"
@@ -99,8 +98,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c ] ; then
     -o ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c \
     -m ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_cm \
     -L $SW_DATA/h2o-h2o_lbl_sw.nc \
-     > ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_clog \
-     && echo "H2O self-broadened continuum done" &
+    > ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_clog \
+    && echo "H2O self-broadened continuum done" &
 fi
 
 if [ ! -s ${K_COEFF_DIR}/co2-co2_s${NBAND}_c ] ; then
@@ -113,8 +112,8 @@ if [ ! -s ${K_COEFF_DIR}/co2-co2_s${NBAND}_c ] ; then
     -o ${K_COEFF_DIR}/co2-co2_s${NBAND}_c \
     -m ${K_COEFF_DIR}/co2-co2_s${NBAND}_cm \
     -L $SW_DATA/co2-co2_lbl_sw.nc \
-     > ${K_COEFF_DIR}/co2-co2_s${NBAND}_clog \
-     && echo "CO2-CO2 CIA done" &
+    > ${K_COEFF_DIR}/co2-co2_s${NBAND}_clog \
+    && echo "CO2-CO2 CIA done" &
 fi
 
 wait

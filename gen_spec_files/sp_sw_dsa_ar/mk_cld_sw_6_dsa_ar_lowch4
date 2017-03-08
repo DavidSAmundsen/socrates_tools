@@ -6,8 +6,7 @@ SOLAR_SPEC="sun_2.9gyr"
 NBAND="6"
 SP_ID="dsa_ar_lowch4"
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Skeletal spectral file
 SPECFILE="sp_sw_6_${SP_ID}_skel"

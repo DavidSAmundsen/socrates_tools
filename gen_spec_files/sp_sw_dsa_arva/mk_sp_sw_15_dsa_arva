@@ -5,8 +5,7 @@ SP_FLDR="dsa_arva"
 SOLAR_SPEC="sun_2.9gyr"
 PT_FILE="pt663"
 
-# Paths
-. set_paths
+. ../set_paths_sw
 
 # Create full path to spectral file
 SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_15_${SP_ID}_${SOLAR_SPEC}"
