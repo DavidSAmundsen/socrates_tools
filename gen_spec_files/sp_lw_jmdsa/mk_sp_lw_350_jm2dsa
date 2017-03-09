@@ -70,11 +70,11 @@ ${SPEC_FILE_DIR}/${SPEC_FILE}
 a
 10
 5
-${CLD_DIR}/fit_lw_drop5_350
+${CLD_COEFF_DIR}/fit_lw_drop5_350
 7.60000E-06 5.00000E-05
 12
 8
-${CLD_DIR}/fit_lw_ice8_350
+${CLD_COEFF_DIR}/fit_lw_ice8_350
 1.30000E-05 3.10000E-04
 -1
 EOF

@@ -2,7 +2,7 @@
 
 # This script creates the k-coefficients.
 
-NBANDS="17" # Number of bands
+NBANDS="350" # Number of bands
 SP_ID="dsa_arcc" # Spectral file ID
 LBL_RES="0.1" # Resolution in LbL files
 TOL="-b 1.0e-3" # Tolerance for k-coefficients
@@ -77,6 +77,8 @@ if [ ! -s ${K_COEFF_DIR}/ch4_l${NBANDS}_l ] || \
      > ${K_COEFF_DIR}/ch4_l${NBANDS}_log && echo "CH4 done" &
 fi
 
+echo "Jobs running in foreground:"
+
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
     [ ! -s ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc ] ; then
   echo "H2O lines and foreign continuum"
@@ -87,8 +89,9 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
     -k -x ${RAD_DATA}/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_l -m ${K_COEFF_DIR}/h2o_l${NBANDS}_lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
      > ${K_COEFF_DIR}/h2o_l${NBANDS}_log \
-     && echo "H2O lines and foreign continuum done" &
+     && echo "H2O lines and foreign continuum done"
 fi
 
 if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c ] ; then
@@ -96,14 +99,15 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c ] ; then
   rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c*
   Ccorr_k -F ../pt_cont \
     -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} \
-    -ct 1 1 ${COL_H2OC} -t 1.0e-3 \
+    -ct 1 1 ${COL_H2OC} ${TOL} \
     -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
     -k -s ${SPECFILE} +p -lk \
     -o ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c \
     -m ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_cm \
-    -L ${ABS_COEFF_DIR}/h2o-h2o_sbc_lw.nc \
+    -L ${ABS_COEFF_DIR}/h2o-h2o_lbl_lw.nc \
+    -lw ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
      > ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_clog \
-     && echo "H2O self-broadened continuum done" &
+     && echo "H2O self-broadened continuum done"
 fi
 
 if [ ! -s ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c ] ; then
@@ -117,7 +121,7 @@ if [ ! -s ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c ] ; then
     -m ${K_COEFF_DIR}/co2-co2_l${NBANDS}_cm \
     -L ${ABS_COEFF_DIR}/co2-co2_lbl_lw.nc \
      > ${K_COEFF_DIR}/co2-co2_l${NBANDS}_clog \
-     && echo "CO2-CO2 CIA done" &
+     && echo "CO2-CO2 CIA done"
 fi
 
 wait

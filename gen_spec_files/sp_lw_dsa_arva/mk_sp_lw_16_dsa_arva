@@ -94,11 +94,11 @@ ${SPEC_FILE_DIR}/${SPEC_FILE}
 a
 10
 5
-${CLD_DIR}/fit_lw_drop5_${NBAND}
+${CLD_COEFF_DIR}/fit_lw_drop5_${NBAND}
 1.50000E-06 5.00000E-05
 12
 8
-${CLD_DIR}/fit_lw_ice8_${NBAND}
+${CLD_COEFF_DIR}/fit_lw_ice8_${NBAND}
 8.00000E-06 3.20000E-04
 -1
 EOF

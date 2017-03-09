@@ -2,7 +2,7 @@
 
 SP_ID="dsa_arva"
 SP_FLDR="dsa_arva"
-SOLAR_SPEC="sun_2.9gyr"
+SOLAR_SPEC="sun_2.9gya"
 PT_FILE="pt663"
 
 . ../set_paths_sw

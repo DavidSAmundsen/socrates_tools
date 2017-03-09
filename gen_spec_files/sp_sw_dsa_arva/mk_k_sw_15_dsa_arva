@@ -2,7 +2,7 @@
 
 # Setting for k-coefficient calculation
 SP_ID="dsa_arva"
-SOLAR_SPEC="sun_2.9gyr"
+SOLAR_SPEC="sun"
 PT_FILE="pt663"
 
 . ../set_paths_sw
@@ -140,6 +140,8 @@ if [ ! -s ${K_COEFF_DIR}/ch4_s15_6l ] ; then
     && echo "CH4 band 6 done" &
 fi
 
+echo "Jobs running in foreground:"
+
 if [ ! -s ${K_COEFF_DIR}/h2o_s15_2l ] || \
     [ ! -s $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc ] ; then
   echo "H2O lines band 2"
@@ -149,7 +151,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s15_2l ] || \
     -s $specfile ${WGT} -lk \
     -o ${K_COEFF_DIR}/h2o_s15_2l -m ${K_COEFF_DIR}/h2o_s15_2lm \
     -L $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc \
-     > ${K_COEFF_DIR}/h2o_s15_2log && echo "H2O lines band 2 done" &
+    -sm ${K_COEFF_DIR}/h2o_s15_map.nc \
+     > ${K_COEFF_DIR}/h2o_s15_2log && echo "H2O lines band 2 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s15_3l ] ; then
   echo "H2O lines band 3"
@@ -159,8 +162,10 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s15_3l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s15_3l -m ${K_COEFF_DIR}/h2o_s15_3lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s15_3log \
-    && echo "H2O lines band 3 done" &
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_s15_map.nc \
+    > ${K_COEFF_DIR}/h2o_s15_3log \
+    && echo "H2O lines band 3 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s15_4l ] ; then
   echo "H2O lines band 4"
@@ -170,8 +175,10 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s15_4l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s15_4l -m ${K_COEFF_DIR}/h2o_s15_4lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s15_4log \
-    && echo "H2O lines band 4 done" &
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_s15_map.nc \
+    > ${K_COEFF_DIR}/h2o_s15_4log \
+    && echo "H2O lines band 4 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s15_5l ] ; then
   echo "H2O lines band 5"
@@ -181,8 +188,10 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s15_5l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s15_5l -m ${K_COEFF_DIR}/h2o_s15_5lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s15_5log \
-    && echo "H2O lines band 5 done" &
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_s15_map.nc \
+    > ${K_COEFF_DIR}/h2o_s15_5log \
+    && echo "H2O lines band 5 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s15_6l ] ; then
   echo "H2O lines band 6"
@@ -192,37 +201,38 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s15_6l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s15_6l -m ${K_COEFF_DIR}/h2o_s15_6lm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s15_6log \
-    && echo "H2O lines band 6 done" &
+    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_s15_map.nc \
+    > ${K_COEFF_DIR}/h2o_s15_6log \
+    && echo "H2O lines band 6 done"
 fi
 
 if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s15_3-6c ] ; then
   echo "H2O self-broadened continuum"
   rm -f ${K_COEFF_DIR}/h2o-h2o_s15_3-6c*
   Ccorr_k -F ../pt_cont \
-    -R 3 15 -i 1.0 \
-    -ct 1 1 10.0 -t 1.0e-2 \
+    -R 3 15 -i 1.0 -ct 1 1 10.0 -t 1.0e-3 \
     -e $RAD_DATA/continua/caviar_s296 $RAD_DATA/continua/caviar_s260 \
     -k -s $specfile ${WGT} -lk \
     -o ${K_COEFF_DIR}/h2o-h2o_s15_3-6c \
     -m ${K_COEFF_DIR}/h2o-h2o_s15_3-6cm \
     -L $SW_DATA/h2o-h2o_lbl_sw.nc \
-     > ${K_COEFF_DIR}/h2o-h2o_s15_3-6clog \
-     && echo "H2O self-broadened continuum done" &
+    -lw ${K_COEFF_DIR}/h2o_s15_map.nc \
+    > ${K_COEFF_DIR}/h2o-h2o_s15_3-6clog \
+    && echo "H2O self-broadened continuum done"
 fi
 
 if [ ! -s ${K_COEFF_DIR}/co2-co2_s15_6c ] ; then
   echo "CO2-CO2 CIA"
   rm -f ${K_COEFF_DIR}/co2-co2_s15_6c*
   Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-co2.cia \
-    -R 15 15 -i 1.0 \
-    -ct 2 2 1.0e2 -t 1.0e-2 \
+    -R 15 15 -i 1.0 -ct 2 2 1.0e2 -t 1.0e-2 \
     -k -s $specfile +p -lk \
     -o ${K_COEFF_DIR}/co2-co2_s15_6c \
     -m ${K_COEFF_DIR}/co2-co2_s15_6cm \
     -L $SW_DATA/co2-co2_lbl_sw.nc \
-     > ${K_COEFF_DIR}/co2-co2_s15_6clog \
-     && echo "CO2-CO2 CIA done" &
+    > ${K_COEFF_DIR}/co2-co2_s15_6clog \
+    && echo "CO2-CO2 CIA done"
 fi
 
 wait

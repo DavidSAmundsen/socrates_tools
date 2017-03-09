@@ -156,6 +156,7 @@ if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_13-17l ] ; then
     && echo "CH4 band 13-17 done" &
 fi
 
+echo "Jobs running in foreground:"
 
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l ] ; then
   echo "H2O band 1-2"
@@ -167,7 +168,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l ] ; then
     -o ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l \
     -m ${K_COEFF_DIR}/h2o_l${NBAND}_1-2lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
-    > ${K_COEFF_DIR}/h2o_l${NBAND}_1-2log && echo "H2O band 1-2 done" &
+    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
+    > ${K_COEFF_DIR}/h2o_l${NBAND}_1-2log && echo "H2O band 1-2 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_3-4l ] ; then
   echo "H2O band 3-4"
@@ -179,7 +181,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_3-4l ] ; then
     -o ${K_COEFF_DIR}/h2o_l${NBAND}_3-4l \
     -m ${K_COEFF_DIR}/h2o_l${NBAND}_3-4lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
-    > ${K_COEFF_DIR}/h2o_l${NBAND}_3-4log && echo "H2O band 3-4 done" &
+    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
+    > ${K_COEFF_DIR}/h2o_l${NBAND}_3-4log && echo "H2O band 3-4 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_5-17l ] ; then
   echo "H2O band 5-17"
@@ -191,7 +194,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_5-17l ] ; then
     -o ${K_COEFF_DIR}/h2o_l${NBAND}_5-17l \
     -m ${K_COEFF_DIR}/h2o_l${NBAND}_5-17lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
-    > ${K_COEFF_DIR}/h2o_l${NBAND}_5-17log && echo "H2O band 5-17 done" &
+    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
+    > ${K_COEFF_DIR}/h2o_l${NBAND}_5-17log && echo "H2O band 5-17 done"
 fi
 
 
@@ -199,15 +203,16 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-17c ] ; then
   echo "H2O self-broadened continuum"
   rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-17c*
   Ccorr_k -F ../pt_cont \
-    -R 2 17 -c 2500.0 -i 1.0 \
-    -ct 1 1 10.0 -t 1.0e-2 \
+    -R 1 17 -c 2500.0 -i 0.1 \
+    -ct 1 1 10.0 -t 1.0e-3 \
     -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
     -k -s ${SPECFILE} +p -lk \
     -o ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-17c \
     -m ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-17cm \
     -L ${ABS_COEFF_DIR}/h2o-h2o_sbc_lw.nc \
+    -lw ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
      > ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-17clog \
-     && echo "H2O self-broadened continuum done" &
+     && echo "H2O self-broadened continuum done"
 fi
 
 
@@ -222,7 +227,7 @@ if [ ! -s ${K_COEFF_DIR}/co2-co2_l${NBAND}_1-17c ] ; then
     -m ${K_COEFF_DIR}/co2-co2_l${NBAND}_1-17cm \
     -L ${ABS_COEFF_DIR}/co2-co2_lbl_lw.nc \
      > ${K_COEFF_DIR}/co2-co2_l${NBAND}_1-17clog \
-     && echo "CO2-CO2 CIA done" &
+     && echo "CO2-CO2 CIA done"
 fi
 
 wait
