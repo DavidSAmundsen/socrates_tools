@@ -8,16 +8,34 @@ from aer_density_component import aer_density_component
 # User definitions
 ################################################################################
 
-# Spectral file
-# spectral_file_name = 'sp_lw_ga7'
-# spectral_file_name = 'sp_sw_ga7'
-# spectral_file_name = 'sp_lw_300_jm2'
-spectral_file_name = 'sp_sw_260_jm2'
-
+spectral_file_name = 'sp_sw_ga7_dsa'
+spectral_file_folder = 'sp_sw_ga7'
 solar_spec='sun'
+
+################################################################################
+# Diagnostics, paths and aerosol types
+################################################################################
 
 # Spectral file for diagnostics
 spectral_file_name_550nm = 'sp_diag'
+
+socrates_dir = '/scr2/socrates'
+scatter_base_dir = os.path.join(socrates_dir, 'data', 'aerosol')
+spectral_file_dir = os.path.join(socrates_dir, 'spectral_files')
+if spectral_file_name[3:5] == 'lw':
+  scatter_data_dir = os.path.join(scatter_base_dir, spectral_file_name)
+  aer_nc = os.path.join(spectral_file_dir, spectral_file_folder,
+      'aer_' + spectral_file_name[3:] + '.nc')
+elif spectral_file_name[3:5] == 'sw':
+  scatter_data_dir = os.path.join(scatter_base_dir, spectral_file_name,
+      solar_spec)
+  aer_nc = os.path.join(spectral_file_dir, spectral_file_folder,
+      'aer_' + spectral_file_name[3:] + '_' + solar_spec + '.nc')
+else:
+  print('Spectral region not recognised.')
+  sys.exit(1)
+scatter_data_550nm_dir = os.path.join(scatter_base_dir,
+    spectral_file_name_550nm)
 
 # List of aerosol types
 aer_type = array([
@@ -31,21 +49,7 @@ aer_type = array([
     'organic',
     ])
 
-scatter_base_dir = '/home/damundse/Scatter_data'
-if spectral_file_name[3:5] == 'lw':
-  scatter_data_dir = os.path.join(scatter_base_dir, spectral_file_name)
-  aer_nc = ('/home/damundse/Scatter_data/aer_' +
-      spectral_file_name[3:] + '.nc')
-elif spectral_file_name[3:5] == 'sw':
-  scatter_data_dir = os.path.join(scatter_base_dir, spectral_file_name,
-      solar_spec)
-  aer_nc = ('/home/damundse/Scatter_data/aer_' +
-      spectral_file_name[3:] + '_' + solar_spec + '.nc')
-else:
-  print('Spectral region not recognised.')
-  sys.exit(1)
-scatter_data_550nm_dir = os.path.join(scatter_base_dir,
-    spectral_file_name_550nm)
+print(aer_nc)
 
 ################################################################################
 # Functions

@@ -1,2 +1,6 @@
 radiation_code.lock
 *.exe
+aer_density_component.cpython*
+aerosol/rad_pcf.F90
+aerosol/realtype_rd.f90
+aerosol/aerosol_component.finc

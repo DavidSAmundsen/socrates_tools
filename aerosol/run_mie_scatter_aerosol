@@ -16,7 +16,7 @@ source def_size_aerosol
 echo "Patterson dust"
 for RE in ${RE_DUST}; do
   if [ ! -s ${SCATTER_DIR}/mie/sdust_${RE}.mon ] ; then
-    DIST=`./convert ${RE} ${VAR_DUST}`
+    DIST=`./convert.exe ${RE} ${VAR_DUST}`
     Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
              -r ${SCATTER_DIR}/refract/refract_sdust \
              -l -C 2 -M -o ${SCATTER_DIR}/mie/sdust_${RE}.mon \
@@ -28,7 +28,7 @@ echo "Done"
 echo "Sinyuk dust"
 for RE in ${RE_DUST}; do
   if [ ! -s ${SCATTER_DIR}/mie/sinyukdust_${RE}.mon ] ; then
-    DIST=`./convert ${RE} ${VAR_DUST}`
+    DIST=`./convert.exe ${RE} ${VAR_DUST}`
     Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
              -r ${SCATTER_DIR}/refract/refract_sinyukdust \
              -l -C 2 -M -o ${SCATTER_DIR}/mie/sinyukdust_${RE}.mon \
@@ -42,7 +42,7 @@ echo "Done"
 echo "Sulfuric acid"
 for RE in ${RE_H2SO4}; do
   if [ ! -s ${SCATTER_DIR}/mie/h2so4_${RE}.mon ] ; then
-    DIST=`./convert ${RE} ${VAR_H2SO4}`
+    DIST=`./convert.exe ${RE} ${VAR_H2SO4}`
     Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
              -r ${SCATTER_DIR}/refract/refract_h2so4 \
              -l -C 6 -M -o ${SCATTER_DIR}/mie/h2so4_${RE}.mon \
@@ -56,7 +56,7 @@ echo "Done"
 echo "Black carbon (soot)"
 for RE in ${RE_SOOT}; do
   if [ ! -s ${SCATTER_DIR}/mie/soot_${RE}.mon ] ; then
-    DIST=`./convert ${RE} ${VAR_SOOT}`
+    DIST=`./convert.exe ${RE} ${VAR_SOOT}`
     Cscatter -w $RAD_DATA/aerosol/wl_aerosol \
              -r ${SCATTER_DIR}/refract/refract_soot \
              -l -C 4 -M -o ${SCATTER_DIR}/mie/soot_${RE}.mon \

@@ -2,24 +2,12 @@
 
 # Averages single scattering properties over bands.
 
-# Paths
-SOLAR_SPEC_DIR="/home/damundse/Stellar_spectra"
-SCATTER_DIR="/home/damundse/Scatter_data"
-SPEC_FILE_DIR="/home/damundse/Spectral_files/sp_sw_ga7"
-
 ################################################################################
 # User input
 ################################################################################
 
-# SPECTRAL_FILE_NAME="sp_lw_ga7"
-# WGT="-p 250"
-
-# SPECTRAL_FILE_NAME="sp_sw_ga7"
-# SOLAR_SPEC="lean_12"
-
-# SPECTRAL_FILE_NAME="sp_lw_300_jm2"
-
-SPECTRAL_FILE_NAME="sp_sw_260_jm2"
+SPECTRAL_FILE_NAME="sp_sw_ga7_dsa"
+SPECTRAL_FILE_FOLDER="sp_sw_ga7"
 SOLAR_SPEC="sun"
 
 # SPECTRAL_FILE_NAME="sp_diag"
@@ -28,6 +16,12 @@ SOLAR_SPEC="sun"
 ################################################################################
 # End user input
 ################################################################################
+
+# Construct paths to data
+SOCRATES_DIR="/scr2/socrates"
+SOLAR_SPEC_DIR="${SOCRATES_DIR}/stellar_spectra"
+SCATTER_DIR="${SOCRATES_DIR}/data/aerosol"
+SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/${SPECTRAL_FILE_FOLDER}"
 
 # Create weighting argument and output directory, which depends on spectral
 # region
@@ -42,13 +36,21 @@ else
   exit
 fi
 
-echo ${WGT}
-
 # Construct spectral file name
 SPECTRAL_FILE="${SPEC_FILE_DIR}/${SPECTRAL_FILE_NAME}"
+if [ ! -f ${SPECTRAL_FILE} ] ; then
+  if [ "${SPECTRAL_FILE_NAME:3:2}" = "sw" ] ; then
+    SPECTRAL_FILE="${SPECTRAL_FILE}_${SOLAR_SPEC}"
+  fi
+  if [ ! -f ${SPECTRAL_FILE} ] ; then
+    echo "Spectral file not found:"
+    echo ${SPECTRAL_FILE}
+    exit 1
+  fi
+fi
 
 # Construct paths to directories for scattering input/output data
-SCATTER_IN_DIR="${SCATTER_DIR}"/mie
+SCATTER_IN_DIR="${SCATTER_DIR}/mie"
 
 # Create directory for averaged single scattering properties
 mkdir -p "${SCATTER_OUT_DIR}"
@@ -149,3 +151,5 @@ for R in ${R_OC}; do
   fi
 done
 echo "Done"
+
+echo "All done."

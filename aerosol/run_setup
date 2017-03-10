@@ -1,0 +1,16 @@
+#!/bin/bash
+# This small scripts sets up the needed symbolic links to SOCRATES source files
+# and compiles the Fortran code with f2py.
+
+SOCRATES_DIR="/scr2/socrates/modele_branch"
+
+rm -f rad_pcf.F90 realtype_rd.f90 aerosol_component.finc
+
+ln -s ${SOCRATES_DIR}/src/radiance_core/rad_pcf.F90 . && \
+  ln -s ${SOCRATES_DIR}/src/modules_core/realtype_rd.f90 . && \
+  ln -s ${SOCRATES_DIR}/src/general/aerosol_component.finc . \
+
+f2py3 -c aer_density_component.f90 rad_pcf.F90 \
+ realtype_rd.f90 -m aer_density_component
+
+gcc -c convert.c -o convert.exe
