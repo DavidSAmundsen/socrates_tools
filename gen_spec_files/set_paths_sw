@@ -2,15 +2,29 @@
 # Defines paths to all needed input and output data for generation of
 # short-wave spectral files.
 
-HITRAN_DIR="/scr2/socrates/hitran"
-CONT_DIR="/scr2/socrates/continua"
-K_COEFF_DIR="/scr2/socrates/data/sp_cmp/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
-SW_DATA="/scr2/socrates/data/abs_coeff"
-SOLAR_SPEC_DIR="/scr2/socrates/stellar_spectra"
-CLD_COEFF_DIR="/scr2/socrates/data/sp_cmp/sw_${SP_ID}/cld/${SOLAR_SPEC}"
+HOST=`uname -n`
+if [ ${HOST:0:4} == "dali" ]; then
+  HOST="dali"
+  SOCRATES_DIR="/discover/nobackup/projects/giss/socrates"
+else
+  SOCRATES_DIR="/scr2/socrates"
+fi
+
+HITRAN_DIR="${SOCRATES_DIR}/hitran"
+CONT_DIR="${SOCRATES_DIR}/continua"
+K_COEFF_DIR="${SOCRATES_DIR}/data/sp_cmp/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
+SW_DATA="${SOCRATES_DIR}/data/abs_coeff"
+SOLAR_SPEC_DIR="${SOCRATES_DIR}/stellar_spectra"
+CLD_COEFF_DIR="${SOCRATES_DIR}/data/sp_cmp/sw_${SP_ID}/cld/${SOLAR_SPEC}"
 
 if [ -n "${SP_FLDR}" ] ; then
-  SPEC_FILE_DIR="/scr2/socrates/spectral_files/sp_sw_${SP_FLDR}"
+  SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/sp_sw_${SP_FLDR}"
 else
-  SPEC_FILE_DIR="/scr2/socrates/spectral_files/sp_sw_${SP_ID}"
+  SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/sp_sw_${SP_ID}"
+fi
+
+# If on discover (dali node) put cloud optical properties in
+# in working directory.
+if [ ${HOST} == "dali" ]; then
+  CLD_COEFF_DIR="sw_${SP_ID}/cld/${SOLAR_SPEC}"
 fi
