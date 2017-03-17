@@ -37,9 +37,6 @@ y
 ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c
 5
 y
-${K_COEFF_DIR}/n2o_l${NBANDS}_l
-5
-y
 ${K_COEFF_DIR}/ch4_l${NBANDS}_l
 6
 n

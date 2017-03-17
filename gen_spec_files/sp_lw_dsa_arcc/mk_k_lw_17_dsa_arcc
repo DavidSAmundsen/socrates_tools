@@ -161,6 +161,7 @@ echo "Jobs running in foreground:"
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l ] ; then
   echo "H2O band 1-2"
   rm -f ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l*
+  rm -f ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 1 2 -c 2500.0 -i 0.1 -l 1 1.0e2 -b 2.0e-3 \
     -s ${SPECFILE} ${WGT} -lk \

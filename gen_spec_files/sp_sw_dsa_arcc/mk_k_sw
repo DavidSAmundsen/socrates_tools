@@ -63,6 +63,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_v${NBAND}_l ] || \
     [ ! -s $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc ] ; then
   echo "H2O lines (visible)"
   rm -f ${K_COEFF_DIR}/h2o_v${NBAND}_l*
+  rm -f ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R ${BAND_FIRST_H2O} $((BAND_NIR_START-1)) -c 2500.0 -i 1.0 \
     -l 1 ${COL_MASS_K_H2O} ${TOL} \

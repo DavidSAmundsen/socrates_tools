@@ -146,6 +146,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s15_2l ] || \
     [ ! -s $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc ] ; then
   echo "H2O lines band 2"
   rm -f ${K_COEFF_DIR}/h2o_s15_2l*
+  rm -f ${K_COEFF_DIR}/h2o_s15_map.nc
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 2 2 -c 2500.0 -i 1.0 -l 1 1.0e2 -n 1 \
     -s $specfile ${WGT} -lk \

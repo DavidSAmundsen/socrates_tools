@@ -83,6 +83,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
     [ ! -s ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc ] ; then
   echo "H2O lines and foreign continuum"
   rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_l*
+  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc
   Ccorr_k -F ../${PT_FILE} -D ${HITRAN_H2O} \
     -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} -l 1 ${COL_H2O} \
     ${TOL} -s ${SPECFILE} +p -lk -np 4 \
