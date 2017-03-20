@@ -9,13 +9,12 @@ SP_ID="dsa"
 . ../set_paths_sw
 
 # Skeletal spectral file
-SPECFILE="sp_sw_6_jm2dsa_${SOLAR_SPEC}_skel"
+SPECFILE="sp_sw_${NBAND}_${SP_ID}_skel"
 
 # Cscatter_average requires -S as weighting argument, not +S
 WGT="-S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
 
 mkdir -p ${CLD_COEFF_DIR}
-echo ${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND}
 
 if [ ! -s ${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND} ] ; then
   echo 'Type 5 droplets'
