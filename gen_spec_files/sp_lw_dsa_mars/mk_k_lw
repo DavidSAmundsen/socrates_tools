@@ -1,0 +1,116 @@
+#!/bin/bash
+
+# This script creates the k-coefficients.
+
+NBANDS="17" # Number of bands
+SP_ID="dsa_mars" # Spectral file ID
+LBL_RES="0.1" # Resolution in LbL files
+TOL="-b 1.0e-3" # Tolerance for k-coefficients
+
+# For a 10 bar atmosphere
+PT_FILE="pt793"
+COL_H2O="1.0e+03" 
+COL_CO2="1.0e+05" # 1e6 ppmv in a 10 bar atmosphere
+COL_H2OC="100.0" # 10 bar atmosphere
+COL_CO2C="1.0e6" # 1e6 ppmv in a 10 bar atmosphere
+
+. ../set_paths_lw
+
+HITRAN_H2O="${HITRAN_DIR}/01_hit12.par"
+HITRAN_CO2="${HITRAN_DIR}/02_hit12.par"
+
+# Water vapour continuum uses CAVIAR data contained within the
+# suite (${RAD_DATA}/continua).
+
+# Aerosol and cloud parametrisations are those used operationally
+# in the Met Office from GA3.0 (see also $RAD_DIR/examples/aerosols,
+# $RAD_DIR/examples/droplets).
+
+# Note this script takes a very long time to run initially (probably
+# several days if not done in parallel). However once the
+# line-by-line netCDF files have been created, subsequent runs will
+# use these files and the whole script should run in around an hour.
+
+if [ $RAD_BIN ] ; then
+  echo "Using code compiled in "$RAD_BIN
+else
+  echo "Path to code not set."
+  exit 1
+fi
+
+# Create skeleton spectral file
+SPECFILE="sp_lw_${NBANDS}_${SP_ID}_skel"
+rm -f ${SPECFILE}
+. mk_sp_lw_${NBANDS}_${SP_ID}_skel > /dev/null
+
+# Create directory for k-coefficients
+mkdir -p ${K_COEFF_DIR}
+
+# Gases
+
+echo "Jobs running in background:"
+
+if [ ! -s ${K_COEFF_DIR}/co2_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf1.0.nc ] ; then
+  echo "CO2"
+  rm -f ${K_COEFF_DIR}/co2_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D ${HITRAN_CO2} \
+    -R 1 ${NBANDS} -c 50000.0 -i ${LBL_RES} -l 2 ${COL_CO2} \
+    ${TOL} -s ${SPECFILE} +p -lk -np 8 \
+    -sb gas_fractions -lp 2 \
+    -o ${K_COEFF_DIR}/co2_l${NBANDS}_l -m ${K_COEFF_DIR}/co2_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf1.0.nc \
+    > ${K_COEFF_DIR}/co2_l${NBANDS}_log && echo "CO2 done" &
+fi
+
+echo "Jobs running in foreground:"
+
+if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc ] ; then
+  echo "H2O lines"
+  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_l*
+  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc
+  Ccorr_k -F ../${PT_FILE} -D ${HITRAN_H2O} \
+    -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} -l 1 ${COL_H2O} \
+    ${TOL} -s ${SPECFILE} +p -lk -np 4 \
+    -k -x ${RAD_DATA}/continua/caviar_frn \
+    -o ${K_COEFF_DIR}/h2o_l${NBANDS}_l -m ${K_COEFF_DIR}/h2o_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
+    > ${K_COEFF_DIR}/h2o_l${NBANDS}_log \
+    && echo "H2O lines and foreign continuum done"
+fi
+
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c ] ; then
+  echo "H2O self-broadened continuum"
+  rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont \
+    -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} \
+    -ct 1 1 ${COL_H2OC} ${TOL} \
+    -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/h2o-h2o_lbl_lw.nc \
+    -lw ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
+     > ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_clog \
+     && echo "H2O self-broadened continuum done"
+fi
+
+if [ ! -s ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c ] ; then
+  echo "CO2-CO2 CIA"
+  rm -f ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-co2.cia \
+    -R 1 ${NBANDS} -c 2500.0 -i 1.0 \
+    -ct 2 2 ${COL_CO2C} -t 1.0e-3 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/co2-co2_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/co2-co2_lbl_lw.nc \
+     > ${K_COEFF_DIR}/co2-co2_l${NBANDS}_clog \
+     && echo "CO2-CO2 CIA done" &
+fi
+
+wait
+
+echo "All done"
