@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NBANDS="17" # Number of bands
+NBANDS="350" # Number of bands
 SP_ID="dsa_mars" # Spectral file ID
 PT_FILE="pt793" # P-T grid
 

@@ -52,19 +52,19 @@ ${K_COEFF_DIR}/co2-co2_s${NBAND}_6c
 EOF
 
 # Add cloud fits to spectral file
-# prep_spec << EOF
-# ${SPEC_FILE}
-# a
-# 10
-# 5
-# ${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND}
-# 1.70000E-06 5.00000E-05
-# 12
-# 8
-# ${CLD_COEFF_DIR}/fit_sw_ice8_${NBAND}
-# 8.00000E-06 3.20000E-04
-# -1
-# EOF
+prep_spec << EOF
+${SPEC_FILE}
+a
+10
+5
+${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND}
+1.70000E-06 5.00000E-05
+12
+8
+${CLD_COEFF_DIR}/fit_sw_ice8_${NBAND}
+8.00000E-06 3.00000E-04
+-1
+EOF
 
 # Add solar spectrum and Rayleigh scattering coefficients
 prep_spec << EOF

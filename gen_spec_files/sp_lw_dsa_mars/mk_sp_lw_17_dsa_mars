@@ -59,19 +59,19 @@ t
 EOF
 
 # Add ice cloud optical properties only
-# prep_spec << EOF
-# ${SPEC_FILE_DIR}/${SPEC_FILE}
-# a
-# 10
-# 5
-# ${CLD_COEFF_DIR}/fit_lw_drop5_${NBAND}
-# 1.50000E-06 5.00000E-05
-# 12
-# 8
-# ${CLD_COEFF_DIR}/fit_lw_ice8_${NBAND}
-# 8.00000E-06 3.20000E-04
-# -1
-# EOF
+prep_spec << EOF
+${SPEC_FILE_DIR}/${SPEC_FILE}
+a
+10
+5
+${CLD_COEFF_DIR}/fit_lw_drop5_${NBAND}
+1.50000E-06 5.00000E-05
+12
+8
+${CLD_COEFF_DIR}/fit_lw_ice8_${NBAND}
+8.00000E-06 3.20000E-04
+-1
+EOF
 
 # Rearrange so the major gas is listed first for each band and
 # gases are removed from bands where absorption is very weak.
