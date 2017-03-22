@@ -469,7 +469,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-12c ] ; then
     -k -s ${SPECFILE} +p -lk \
     -o ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-12c \
     -m ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-12cm \
-    -L ${ABS_COEFF_DIR}/h2o-h2o_sbc_lw.nc \
+    -L ${ABS_COEFF_DIR}/h2o-h2o_lbl_lw.nc \
     -lw ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
      > ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-12clog \
      && echo "H2O self-broadened continuum done"
