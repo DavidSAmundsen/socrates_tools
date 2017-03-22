@@ -25,8 +25,8 @@ n
 ${SPEC_FILE_DIR}/${SPEC_FILE}
 5
 ${K_COEFF_DIR}/h2o_l${NBANDS}_l
-9
-${K_COEFF_DIR}/h2o_l${NBANDS}_s
+19
+${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c
 5
 y
 ${K_COEFF_DIR}/co2_l${NBANDS}_l
@@ -64,10 +64,15 @@ o
 ${COL_H2O}
 ${COL_CO2}
 ${COL_CH4}
+10.0
 0.99990
 6
 ${COL_TIDY_H2O}
 ${COL_CO2}
 ${COL_CH4}
+10.0
+n
+8
+1
 -1
 EOF

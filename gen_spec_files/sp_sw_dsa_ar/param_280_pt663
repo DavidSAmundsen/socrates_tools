@@ -4,7 +4,7 @@
 SP_ID="dsa_ar"
 SP_FLDR="dsa_ar"
 NBAND="280"
-SOLAR_SPEC="trappist1"
+SOLAR_SPEC="sun"
 PT_FILE="pt663"
 TOL="-b 1.0e-3"
 BAND_NIR_START="66" # 5.000000000E-07 m

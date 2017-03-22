@@ -78,6 +78,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBAND}_l ] || \
     [ ! -s $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc ] ; then
   echo "H2O lines"
   rm -f ${K_COEFF_DIR}/h2o_s${NBAND}_l*
+  rm -f ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R ${BAND_NIR_START} ${NBAND} -c 2500.0 -i 1.0 \
     -l 1 ${COL_MASS_K_H2O} ${TOL} \
@@ -85,21 +86,25 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBAND}_l ] || \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s${NBAND}_l -m ${K_COEFF_DIR}/h2o_s${NBAND}_lm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc \
     > ${K_COEFF_DIR}/h2o_s${NBAND}_log && echo "H2O lines done"
   echo
 fi
 
-if [ ! -s ${K_COEFF_DIR}/h2o_s${NBAND}_s ] ; then
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c ] ; then
   echo "H2O self-broadened continuum"
-  rm -f ${K_COEFF_DIR}/h2o_s${NBAND}_s*
-  Ccorr_k -C 33 1.0e-4 1.0e4 -F ../${PT_FILE} -D $HITRAN_H2O \
-    -P 7 -R ${BAND_NIR_START} ${NBAND} -c 2500.0 -i 1.0 \
+  rm -f ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c*
+  Ccorr_k -F ../pt_cont \
+    -R ${BAND_NIR_START} ${NBAND} -c 2500.0 -i 1.0 \
+    -ct 1 1 10.0 ${TOL} \
     -e $RAD_DATA/continua/caviar_s296 $RAD_DATA/continua/caviar_s260 \
-    -k -s $specfile ${WGT} -q -r $ref_pt_file \
-    -o ${K_COEFF_DIR}/h2o_s${NBAND}_s -m ${K_COEFF_DIR}/h2o_s${NBAND}_sm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
-     > ${K_COEFF_DIR}/h2o_s${NBAND}_slog \
-     && echo "H2O self-broadened continuum done"
+    -k -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c \
+    -m ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_cm \
+    -L $SW_DATA/h2o-h2o_lbl_sw.nc \
+    -lw ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc \
+    > ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_clog \
+    && echo "H2O self-broadened continuum done"
 fi
 
 wait

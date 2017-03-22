@@ -2,7 +2,7 @@
 
 SP_ID="dsa_ar"
 SP_FLDR="dsa_ar"
-SOLAR_SPEC="trappist1"
+SOLAR_SPEC="sun"
 PT_FILE="pt663"
 
 . ../set_paths_sw
@@ -33,8 +33,8 @@ ${K_COEFF_DIR}/h2o_s29_5l
 5
 y
 ${K_COEFF_DIR}/h2o_s29_6l
-9
-${K_COEFF_DIR}/h2o_s29_s
+19
+${K_COEFF_DIR}/h2o-h2o_s29_3-6c
 5
 y
 ${K_COEFF_DIR}/co2_s29_4l
@@ -93,10 +93,15 @@ o
 2.5e1
 1.6e2
 5.8e1
+10.0
 0.999990
 6
 2.5e1
 1.6e2
 5.8e1
+10.0
+n
+8
+1
 -1
 EOF

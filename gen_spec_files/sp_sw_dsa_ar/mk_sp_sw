@@ -23,8 +23,8 @@ ${K_COEFF_DIR}/h2o_v${NBAND}_l
 5
 y
 ${K_COEFF_DIR}/h2o_s${NBAND}_l
-9
-${K_COEFF_DIR}/h2o_s${NBAND}_s
+19
+${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c
 5
 y
 ${K_COEFF_DIR}/co2_s${NBAND}_l
@@ -71,11 +71,16 @@ o
 ${COL_MASS_ELIM_H2O}
 ${COL_MASS_ELIM_CO2}
 ${COL_MASS_ELIM_CH4}
+10.0
 0.999990
 6
 ${COL_MASS_STMJ_H2O}
 ${COL_MASS_STMJ_CO2}
 ${COL_MASS_STMJ_CH4}
+10.0
+n
+8
+1
 -1
 EOF
 

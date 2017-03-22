@@ -54,8 +54,8 @@ ${K_COEFF_DIR}/h2o_l${NBAND}_11l
 5
 y
 ${K_COEFF_DIR}/h2o_l${NBAND}_12l
-9
-${K_COEFF_DIR}/h2o_l${NBAND}_s
+19
+${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-12c
 5
 y
 ${K_COEFF_DIR}/co2_l${NBAND}_1l
@@ -160,11 +160,16 @@ o
 2.5e1
 1.6e2
 5.8e1
+10.0
 0.99990
 6
 2.5e1
 1.6e2
 5.8e1
+10.0
+n
+8
+1
 -1
 EOF
 

@@ -30,8 +30,8 @@ ${K_COEFF_DIR}/h2o_s6_5l
 5
 y
 ${K_COEFF_DIR}/h2o_s6_6l
-9
-${K_COEFF_DIR}/h2o_s6_s
+19
+${K_COEFF_DIR}/h2o-h2o_s6_3-6c
 5
 y
 ${K_COEFF_DIR}/co2_s6_4l
@@ -78,5 +78,14 @@ ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}
 y
 3
 a
+-1
+EOF
+
+# Set continuum overlap treatment
+tidy_90 << EOF
+${SPEC_FILE}
+o
+8
+1
 -1
 EOF

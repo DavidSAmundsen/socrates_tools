@@ -7,7 +7,6 @@ SP_ID="dsa_ar" # Spectral file ID
 LBL_RES="0.1" # Resolution in LbL files
 TOL="-b 1.0e-3" # Tolerance for k-coefficients
 PT_FILE="pt663" # P-T grid
-REF_PT_FILE="../ref_pt" # Reference P-T for continuum
 
 . ../set_paths_lw
 
@@ -82,26 +81,31 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
     [ ! -s ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc ] ; then
   echo "H2O lines and foreign continuum"
   rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_l*
+  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc
   Ccorr_k -F ../${PT_FILE} -D ${HITRAN_H2O} \
     -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} -l 1 ${COL_H2O} \
     ${TOL} -s ${SPECFILE} +p -lk \
     -k -x ${RAD_DATA}/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_l -m ${K_COEFF_DIR}/h2o_l${NBANDS}_lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
      > ${K_COEFF_DIR}/h2o_l${NBANDS}_log \
-     && echo "H2O lines and foreign continuum done" &
+     && echo "H2O lines and foreign continuum done"
 fi
 
-if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_s ] ; then
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c ] ; then
   echo "H2O self-broadened continuum"
-  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_s*
-  Ccorr_k -C 17 2.5e-1 2.5e2 -F ../${PT_FILE} -D ${HITRAN_H2O} \
-    -P 7 -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} \
+  rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont \
+    -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} \
+    -ct 1 1 10.0 ${TOL} \
     -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
-    -k -s ${SPECFILE} +p -q -r ${REF_PT_FILE} \
-    -o ${K_COEFF_DIR}/h2o_l${NBANDS}_s -m ${K_COEFF_DIR}/h2o_l${NBANDS}_sm \
-    -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
-     > ${K_COEFF_DIR}/h2o_l${NBANDS}_slog \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/h2o-h2o_lbl_lw.nc \
+    -lw ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
+     > ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_clog \
      && echo "H2O self-broadened continuum done"
 fi
 

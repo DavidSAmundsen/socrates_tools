@@ -1,0 +1,688 @@
+Enter the name of the spectral file.
+Type "a" to append data to the existing file;
+  or "n" to create a new file.
+Enter the name of the new file.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    2
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    3
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    4
+
+Adding gas to band    5
+
+Adding gas to band    6
+
+Adding gas to band    7
+
+Adding gas to band    8
+
+Adding gas to band    9
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band   10
+
+Adding gas to band   11
+
+Adding gas to band   12
+
+Adding gas to band   13
+
+Adding gas to band   14
+
+Adding gas to band   15
+
+Adding gas to band   16
+
+Adding gas to band   17
+
+Adding gas to band   18
+
+Adding gas to band   19
+
+Adding gas to band   20
+
+Adding gas to band   21
+
+Adding gas to band   22
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band   23
+
+Adding gas to band   24
+
+Adding gas to band   25
+
+Adding gas to band   26
+
+Adding gas to band   27
+
+Adding gas to band   28
+
+Adding gas to band   29
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    4
+
+Adding gas to band    5
+
+Adding gas to band    6
+
+Adding gas to band    7
+
+Adding gas to band    8
+
+Adding gas to band    9
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band   10
+
+Adding gas to band   11
+
+Adding gas to band   12
+
+Adding gas to band   13
+
+Adding gas to band   14
+
+Adding gas to band   15
+
+Adding gas to band   16
+
+Adding gas to band   17
+
+Adding gas to band   18
+
+Adding gas to band   19
+
+Adding gas to band   20
+
+Adding gas to band   21
+
+Adding gas to band   22
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band   23
+
+Adding gas to band   24
+
+Adding gas to band   25
+
+Adding gas to band   26
+
+Adding gas to band   27
+
+Adding gas to band   28
+
+Adding gas to band   29
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    4
+
+Adding gas to band    5
+
+Adding gas to band    6
+
+Adding gas to band    7
+
+Adding gas to band    8
+
+Adding gas to band    9
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band   10
+
+Adding gas to band   11
+
+Adding gas to band   12
+
+Adding gas to band   13
+
+Adding gas to band   14
+
+Adding gas to band   15
+
+Adding gas to band   16
+
+Adding gas to band   17
+
+Adding gas to band   18
+
+Adding gas to band   19
+
+Adding gas to band   20
+
+Adding gas to band   21
+
+Adding gas to band   22
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band   23
+
+Adding gas to band   24
+
+Adding gas to band   25
+
+Adding gas to band   26
+
+Adding gas to band   27
+
+Adding gas to band   28
+
+Adding gas to band   29
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+Enter the name of the spectral file.
+Type "a" to append data to the existing file;
+  or "n" to create a new file.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+enter the number for the type of droplets for which data are to be provided.
+
+Enter the name of the file containing the fitted parameters for the droplets.
+
+Enter the range of validity of the parametrization.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+Enter the number for the type of ice crystals for which data are to be provided.
+
+Enter the name of the file containing the fitted parameters for ice crystals.
+
+Enter the range of validity of the parametrization.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+Enter the name of the spectral file.
+Type "a" to append data to the existing file;
+  or "n" to create a new file.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+Is a filter function required (Y/N)?
+
+Enter the name of the file containing the solar irradiance data.
+
+Assign solar flux outside given bands to outside bands? (y/n)
+Total irradiance of solar spectrum =   1366.059915637
+Total irradiance of Rayleigh-Jeans tail =      0.000345791
+Sum of normalised flux =      1.000000000
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+
+Rayleigh scattering coefficients will be averaged using 
+the solar spectrum read in earlier.
+
+
+Is the atmosphere composed of air, H2-He gas or a custom composition? (A/H/C)
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+
+
+      -2.  To quit without writing spectral file.
+
+Enter the name of the spectral file.
+
+Type
+      "o" to overwrite the existing file;
+      "n" to create a new file;
+      "q" to quit.
+
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+
+
+For each absorber enter the amounts of the gas to test for
+neglecting the gas in a band.
+    Column amount for Water Vapour        
+    Column amount for Carbon Dioxide      
+    Column amount for Methane             
+    Column amount for Water Vapour -- Water Vapour continuum
+
+Enter the transmission for neglecting gases and continua.
+
+specify next process.
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+
+
+For each absorber enter the amounts of the gas to find
+the major gas in each band.
+    Column amount for Water Vapour        
+    Column amount for Carbon Dioxide      
+    Column amount for Methane             
+    Column amount for Water Vapour -- Water Vapour continuum
+
+Do you wish to allow continua to become the major absorber? (Y/N)
+
+specify next process.
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+
+Enter the overlap treatment for generalised continua.
+Enter 0 to use the overlapping gaseous absorption treatment,
+or the type index of the gas for which the continuum is perfectly correlated.
+The type index of the continuum gases are given in parentheses after gas name.
+    Overlap treatment for Water Vapour (  1) -- Water Vapour (  1) continuum
+
+specify next process.
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+

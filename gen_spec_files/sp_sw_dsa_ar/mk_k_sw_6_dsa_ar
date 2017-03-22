@@ -2,7 +2,7 @@
 
 # Setting for k-coefficient calculation
 SP_ID="dsa_ar"
-SOLAR_SPEC="pc"
+SOLAR_SPEC="sun"
 PT_FILE="pt663"
 
 . ../set_paths_sw
@@ -120,16 +120,21 @@ if [ ! -s ${K_COEFF_DIR}/ch4_s6_6l ] ; then
     && echo "CH4 band 6 done" &
 fi
 
+echo
+echo "Jobs running in foreground:"
+
 if [ ! -s ${K_COEFF_DIR}/h2o_s6_3l ] ; then
   echo "H2O lines band 3"
   rm -f ${K_COEFF_DIR}/h2o_s6_3l*
+  rm -f ${K_COEFF_DIR}/h2o_s6_map.nc
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 3 3 -c 2500.0 -i 1.0 -l 1 1.0e2 -n 2 \
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s6_3l -m ${K_COEFF_DIR}/h2o_s6_3lm \
+    -sm ${K_COEFF_DIR}/h2o_s6_map.nc \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s6_3log \
-    && echo "H2O lines band 3 done" &
+    && echo "H2O lines band 3 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s6_4l ] ; then
   echo "H2O lines band 4"
@@ -139,8 +144,9 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s6_4l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s6_4l -m ${K_COEFF_DIR}/h2o_s6_4lm \
+    -sm ${K_COEFF_DIR}/h2o_s6_map.nc \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s6_4log \
-    && echo "H2O lines band 4 done" &
+    && echo "H2O lines band 4 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s6_5l ] ; then
   echo "H2O lines band 5"
@@ -150,8 +156,9 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s6_5l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s6_5l -m ${K_COEFF_DIR}/h2o_s6_5lm \
+    -sm ${K_COEFF_DIR}/h2o_s6_map.nc \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s6_5log \
-    && echo "H2O lines band 5 done" &
+    && echo "H2O lines band 5 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_s6_6l ] ; then
   echo "H2O lines band 6"
@@ -161,20 +168,24 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s6_6l ] ; then
     -s $specfile ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_s6_6l -m ${K_COEFF_DIR}/h2o_s6_6lm \
+    -sm ${K_COEFF_DIR}/h2o_s6_map.nc \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s6_6log \
-    && echo "H2O lines band 6 done" &
+    && echo "H2O lines band 6 done"
 fi
 
-if [ ! -s ${K_COEFF_DIR}/h2o_s6_s ] ; then
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s6_3-6c ] ; then
   echo "H2O self-broadened continuum"
-  rm -f ${K_COEFF_DIR}/h2o_s6_s*
-  Ccorr_k -C 33 1.0e-4 1.0e4 -F ../${PT_FILE} -D $HITRAN_H2O \
-    -P 7 -R 3 6 -c 2500.0 -i 1.0 \
+  rm -f ${K_COEFF_DIR}/h2o-h2o_s6_3-6c*
+  Ccorr_k -F ../pt_cont \
+    -R 3 6 -i 1.0 -ct 1 1 10.0 -t 1.0e-3 \
     -e $RAD_DATA/continua/caviar_s296 $RAD_DATA/continua/caviar_s260 \
-    -k -s $specfile ${WGT} -q -r $ref_pt_file \
-    -o ${K_COEFF_DIR}/h2o_s6_s -m ${K_COEFF_DIR}/h2o_s6_sm \
-    -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc > ${K_COEFF_DIR}/h2o_s6_slog \
-    && echo "H2O self-broadened continuum done" &
+    -k -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/h2o-h2o_s6_3-6c \
+    -m ${K_COEFF_DIR}/h2o-h2o_s6_3-6cm \
+    -L $SW_DATA/h2o-h2o_lbl_sw.nc \
+    -lw ${K_COEFF_DIR}/h2o_s6_map.nc \
+    > ${K_COEFF_DIR}/h2o-h2o_s6_3-6clog \
+    && echo "H2O self-broadened continuum done"
 fi
 
 wait
