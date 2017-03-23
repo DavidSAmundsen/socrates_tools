@@ -46,7 +46,10 @@ y
 ${K_COEFF_DIR}/co2_l${NBAND}_8-9l
 5
 y
-${K_COEFF_DIR}/co2_l${NBAND}_10-17l
+${K_COEFF_DIR}/co2_l${NBAND}_10-16l
+5
+y
+${K_COEFF_DIR}/co2_l${NBAND}_17l
 19
 y
 ${K_COEFF_DIR}/co2-co2_l${NBAND}_1-17c
