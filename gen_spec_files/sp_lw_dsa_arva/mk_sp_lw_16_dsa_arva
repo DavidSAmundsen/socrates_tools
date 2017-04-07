@@ -28,7 +28,7 @@ ${K_COEFF_DIR}/h2o_l${NBAND}_3-4l
 y
 ${K_COEFF_DIR}/h2o_l${NBAND}_5-16l
 19
-${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-16c
+${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-16c
 5
 y
 ${K_COEFF_DIR}/co2_l${NBAND}_1l

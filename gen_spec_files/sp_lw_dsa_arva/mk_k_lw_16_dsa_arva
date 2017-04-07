@@ -247,7 +247,6 @@ echo "Jobs running in foreground:"
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l ] ; then
   echo "H2O band 1-2"
   rm -f ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l*
-  rm -f ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 1 2 -c 2500.0 -i 0.1 -l 1 1.0e2 -b 2.0e-3 \
     -s ${SPECFILE} ${WGT} -lk \
@@ -255,7 +254,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l ] ; then
     -o ${K_COEFF_DIR}/h2o_l${NBAND}_1-2l \
     -m ${K_COEFF_DIR}/h2o_l${NBAND}_1-2lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
-    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_1-${NBAND}map.nc \
     > ${K_COEFF_DIR}/h2o_l${NBAND}_1-2log && echo "H2O band 1-2 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_3-4l ] ; then
@@ -268,7 +267,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_3-4l ] ; then
     -o ${K_COEFF_DIR}/h2o_l${NBAND}_3-4l \
     -m ${K_COEFF_DIR}/h2o_l${NBAND}_3-4lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
-    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_1-${NBAND}map.nc \
     > ${K_COEFF_DIR}/h2o_l${NBAND}_3-4log && echo "H2O band 3-4 done"
 fi
 if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_5-16l ] ; then
@@ -281,24 +280,24 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBAND}_5-16l ] ; then
     -o ${K_COEFF_DIR}/h2o_l${NBAND}_5-16l \
     -m ${K_COEFF_DIR}/h2o_l${NBAND}_5-16lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
-    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBAND}_1-${NBAND}map.nc \
     > ${K_COEFF_DIR}/h2o_l${NBAND}_5-16log && echo "H2O band 5-16 done"
 fi
 
 
-if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-16c ] ; then
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-${NBAND}c ] ; then
   echo "H2O self-broadened continuum"
-  rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-16c*
+  rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-${NBAND}c*
   Ccorr_k -F ../pt_cont \
     -R 1 ${NBAND} -c 2500.0 -i 0.1 \
     -ct 1 1 10.0 -t 1.0e-3 \
     -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
     -k -s ${SPECFILE} +p -lk \
-    -o ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-16c \
-    -m ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-16cm \
+    -o ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-${NBAND}c \
+    -m ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-${NBAND}cm \
     -L ${ABS_COEFF_DIR}/h2o-h2o_lbl_lw.nc \
-    -lw ${K_COEFF_DIR}/h2o_l${NBAND}_map.nc \
-     > ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_2-16clog \
+    -lw ${K_COEFF_DIR}/h2o_l${NBAND}_1-${NBAND}map.nc \
+     > ${K_COEFF_DIR}/h2o-h2o_l${NBAND}_1-${NBAND}clog \
      && echo "H2O self-broadened continuum done"
 fi
 

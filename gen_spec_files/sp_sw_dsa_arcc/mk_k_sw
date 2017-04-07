@@ -31,7 +31,7 @@ WGT="+S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
 mkdir -p ${K_COEFF_DIR}
 
 if [ ! -s ${K_COEFF_DIR}/co2_s${NBAND}_l ] || \
-    [ ! -s $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc ] ; then
+    [ ! -s $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.0-0.1.nc ] ; then
   echo "CO2"
   rm -f ${K_COEFF_DIR}/co2_s${NBAND}_l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
@@ -40,7 +40,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_s${NBAND}_l ] || \
     -sb gas_fractions -lp 2 -np 40 \
     -s $specfile ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_s${NBAND}_l -m ${K_COEFF_DIR}/co2_s${NBAND}_lm \
-    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.0-0.1.nc \
      > ${K_COEFF_DIR}/co2_s${NBAND}_log && echo "CO2 done" &
 fi
 

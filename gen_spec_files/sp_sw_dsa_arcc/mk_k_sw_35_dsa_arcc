@@ -2,7 +2,7 @@
 
 # Setting for k-coefficient calculation
 SP_ID="dsa_arcc"
-SOLAR_SPEC="sun_2.9gya"
+SOLAR_SPEC="sun"
 PT_FILE="pt663"
 
 . ../set_paths_sw
@@ -46,14 +46,6 @@ mkdir -p ${K_COEFF_DIR}
 # Construct weight argument
 WGT="+S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
 
-# Hadgem bands ->  220        ->  260 bands:
-#            1 ->    1 -  38  ->  1/6 -  29
-#            2 ->   38 -  91  ->   30 -  66
-#            3 ->   91 - 118  ->   67 - 103
-#            4 ->  118 - 148  ->  104 - 154
-#            5 ->  148 - 188  ->  155 - 214
-#            6 ->  188 - 220  ->  215 - 260
-
 # Gases
 
 echo "Jobs running in background:"
@@ -66,7 +58,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_s35_4l ] ; then
     -sb gas_fractions -lp 2 \
     -s $specfile ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_s35_4l -m ${K_COEFF_DIR}/co2_s35_4lm \
-    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc > \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.0-0.1.nc > \
     ${K_COEFF_DIR}/co2_s35_4log \
     && echo "CO2 band 4 done" &
 fi
@@ -78,7 +70,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_s35_5l ] ; then
     -sb gas_fractions -lp 2 \
     -s $specfile ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_s35_5l -m ${K_COEFF_DIR}/co2_s35_5lm \
-    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc > \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.0-0.1.nc > \
     ${K_COEFF_DIR}/co2_s35_5log \
     && echo "CO2 band 5 done" &
 fi
@@ -90,7 +82,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_s35_6l ] ; then
     -sb gas_fractions -lp 2 \
     -s $specfile ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_s35_6l -m ${K_COEFF_DIR}/co2_s35_6lm \
-    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc > \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.0-0.1.nc > \
     ${K_COEFF_DIR}/co2_s35_6log \
     && echo "CO2 band 6 done" &
 fi

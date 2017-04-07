@@ -50,7 +50,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_1l ] ; then
     -sb gas_fractions -lp 2 \
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_l${NBAND}_1l -m ${K_COEFF_DIR}/co2_l${NBAND}_1lm \
-    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.1.nc \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
     > ${K_COEFF_DIR}/co2_l${NBAND}_1log \
     && echo "CO2 band 1 done" &
 fi
@@ -62,7 +62,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_2l ] ; then
     -sb gas_fractions -lp 2 \
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_l${NBAND}_2l -m ${K_COEFF_DIR}/co2_l${NBAND}_2lm \
-    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.1.nc \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
     > ${K_COEFF_DIR}/co2_l${NBAND}_2log \
     && echo "CO2 band 2 done" &
 fi
@@ -75,7 +75,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_3-4l ] ; then
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_l${NBAND}_3-4l \
     -m ${K_COEFF_DIR}/co2_l${NBAND}_3-4lm \
-    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.1.nc \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
     > ${K_COEFF_DIR}/co2_l${NBAND}_3-4log \
     && echo "CO2 band 3-4 done" &
 fi
@@ -83,11 +83,11 @@ if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_5l ] ; then
   echo "CO2 band 5"
   rm -f ${K_COEFF_DIR}/co2_l${NBAND}_5l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
-    -R 5 5 -c 2500.0 -i 0.1 -l 2 1.6e3 -b 1.5e-3 \
+    -R 5 5 -c 2500.0 -i 0.1 -l 2 1.6e4 -b 1.5e-3 \
     -sb gas_fractions -lp 2 \
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_l${NBAND}_5l -m ${K_COEFF_DIR}/co2_l${NBAND}_5lm \
-    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.1.nc \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
     > ${K_COEFF_DIR}/co2_l${NBAND}_5log \
     && echo "CO2 band 5 done" &
 fi
@@ -100,24 +100,62 @@ if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_6-9l ] ; then
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_l${NBAND}_6-9l \
     -m ${K_COEFF_DIR}/co2_l${NBAND}_6-9lm \
-    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.1.nc \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
     > ${K_COEFF_DIR}/co2_l${NBAND}_6-9log \
     && echo "CO2 band 6-9 done" &
 fi
-if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_10-17l ] ; then
-  echo "CO2 band 10-17"
-  rm -f ${K_COEFF_DIR}/co2_l${NBAND}_10-17l*
+if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_10l ] ; then
+  echo "CO2 band 10"
+  rm -f ${K_COEFF_DIR}/co2_l${NBAND}_10l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
-    -R 10 17 -c 2500.0 -i 0.1 -l 2 1.6e3 -n 5 \
+    -R 10 10 -c 2500.0 -i 0.1 -l 2 1.6e3 -n 1 \
     -sb gas_fractions -lp 2 \
     -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/co2_l${NBAND}_10-17l \
-    -m ${K_COEFF_DIR}/co2_l${NBAND}_10-17lm \
-    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.1.nc \
-    > ${K_COEFF_DIR}/co2_l${NBAND}_10-17log \
-    && echo "CO2 band 10-17 done" &
+    -o ${K_COEFF_DIR}/co2_l${NBAND}_10l \
+    -m ${K_COEFF_DIR}/co2_l${NBAND}_10lm \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
+    > ${K_COEFF_DIR}/co2_l${NBAND}_10log \
+    && echo "CO2 band 10 done" &
 fi
-
+if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_11-15l ] ; then
+  echo "CO2 band 11-15"
+  rm -f ${K_COEFF_DIR}/co2_l${NBAND}_11-15l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
+    -R 11 15 -c 2500.0 -i 0.1 -l 2 1.6e3 -n 5 \
+    -sb gas_fractions -lp 2 \
+    -s ${SPECFILE} ${WGT} -lk \
+    -o ${K_COEFF_DIR}/co2_l${NBAND}_11-15l \
+    -m ${K_COEFF_DIR}/co2_l${NBAND}_11-15lm \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
+    > ${K_COEFF_DIR}/co2_l${NBAND}_11-15log \
+    && echo "CO2 band 11-15 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_16l ] ; then
+  echo "CO2 band 16"
+  rm -f ${K_COEFF_DIR}/co2_l${NBAND}_10l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
+    -R 16 16 -c 2500.0 -i 0.1 -l 2 1.6e4 -n 10 \
+    -sb gas_fractions -lp 2 \
+    -s ${SPECFILE} ${WGT} -lk \
+    -o ${K_COEFF_DIR}/co2_l${NBAND}_16l \
+    -m ${K_COEFF_DIR}/co2_l${NBAND}_16lm \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
+    > ${K_COEFF_DIR}/co2_l${NBAND}_16log \
+    && echo "CO2 band 16 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/co2_l${NBAND}_17l ] ; then
+  echo "CO2 band 17"
+  rm -f ${K_COEFF_DIR}/co2_l${NBAND}_17l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
+    -R 17 17 -c 2500.0 -i 0.1 -l 2 1.6e3 -n 5 \
+    -sb gas_fractions -lp 2 \
+    -s ${SPECFILE} ${WGT} -lk \
+    -o ${K_COEFF_DIR}/co2_l${NBAND}_17l \
+    -m ${K_COEFF_DIR}/co2_l${NBAND}_17lm \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.0-0.1.nc \
+    > ${K_COEFF_DIR}/co2_l${NBAND}_17log \
+    && echo "CO2 band 17 done" &
+fi
 
 if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_1-8l ] ; then
   echo "CH4 band 1-8"
@@ -131,29 +169,53 @@ if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_1-8l ] ; then
     > ${K_COEFF_DIR}/ch4_l${NBAND}_1-8log \
     && echo "CH4 band 1-8 done" &
 fi
-if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_9-12l ] ; then
-  echo "CH4 band 9-12"
-  rm -f ${K_COEFF_DIR}/ch4_l${NBAND}_9-12l*
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_9l ] ; then
+  echo "CH4 band 9"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBAND}_9l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
-    -R 9 12 -c 2500.0 -i 0.1 -l 6 5.8e1 -b 5.0e-3 \
+    -R 9 9 -c 2500.0 -i 0.1 -l 6 5.8e1 -n 5 \
     -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/ch4_l${NBAND}_9-12l \
-    -m ${K_COEFF_DIR}/ch4_l${NBAND}_9-12lm \
+    -o ${K_COEFF_DIR}/ch4_l${NBAND}_9l \
+    -m ${K_COEFF_DIR}/ch4_l${NBAND}_9lm \
     -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
-    > ${K_COEFF_DIR}/ch4_l${NBAND}_9-12log \
-    && echo "CH4 band 9-12 done" &
+    > ${K_COEFF_DIR}/ch4_l${NBAND}_9log \
+    && echo "CH4 band 9 done" &
 fi
-if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_13-17l ] ; then
-  echo "CH4 band 13-17"
-  rm -f ${K_COEFF_DIR}/ch4_l${NBAND}_13-17l*
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_10-13l ] ; then
+  echo "CH4 band 10-13"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBAND}_10-13l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
-    -R 13 17 -c 2500.0 -i 0.1 -l 6 5.8e1 -n 5 \
+    -R 10 13 -c 2500.0 -i 0.1 -l 6 5.8e1 -n 8 \
     -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/ch4_l${NBAND}_13-17l \
-    -m ${K_COEFF_DIR}/ch4_l${NBAND}_13-17lm \
+    -o ${K_COEFF_DIR}/ch4_l${NBAND}_10-13l \
+    -m ${K_COEFF_DIR}/ch4_l${NBAND}_10-13lm \
     -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
-    > ${K_COEFF_DIR}/ch4_l${NBAND}_13-17log \
-    && echo "CH4 band 13-17 done" &
+    > ${K_COEFF_DIR}/ch4_l${NBAND}_10-13log \
+    && echo "CH4 band 10-13 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_14-15l ] ; then
+  echo "CH4 band 14-15"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBAND}_14-15l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 14 15 -c 2500.0 -i 0.1 -l 6 5.8e1 -n 3 \
+    -s ${SPECFILE} ${WGT} -lk \
+    -o ${K_COEFF_DIR}/ch4_l${NBAND}_14-15l \
+    -m ${K_COEFF_DIR}/ch4_l${NBAND}_14-15lm \
+    -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/ch4_l${NBAND}_14-15log \
+    && echo "CH4 band 14-15 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBAND}_16-17l ] ; then
+  echo "CH4 band 16-17"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBAND}_16-17l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 16 17 -c 2500.0 -i 0.1 -l 6 5.8e1 -n 5 \
+    -s ${SPECFILE} ${WGT} -lk \
+    -o ${K_COEFF_DIR}/ch4_l${NBAND}_16-17l \
+    -m ${K_COEFF_DIR}/ch4_l${NBAND}_16-17lm \
+    -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/ch4_l${NBAND}_16-17log \
+    && echo "CH4 band 16-17 done" &
 fi
 
 echo "Jobs running in foreground:"

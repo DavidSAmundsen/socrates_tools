@@ -3,7 +3,7 @@
 SP_ID="dsa_arcc"
 SP_FLDR="dsa_arcc"
 NBAND="35"
-SOLAR_SPEC="sun_2.9gya"
+SOLAR_SPEC="sun"
 PT_FILE="pt663"
 
 . ../set_paths_sw
