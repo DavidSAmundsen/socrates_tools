@@ -25,9 +25,9 @@ else
 fi
 
 # Create skeleton spectral file
-SPECFILE="sp_sw_${NBAND}_${SP_ID}_skel"
+SPECFILE="sp_sw_${NBANDS}_${SP_ID}_skel"
 rm -f ${SPECFILE}
-. mk_sp_sw_${NBAND}_${SP_ID}_skel > /dev/null
+. mk_sp_sw_${NBANDS}_${SP_ID}_skel > /dev/null
 
 # Construct weighting argument
 WGT="+S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
@@ -37,106 +37,106 @@ mkdir -p ${K_COEFF_DIR}
 
 echo "Jobs running in background:"
 
-if [ ! -s ${K_COEFF_DIR}/co2_s${NBAND}_l ] || \
+if [ ! -s ${K_COEFF_DIR}/co2_s${NBANDS}_l ] || \
     [ ! -s $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc ] ; then
   echo "CO2"
-  rm -f ${K_COEFF_DIR}/co2_s${NBAND}_l*
+  rm -f ${K_COEFF_DIR}/co2_s${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
-    -R ${BAND_FIRST_CO2} ${NBAND} -c 50000.0 -i 1.0 \
+    -R ${BAND_FIRST_CO2} ${NBANDS} -c 50000.0 -i 1.0 \
     -l 2 ${COL_MASS_K_CO2} ${TOL} \
     -sb gas_fractions -lp 2 -np 40 \
     -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/co2_s${NBAND}_l -m ${K_COEFF_DIR}/co2_s${NBAND}_lm \
+    -o ${K_COEFF_DIR}/co2_s${NBANDS}_l -m ${K_COEFF_DIR}/co2_s${NBANDS}_lm \
     -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.1.nc \
-     > ${K_COEFF_DIR}/co2_s${NBAND}_log && echo "CO2 done" &
+     > ${K_COEFF_DIR}/co2_s${NBANDS}_log && echo "CO2 done" &
 fi
 
-if [ ! -s ${K_COEFF_DIR}/n2o_s${NBAND}_l ] || \
+if [ ! -s ${K_COEFF_DIR}/n2o_s${NBANDS}_l ] || \
     [ ! -s $SW_DATA/n2o_lbl_sw_${PT_FILE}.nc ] ; then
   echo "N2O"
-  rm -f ${K_COEFF_DIR}/n2o_s${NBAND}_l*
+  rm -f ${K_COEFF_DIR}/n2o_s${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_N2O \
-    -R ${BAND_FIRST_N2O} ${NBAND} -c 2500.0 -i 1.0 \
+    -R ${BAND_FIRST_N2O} ${NBANDS} -c 2500.0 -i 1.0 \
     -l 4 ${COL_MASS_K_N2O} ${TOL} \
     -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/n2o_s${NBAND}_l -m ${K_COEFF_DIR}/n2o_s${NBAND}_lm \
+    -o ${K_COEFF_DIR}/n2o_s${NBANDS}_l -m ${K_COEFF_DIR}/n2o_s${NBANDS}_lm \
     -L $SW_DATA/n2o_lbl_sw_${PT_FILE}.nc \
-     > ${K_COEFF_DIR}/n2o_s${NBAND}_log && echo "N2O done" &
+     > ${K_COEFF_DIR}/n2o_s${NBANDS}_log && echo "N2O done" &
 fi
 
-if [ ! -s ${K_COEFF_DIR}/ch4_s${NBAND}_l ] || \
+if [ ! -s ${K_COEFF_DIR}/ch4_s${NBANDS}_l ] || \
     [ ! -s $SW_DATA/ch4_lbl_sw_${PT_FILE}.nc ] ; then
   echo "CH4"
-  rm -f ${K_COEFF_DIR}/ch4_s${NBAND}_l*
+  rm -f ${K_COEFF_DIR}/ch4_s${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
-    -R ${BAND_FIRST_CH4} ${NBAND} -c 2500.0 -i 1.0 \
+    -R ${BAND_FIRST_CH4} ${NBANDS} -c 2500.0 -i 1.0 \
     -l 6 ${COL_MASS_K_CH4} ${TOL} \
     -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/ch4_s${NBAND}_l -m ${K_COEFF_DIR}/ch4_s${NBAND}_lm \
+    -o ${K_COEFF_DIR}/ch4_s${NBANDS}_l -m ${K_COEFF_DIR}/ch4_s${NBANDS}_lm \
     -L $SW_DATA/ch4_lbl_sw_${PT_FILE}.nc \
-     > ${K_COEFF_DIR}/ch4_s${NBAND}_log && echo "CH4 done" &
+     > ${K_COEFF_DIR}/ch4_s${NBANDS}_log && echo "CH4 done" &
 fi
 
 echo "Jobs running in foreground:"
 
-if [ ! -s ${K_COEFF_DIR}/h2o_v${NBAND}_l ] || \
+if [ ! -s ${K_COEFF_DIR}/h2o_v${NBANDS}_l ] || \
     [ ! -s $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc ] ; then
   echo "H2O lines (visible)"
-  rm -f ${K_COEFF_DIR}/h2o_v${NBAND}_l*
-  rm -f ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc
+  rm -f ${K_COEFF_DIR}/h2o_v${NBANDS}_l*
+  rm -f ${K_COEFF_DIR}/h2o_s${NBANDS}_map.nc
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R ${BAND_FIRST_H2O} $((BAND_NIR_START-1)) -c 2500.0 -i 1.0 \
     -l 1 ${COL_MASS_K_H2O} ${TOL} \
     -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/h2o_v${NBAND}_l -m ${K_COEFF_DIR}/h2o_v${NBAND}_lm \
+    -o ${K_COEFF_DIR}/h2o_v${NBANDS}_l -m ${K_COEFF_DIR}/h2o_v${NBANDS}_lm \
     -L $SW_DATA/h2o_lbl_vis_${PT_FILE}.nc \
-    -sm ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc \
-     > ${K_COEFF_DIR}/h2o_v${NBAND}_log && echo "H2O lines (visible) done"
+    -sm ${K_COEFF_DIR}/h2o_s${NBANDS}_map.nc \
+     > ${K_COEFF_DIR}/h2o_v${NBANDS}_log && echo "H2O lines (visible) done"
 fi
 
-if [ ! -s ${K_COEFF_DIR}/h2o_s${NBAND}_l ] || \
+if [ ! -s ${K_COEFF_DIR}/h2o_s${NBANDS}_l ] || \
     [ ! -s $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc ] ; then
   echo "H2O lines"
-  rm -f ${K_COEFF_DIR}/h2o_s${NBAND}_l*
+  rm -f ${K_COEFF_DIR}/h2o_s${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
-    -R ${BAND_NIR_START} ${NBAND} -c 2500.0 -i 1.0 \
+    -R ${BAND_NIR_START} ${NBANDS} -c 2500.0 -i 1.0 \
     -l 1 ${COL_MASS_K_H2O} ${TOL} \
     -s ${SPECFILE} ${WGT} -lk \
     -k -x $RAD_DATA/continua/caviar_frn \
-    -o ${K_COEFF_DIR}/h2o_s${NBAND}_l -m ${K_COEFF_DIR}/h2o_s${NBAND}_lm \
+    -o ${K_COEFF_DIR}/h2o_s${NBANDS}_l -m ${K_COEFF_DIR}/h2o_s${NBANDS}_lm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
-    -sm ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc \
-    > ${K_COEFF_DIR}/h2o_s${NBAND}_log && echo "H2O lines done"
+    -sm ${K_COEFF_DIR}/h2o_s${NBANDS}_map.nc \
+    > ${K_COEFF_DIR}/h2o_s${NBANDS}_log && echo "H2O lines done"
   echo
 fi
 
-if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c ] ; then
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_c ] ; then
   echo "H2O self-broadened continuum"
-  rm -f ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c*
+  rm -f ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_c*
   Ccorr_k -F ../pt_cont \
-    -R ${BAND_NIR_START} ${NBAND} -c 2500.0 -i 1.0 \
+    -R ${BAND_NIR_START} ${NBANDS} -c 2500.0 -i 1.0 \
     -ct 1 1 ${COL_H2OC} ${TOL} \
     -e $RAD_DATA/continua/caviar_s296 $RAD_DATA/continua/caviar_s260 \
     -k -s ${SPECFILE} ${WGT} -lk \
-    -o ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c \
-    -m ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_cm \
+    -o ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_c \
+    -m ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_cm \
     -L $SW_DATA/h2o-h2o_lbl_sw.nc \
-    -lw ${K_COEFF_DIR}/h2o_s${NBAND}_map.nc \
-    > ${K_COEFF_DIR}/h2o-h2o_s${NBAND}_clog \
+    -lw ${K_COEFF_DIR}/h2o_s${NBANDS}_map.nc \
+    > ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_clog \
     && echo "H2O self-broadened continuum done"
 fi
 
-if [ ! -s ${K_COEFF_DIR}/co2-co2_s${NBAND}_c ] ; then
+if [ ! -s ${K_COEFF_DIR}/co2-co2_s${NBANDS}_c ] ; then
   echo "CO2-CO2 CIA"
-  rm -f ${K_COEFF_DIR}/co2-co2_s${NBAND}_c*
+  rm -f ${K_COEFF_DIR}/co2-co2_s${NBANDS}_c*
   Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-co2.cia \
-    -R 1 ${NBAND} -c 2500.0 -i 1.0 \
+    -R 1 ${NBANDS} -c 2500.0 -i 1.0 \
     -ct 2 2 ${COL_CO2C} -t 1.0e-3 \
     -k -s ${SPECFILE} +p -lk \
-    -o ${K_COEFF_DIR}/co2-co2_s${NBAND}_c \
-    -m ${K_COEFF_DIR}/co2-co2_s${NBAND}_cm \
+    -o ${K_COEFF_DIR}/co2-co2_s${NBANDS}_c \
+    -m ${K_COEFF_DIR}/co2-co2_s${NBANDS}_cm \
     -L $SW_DATA/co2-co2_lbl_sw.nc \
-    > ${K_COEFF_DIR}/co2-co2_s${NBAND}_clog \
+    > ${K_COEFF_DIR}/co2-co2_s${NBANDS}_clog \
     && echo "CO2-CO2 CIA done"
 fi
 
@@ -153,20 +153,20 @@ WGT_SCTAVG="-${WGT:1}"
 
 mkdir -p ${CLD_COEFF_DIR}
 
-if [ ! -s ${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND} ] ; then
+if [ ! -s ${CLD_COEFF_DIR}/fit_sw_drop5_${NBANDS} ] ; then
   echo 'Type 5 droplets'
-  rm -f ${CLD_COEFF_DIR}/mon_sw_drop5_${NBAND}
+  rm -f ${CLD_COEFF_DIR}/mon_sw_drop5_${NBANDS}
   Cscatter_average -s ${SPECFILE} -P 1 -t ${WGT_SCTAVG} \
-    -f 5 ${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND} \
-    ${CLD_COEFF_DIR}/mon_sw_drop5_${NBAND} 1.e3 \
+    -f 5 ${CLD_COEFF_DIR}/fit_sw_drop5_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_sw_drop5_${NBANDS} 1.e3 \
     ${RAD_DATA}/cloud/scatter_drop_type5 -v
 fi
-if [ ! -s ${CLD_COEFF_DIR}/fit_sw_ice8_${NBAND} ] ; then
+if [ ! -s ${CLD_COEFF_DIR}/fit_sw_ice8_${NBANDS} ] ; then
   echo 'Type 8 ice'
-  rm -f ${CLD_COEFF_DIR}/mon_sw_ice8_${NBAND}
+  rm -f ${CLD_COEFF_DIR}/mon_sw_ice8_${NBANDS}
   Cscatter_average -s ${SPECFILE} -P 1 -w ${WGT_SCTAVG} \
-    -f 12 ${CLD_COEFF_DIR}/fit_sw_ice8_${NBAND} \
-    ${CLD_COEFF_DIR}/mon_sw_ice8_${NBAND} 920 \
+    -f 12 ${CLD_COEFF_DIR}/fit_sw_ice8_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_sw_ice8_${NBANDS} 920 \
     ${RAD_DATA}/cloud/scatter_ice_sw_type8
 fi
 
@@ -179,7 +179,7 @@ echo "Calculation of cloud optical properties completed."
 echo "Creating spectral file."
 
 # Create full path to spectral file
-SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_${NBAND}_${SP_ID}_${SOLAR_SPEC}"
+SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}"
 
 mkdir -p ${SPEC_FILE_DIR}
 rm -f ${SPEC_FILE}
@@ -187,28 +187,28 @@ rm -f ${SPEC_FILE}_k
 
 # Construct spectral file with gases
 prep_spec << EOF > mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out
-sp_sw_${NBAND}_${SP_ID}_skel
+sp_sw_${NBANDS}_${SP_ID}_skel
 n
 ${SPEC_FILE}
 5
-${K_COEFF_DIR}/h2o_v${NBAND}_l
+${K_COEFF_DIR}/h2o_v${NBANDS}_l
 5
 y
-${K_COEFF_DIR}/h2o_s${NBAND}_l
+${K_COEFF_DIR}/h2o_s${NBANDS}_l
 19
-${K_COEFF_DIR}/h2o-h2o_s${NBAND}_c
+${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_c
 5
 y
-${K_COEFF_DIR}/co2_s${NBAND}_l
+${K_COEFF_DIR}/co2_s${NBANDS}_l
 19
 y
-${K_COEFF_DIR}/co2-co2_s${NBAND}_c
+${K_COEFF_DIR}/co2-co2_s${NBANDS}_c
 5
 y
-${K_COEFF_DIR}/n2o_s${NBAND}_l
+${K_COEFF_DIR}/n2o_s${NBANDS}_l
 5
 y
-${K_COEFF_DIR}/ch4_s${NBAND}_l
+${K_COEFF_DIR}/ch4_s${NBANDS}_l
 -1
 EOF
 
@@ -218,11 +218,11 @@ ${SPEC_FILE}
 a
 10
 5
-${CLD_COEFF_DIR}/fit_sw_drop5_${NBAND}
+${CLD_COEFF_DIR}/fit_sw_drop5_${NBANDS}
 1.70000E-06 5.00000E-05
 12
 8
-${CLD_COEFF_DIR}/fit_sw_ice8_${NBAND}
+${CLD_COEFF_DIR}/fit_sw_ice8_${NBANDS}
 8.00000E-06 3.00000E-04
 -1
 EOF
