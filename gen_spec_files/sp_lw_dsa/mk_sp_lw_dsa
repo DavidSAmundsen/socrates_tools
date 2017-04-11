@@ -1,0 +1,368 @@
+#!/bin/bash
+
+NBANDS="350" # Number of bands
+SP_ID="dsa" # Spectral file ID
+PT_FILE="pt663" # P-T grid
+
+. ../set_paths_lw
+
+################################################################################
+# Calculate k-coefficients
+################################################################################
+
+echo "Calculating k-coefficients."
+
+# Set paths to files
+CFC113_PT_FILE="$RAD_DATA/gases/pt_cfc113"
+REF_PT_FILE="../ref_pt"
+HITRAN_H2O="$HITRAN_DIR/01_hit12.par"
+HITRAN_CO2="$HITRAN_DIR/02_hit12.par"
+HITRAN_O3="$HITRAN_DIR/03_hit12.par"
+HITRAN_N2O="$HITRAN_DIR/04_hit08.par"
+HITRAN_CH4="$HITRAN_DIR/06_hit12.par"
+HITRAN_O2="$HITRAN_DIR/07_hit12.par"
+HITRAN_SO2="$HITRAN_DIR/09_hit12.par"
+HITRAN_OCS="$HITRAN_DIR/19_hit12.par"
+HITRAN_CFC11="$HITRAN_DIR/CFC-11_IR00.xsc"
+HITRAN_CFC12="$HITRAN_DIR/CFC-12_IR00.xsc"
+HITRAN_CFC113="$HITRAN_DIR/CFC-113_IR00.xsc"
+HITRAN_HCFC22="$HITRAN_DIR/HCFC-22_IR01.xsc"
+HITRAN_HFC134a="$HITRAN_DIR/HFC-134a_IR00.xsc"
+
+if [ $RAD_BIN ] ; then
+  echo "Using code compiled in "$RAD_BIN
+else
+  echo "Path to code not set."
+  exit 1
+fi
+
+# Create skeleton spectral file
+SPECFILE="sp_lw_${NBANDS}_${SP_ID}_skel"
+rm -f ${SPECFILE}
+. mk_sp_lw_${NBANDS}_${SP_ID}_skel > /dev/null
+
+# Create directory for k-coefficients
+mkdir -p ${K_COEFF_DIR}
+
+echo "Jobs running in background:"
+
+if [ ! -s ${K_COEFF_DIR}/co2_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/co2_lbl_lw_${PT_FILE}.nc ] ; then
+  echo "CO2"
+  rm -f ${K_COEFF_DIR}/co2_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CO2 \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 2 1.0e1 -b 1.0e-3  \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/co2_l${NBANDS}_l -m ${K_COEFF_DIR}/co2_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/co2_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/co2_l${NBANDS}_log && echo "CO2 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/o3_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/o3_lbl_lw_${PT_FILE}.nc ] ; then
+  echo "O3"
+  rm -f ${K_COEFF_DIR}/o3_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_O3 \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 3 1.0e-2 -b 1.0e-3  \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/o3_l${NBANDS}_l -m ${K_COEFF_DIR}/o3_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/o3_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/o3_l${NBANDS}_log && echo "O3 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc ] ; then
+  echo "CH4"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 6 1.0e-2 -b 1.0e-3  \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/ch4_l${NBANDS}_l -m ${K_COEFF_DIR}/ch4_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/ch4_l${NBANDS}_log && echo "CH4 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2o_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/n2o_lbl_lw_${PT_FILE}.nc ] ; then
+  echo "N2O"
+  rm -f ${K_COEFF_DIR}/n2o_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_N2O \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 4 5.0e-3 -b 1.0e-3  \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/n2o_l${NBANDS}_l -m ${K_COEFF_DIR}/n2o_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/n2o_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/n2o_l${NBANDS}_log && echo "N2O done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/so2_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/so2_lbl_lw_${PT_FILE}.nc ] ; then
+  echo "SO2"
+  rm -f ${K_COEFF_DIR}/so2_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_SO2 \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 9 3.0e-4 -b 1.0e-3  \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/so2_l${NBANDS}_l -m ${K_COEFF_DIR}/o2_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/so2_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/so2_l${NBANDS}_log && echo "SO2 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/ocs_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/ocs_lbl_lw_${PT_FILE}.nc ] ; then
+  echo "OCS"
+  rm -f ${K_COEFF_DIR}/ocs_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_OCS \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 25 1.0e-3 -b 1.0e-3  \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/ocs_l${NBANDS}_l -m ${K_COEFF_DIR}/ocs_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/ocs_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/ocs_l${NBANDS}_log && echo "OCS done" &
+fi
+
+echo
+echo "Jobs running in foreground:"
+
+if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc ] ; then
+  echo "H2O lines and foreign continuum"
+  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_l*
+  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc
+  Ccorr_k -F ../${PT_FILE} -D ${HITRAN_H2O} \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 1 1.0e2 \
+    -b 1.0e-3 -s ${SPECFILE} +p -lk \
+    -k -x ${RAD_DATA}/continua/caviar_frn \
+    -o ${K_COEFF_DIR}/h2o_l${NBANDS}_l -m ${K_COEFF_DIR}/h2o_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
+     > ${K_COEFF_DIR}/h2o_l${NBANDS}_log \
+     && echo "H2O lines and foreign continuum done"
+fi
+
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c ] ; then
+  echo "H2O self-broadened continuum"
+  rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 \
+    -ct 1 1 10.0 -b 1.0e-3 \
+    -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/h2o-h2o_lbl_lw.nc \
+    -lw ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
+     > ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_clog \
+     && echo "H2O self-broadened continuum done"
+fi
+
+# Halocarbons
+
+if [ ! -s ${K_COEFF_DIR}/cfc11_l${NBANDS}_l ] ; then
+  echo "CFC 11"
+  rm -f ${K_COEFF_DIR}/cfc11_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -X $HITRAN_CFC11 \
+    -R 1 ${NBANDS} -i 1.0 -l 14 0.1e-4 -t 1.0e-4 \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/cfc11_l${NBANDS}_l \
+    -m ${K_COEFF_DIR}/cfc11_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/cfc11_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/cfc11_l${NBANDS}_log
+fi
+
+if [ ! -s ${K_COEFF_DIR}/cfc12_l${NBANDS}_l ] ; then
+  echo "CFC 12"
+  rm -f ${K_COEFF_DIR}/cfc12_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -X $HITRAN_CFC12 \
+    -R 1 ${NBANDS} -i 1.0 -l 15 0.2e-4 -t 1.0e-4 \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/cfc12_l${NBANDS}_l \
+    -m ${K_COEFF_DIR}/cfc12_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/cfc12_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/cfc12_l${NBANDS}_log
+fi
+
+if [ ! -s ${K_COEFF_DIR}/cfc113_l${NBANDS}_l ] ; then
+  echo "CFC 113"
+  rm -f ${K_COEFF_DIR}/cfc113_l${NBANDS}_l*
+  Ccorr_k -F ${CFC113_PT_FILE} -X $HITRAN_CFC113 \
+    -R 1 ${NBANDS} -i 1.0 -l 16 0.4e-5 -t 1.0e-4 \
+    -s ${SPECFILE} +p -q -r ${REF_PT_FILE} \
+    -o ${K_COEFF_DIR}/cfc113_l${NBANDS}_l \
+    -m ${K_COEFF_DIR}/cfc113_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/cfc113_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/cfc113_l${NBANDS}_log
+fi
+
+if [ ! -s ${K_COEFF_DIR}/hcfc22_l${NBANDS}_l ] ; then
+  echo "HCFC 22"
+  rm -f ${K_COEFF_DIR}/hcfc22_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -X $HITRAN_HCFC22 \
+    -R 1 ${NBANDS} -i 1.0 -l 17 0.6e-5 -t 1.0e-4 \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/hcfc22_l${NBANDS}_l \
+    -m ${K_COEFF_DIR}/hcfc22_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/hcfc22_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/hcfc22_l${NBANDS}_log
+fi
+
+if [ ! -s ${K_COEFF_DIR}/hfc134a_l${NBANDS}_l ] ; then
+  echo "HFC 134a"
+  rm -f ${K_COEFF_DIR}/hfc134a_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -X $HITRAN_HFC134a \
+    -R 1 ${NBANDS} -i 1.0 -l 19 0.3e-5 -t 1.0e-4 \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/hfc134a_l${NBANDS}_l \
+    -m ${K_COEFF_DIR}/hfc134a_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/hfc134a_lbl_lw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/hfc134a_l${NBANDS}_log
+fi
+
+wait
+echo "Calculation of k-coefficients completed."
+
+################################################################################
+# Calculate optical properties
+################################################################################
+
+echo "Calculating cloud optical properties."
+
+mkdir -p ${CLD_COEFF_DIR}
+
+if [ ! -s ${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS} ] ; then
+  rm -f ${CLD_COEFF_DIR}/mon_lw_drop5_${NBANDS}
+  Cscatter_average -s ${SPECFILE} -P 1 -t -p 250 \
+    -f 5 ${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_lw_drop5_${NBANDS} 1.e3 \
+    ${RAD_DATA}/cloud/scatter_drop_type5
+fi
+if [ ! -s ${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS} ] ; then
+  rm -f ${CLD_COEFF_DIR}/mon_lw_ice8_${NBANDS}
+  Cscatter_average -s ${SPECFILE} -P 1 -w -p 250 \
+    -f 12 ${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_lw_ice8_${NBANDS} 920 \
+    ${RAD_DATA}/cloud/scatter_ice_lw_type8
+fi
+
+echo "Calculation of cloud optical properties completed."
+
+################################################################################
+# Create spectral file
+################################################################################
+
+echo "Creating spectral file."
+
+# Create name of final spectral file
+SPEC_FILE="sp_lw_${NBANDS}_${SP_ID}"
+
+mkdir -p ${SPEC_FILE_DIR}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}_k
+
+# Construct spectral file
+
+prep_spec << EOF > mk_sp_lw_${NBANDS}_${SP_ID}_out
+sp_lw_${NBANDS}_${SP_ID}_skel
+n
+${SPEC_FILE_DIR}/${SPEC_FILE}
+5
+${K_COEFF_DIR}/h2o_l${NBANDS}_l
+19
+${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c
+5
+y
+${K_COEFF_DIR}/co2_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/o3_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/n2o_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/so2_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/ocs_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/cfc11_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/cfc12_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/cfc113_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/hcfc22_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/hfc134a_l${NBANDS}_l
+6
+n
+t
+1 500
+500
+-1
+EOF
+
+# Add cloud optical properties
+prep_spec << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE_DIR}/${SPEC_FILE}
+a
+10
+5
+${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS}
+7.60000E-06 5.00000E-05
+12
+8
+${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS}
+1.30000E-05 3.10000E-04
+-1
+EOF
+
+# Rearrange so the major gas is listed first for each band and
+# gases are removed from bands where absorption is very weak.
+tidy_90 << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE_DIR}/${SPEC_FILE}
+o
+1
+2.5e1
+1.0e1
+0.1e-1
+0.5e-2
+0.1e-1
+3.0e-2
+0.1e-4
+0.2e-4
+0.4e-5
+0.6e-5
+0.3e-5
+1.0e-1
+10.0
+0.999990
+6
+2.5e1
+1.0e1
+0.1e-1
+0.5e-2
+0.1e-1
+3.0e-6
+0.1e-4
+0.2e-4
+0.4e-5
+0.6e-5
+0.3e-5
+1.0e-5
+10.0
+n
+8
+1
+-1
+EOF
+
+echo "Spectral file ${SPEC_FILE} created. All done."
+echo "Please check mk_sp_lw_${NBANDS}_${SP_ID}_out for errors."
+
+exit 0

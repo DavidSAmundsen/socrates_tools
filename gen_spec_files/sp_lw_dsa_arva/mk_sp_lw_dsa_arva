@@ -1,40 +1,31 @@
 #!/bin/bash
 
-# This script creates the k-coefficients.
-
 NBANDS="350" # Number of bands
 SP_ID="dsa_arva" # Spectral file ID
-LBL_RES="0.1" # Resolution in LbL files
-TOL="-b 1.0e-3" # Tolerance for k-coefficients
+PT_FILE="pt663" # P-T grid
 
-# For a 1 bar atmosphere
-PT_FILE="pt663"
-COL_H2O="1.0e+02"
+COL_H2O="1.0e+02" # 1 bar atmosphere
 COL_CO2="1.6e+03" # 1e5 ppmv in a 1 bar atmosphere
 COL_CH4="5.8e-02" # 10 ppmv in a 1 bar atmosphere
 COL_N2O="1.6" # 100 ppmv in a 1 bar atmosphere
+COL_TIDY_H2O="2.5e1" # 1 bar atmosphere
 COL_H2OC="10.0" # 1 bar atmosphere
 COL_CO2C="1.0e2" # 1e5 ppmv in a 1 bar atmosphere
 
 . ../set_paths_lw
 
+################################################################################
+# Calculate k-coefficients
+################################################################################
+
+echo "Calculating k-coefficients."
+
+# Set paths to files
 HITRAN_H2O="${HITRAN_DIR}/01_hit12.par"
 HITRAN_CO2="${HITRAN_DIR}/02_hit12.par"
 HITRAN_N2O="${HITRAN_DIR}/04_hit08.par"
 HITRAN_CH4="${HITRAN_DIR}/06_hit12.par"
 HITRAN_HCN="${HITRAN_DIR}/23_hit08.par"
-
-# Water vapour continuum uses CAVIAR data contained within the
-# suite (${RAD_DATA}/continua).
-
-# Aerosol and cloud parametrisations are those used operationally
-# in the Met Office from GA3.0 (see also $RAD_DIR/examples/aerosols,
-# $RAD_DIR/examples/droplets).
-
-# Note this script takes a very long time to run initially (probably
-# several days if not done in parallel). However once the
-# line-by-line netCDF files have been created, subsequent runs will
-# use these files and the whole script should run in around an hour.
 
 if [ $RAD_BIN ] ; then
   echo "Using code compiled in "$RAD_BIN
@@ -51,8 +42,6 @@ rm -f ${SPECFILE}
 # Create directory for k-coefficients
 mkdir -p ${K_COEFF_DIR}
 
-# Gases
-
 echo "Jobs running in background:"
 
 if [ ! -s ${K_COEFF_DIR}/n2o_l${NBANDS}_l ] || \
@@ -60,8 +49,8 @@ if [ ! -s ${K_COEFF_DIR}/n2o_l${NBANDS}_l ] || \
   echo "N2O"
   rm -f ${K_COEFF_DIR}/n2o_l${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D ${HITRAN_N2O} \
-    -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} -l 4 ${COL_N2O} \
-    ${TOL} -s ${SPECFILE} +p -lk -np 4 \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 4 ${COL_N2O} \
+    -b 1.0e-3 -s ${SPECFILE} +p -lk -np 4 \
     -o ${K_COEFF_DIR}/n2o_l${NBANDS}_l -m ${K_COEFF_DIR}/n2o_l${NBANDS}_lm \
     -L ${ABS_COEFF_DIR}/n2o_lbl_lw_${PT_FILE}.nc \
      > ${K_COEFF_DIR}/n2o_l${NBANDS}_log && echo "N2O done" &
@@ -72,9 +61,9 @@ if [ ! -s ${K_COEFF_DIR}/co2_l${NBANDS}_l ] || \
   echo "CO2"
   rm -f ${K_COEFF_DIR}/co2_l${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D ${HITRAN_CO2} \
-    -R 1 ${NBANDS} -c 50000.0 -i ${LBL_RES} -l 2 ${COL_CO2} \
+    -R 1 ${NBANDS} -c 50000.0 -i 0.1 -l 2 ${COL_CO2} \
     -sb gas_fractions -lp 2 \
-    ${TOL} -s ${SPECFILE} +p -lk -np 4 \
+    -b 1.0e-3 -s ${SPECFILE} +p -lk -np 4 \
     -o ${K_COEFF_DIR}/co2_l${NBANDS}_l -m ${K_COEFF_DIR}/co2_l${NBANDS}_lm \
     -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.1.nc \
      > ${K_COEFF_DIR}/co2_l${NBANDS}_log && echo "CO2 done" &
@@ -85,8 +74,8 @@ if [ ! -s ${K_COEFF_DIR}/ch4_l${NBANDS}_l ] || \
   echo "CH4"
   rm -f ${K_COEFF_DIR}/ch4_l${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D ${HITRAN_CH4} \
-    -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} -l 6 ${COL_CH4} \
-    ${TOL} -s ${SPECFILE} +p -lk -np 4 \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 6 ${COL_CH4} \
+    -b 1.0e-3 -s ${SPECFILE} +p -lk -np 4 \
     -o ${K_COEFF_DIR}/ch4_l${NBANDS}_l -m ${K_COEFF_DIR}/ch4_l${NBANDS}_lm \
     -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
      > ${K_COEFF_DIR}/ch4_l${NBANDS}_log && echo "CH4 done" &
@@ -100,8 +89,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
   rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_l*
   rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc
   Ccorr_k -F ../${PT_FILE} -D ${HITRAN_H2O} \
-    -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} -l 1 ${COL_H2O} \
-    ${TOL} -s ${SPECFILE} +p -lk -np 4 \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 1 ${COL_H2O} \
+    -b 1.0e-3 -s ${SPECFILE} +p -lk -np 4 \
     -k -x ${RAD_DATA}/continua/caviar_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_l -m ${K_COEFF_DIR}/h2o_l${NBANDS}_lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -114,8 +103,8 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c ] ; then
   echo "H2O self-broadened continuum"
   rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c*
   Ccorr_k -F ../pt_cont \
-    -R 1 ${NBANDS} -c 2500.0 -i ${LBL_RES} \
-    -ct 1 1 ${COL_H2OC} ${TOL} \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 \
+    -ct 1 1 ${COL_H2OC} -b 1.0e-3 \
     -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
     -k -s ${SPECFILE} +p -lk \
     -o ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c \
@@ -141,5 +130,117 @@ if [ ! -s ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c ] ; then
 fi
 
 wait
+echo "Calculation of k-coefficients completed."
 
-echo "All done"
+################################################################################
+# Calculate optical properties
+################################################################################
+
+echo "Calculating cloud optical properties."
+
+mkdir -p ${CLD_COEFF_DIR}
+
+if [ ! -s ${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS} ] ; then
+  rm -f ${CLD_COEFF_DIR}/mon_lw_drop5_${NBANDS}
+  Cscatter_average -s ${SPECFILE} -P 1 -t -p 250 \
+    -f 5 ${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_lw_drop5_${NBANDS} 1.e3 \
+    ${RAD_DATA}/cloud/scatter_drop_type5
+fi
+if [ ! -s ${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS} ] ; then
+  rm -f ${CLD_COEFF_DIR}/mon_lw_ice8_${NBANDS}
+  Cscatter_average -s ${SPECFILE} -P 1 -w -p 250 \
+    -f 12 ${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_lw_ice8_${NBANDS} 920 \
+    ${RAD_DATA}/cloud/scatter_ice_lw_type8
+fi
+
+echo "Calculation of cloud optical properties completed."
+
+################################################################################
+# Create spectral file
+################################################################################
+
+echo "Creating spectral file."
+
+# Create name of spectral file
+SPEC_FILE="sp_lw_${NBANDS}_${SP_ID}"
+
+mkdir -p ${SPEC_FILE_DIR}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}_k
+
+# Construct spectral file
+prep_spec << EOF > mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE}_skel
+n
+${SPEC_FILE_DIR}/${SPEC_FILE}
+5
+${K_COEFF_DIR}/h2o_l${NBANDS}_l
+19
+${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c
+5
+y
+${K_COEFF_DIR}/co2_l${NBANDS}_l
+19
+y
+${K_COEFF_DIR}/co2-co2_l${NBANDS}_c
+5
+y
+${K_COEFF_DIR}/n2o_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBANDS}_l
+6
+n
+t
+1 500
+500
+-1
+EOF
+
+# Add cloud properties
+prep_spec << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE_DIR}/${SPEC_FILE}
+a
+10
+5
+${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS}
+7.60000E-06 5.00000E-05
+12
+8
+${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS}
+1.30000E-05 3.10000E-04
+-1
+EOF
+
+# Remove weak absorbers in bands (up to 1% CO2 and CH4) and set major absorbers
+tidy_90 << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE_DIR}/${SPEC_FILE}
+o
+1
+${COL_H2O}
+${COL_CO2}
+${COL_N2O}
+${COL_CH4}
+${COL_H2OC}
+${COL_CO2C}
+0.99990
+6
+${COL_TIDY_H2O}
+${COL_CO2}
+${COL_N2O}
+${COL_CH4}
+${COL_H2OC}
+${COL_CO2C}
+n
+8
+1
+0
+-1
+EOF
+
+echo "Spectral file ${SPEC_FILE} created. All done."
+echo "Please check mk_sp_lw_${NBANDS}_${SP_ID}_out for errors."
+
+exit 0
