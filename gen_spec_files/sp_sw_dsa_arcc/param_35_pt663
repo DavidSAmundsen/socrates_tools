@@ -3,7 +3,7 @@
 # Setting for k-coefficient calculation
 SP_ID="dsa_arcc"
 SP_FLDR="dsa_arcc"
-NBAND="35"
+NBANDS="35"
 SOLAR_SPEC="pc"
 PT_FILE="pt663"
 TOL="-b 1.0e-3"

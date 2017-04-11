@@ -3,7 +3,7 @@
 # Setting for k-coefficient calculation
 SP_ID="dsa_arva"
 SP_FLDR="dsa_arva"
-NBAND="15"
+NBANDS="15"
 SOLAR_SPEC="sun"
 PT_FILE="pt663"
 TOL="-b 1.0e-3"

@@ -2,13 +2,7 @@
 # Defines paths to all needed input and output data for generation of
 # long-wave spectral files.
 
-HOST=`uname -n`
-if [ ${HOST:0:4} == "dali" ]; then
-  HOST="dali"
-  SOCRATES_DIR="/discover/nobackup/projects/giss/socrates"
-else
-  SOCRATES_DIR="/scr2/socrates"
-fi
+SOCRATES_DIR="/scr2/socrates"
 
 HITRAN_DIR="${SOCRATES_DIR}/hitran"
 CONT_DIR="${SOCRATES_DIR}/continua"
@@ -21,10 +15,4 @@ if [ -n "${SP_FLDR}" ] ; then
   SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/sp_lw_${SP_FLDR}"
 else
   SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/sp_lw_${SP_ID}"
-fi
-
-# If on discover (dali node) put cloud optical properties in
-# in working directory.
-if [ ${HOST} == "dali" ]; then
-  CLD_COEFF_DIR="lw_${SP_ID}/cld"
 fi

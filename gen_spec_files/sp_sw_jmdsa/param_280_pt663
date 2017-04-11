@@ -3,7 +3,7 @@
 # Setting for k-coefficient calculation
 SP_ID="jm2dsa"
 SP_FLDR="ga7"
-NBAND="280"
+NBANDS="280"
 SOLAR_SPEC="pc"
 PT_FILE="pt663"
 TOL_LINE="-b 1.0e-3"
