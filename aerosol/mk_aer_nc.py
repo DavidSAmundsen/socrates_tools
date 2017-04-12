@@ -8,8 +8,8 @@ from aer_density_component import aer_density_component
 # User definitions
 ################################################################################
 
-spectral_file_name = 'sp_sw_ga7_dsa'
-spectral_file_folder = 'sp_sw_ga7'
+spectral_file_name = 'sp_sw_21_dsa'
+spectral_file_folder = 'sp_sw_dsa'
 solar_spec='sun'
 
 ################################################################################
@@ -48,8 +48,6 @@ aer_type = array([
     'antwater',
     'organic',
     ])
-
-print(aer_nc)
 
 ################################################################################
 # Functions
@@ -474,3 +472,6 @@ else:
   fout.spectral_region = 'sw'
 
 fout.close()
+
+print('Successfully created ' + aer_nc)
+print('All done')

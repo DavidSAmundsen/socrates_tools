@@ -6,8 +6,8 @@
 # User input
 ################################################################################
 
-SPECTRAL_FILE_NAME="sp_sw_ga7_dsa"
-SPECTRAL_FILE_FOLDER="sp_sw_ga7"
+SPECTRAL_FILE_NAME="sp_sw_21_dsa"
+SPECTRAL_FILE_FOLDER="sp_sw_dsa"
 SOLAR_SPEC="sun"
 
 # SPECTRAL_FILE_NAME="sp_diag"
