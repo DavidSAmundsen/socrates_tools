@@ -16,7 +16,7 @@ BAND_FIRST_CO2="104" # 12784 cm-1 = 7.82224331232518e-07 m
 
 # Column masses for all molecules for k-coefficient calculation
 COL_MASS_K_H2O="1.0e+03"
-COL_H2OC="100.0"
+COL_H2OC="1.0e+03"
 COL_MASS_K_CO2="1.0e+05"
 COL_CO2C="1.0e6"
 

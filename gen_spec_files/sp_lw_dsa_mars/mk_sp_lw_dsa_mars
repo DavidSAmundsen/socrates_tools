@@ -6,7 +6,7 @@ PT_FILE="pt793" # P-T grid
 
 COL_H2O="1.0e+03" 
 COL_CO2="1.0e+05" # 1e6 ppmv in a 10 bar atmosphere
-COL_H2OC="100.0" # 10 bar atmosphere
+COL_H2OC="1.0e+03" # 10 bar atmosphere
 COL_CO2C="1.0e6" # 1e6 ppmv in a 10 bar atmosphere
 
 . ../set_paths_lw
