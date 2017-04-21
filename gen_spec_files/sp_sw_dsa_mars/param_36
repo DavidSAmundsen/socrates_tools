@@ -6,7 +6,7 @@ SP_FLDR="dsa_mars"
 NBANDS="36"
 SOLAR_SPEC="pc"
 PT_FILE="pt793"
-TOL="-b 1.0e-3"
+TOL="-t 5.0e-4"
 BAND_NIR_START="3" # 5.000000000E-07 m
 
 # For molecules with near-IR absorption, the index of the first band for which
