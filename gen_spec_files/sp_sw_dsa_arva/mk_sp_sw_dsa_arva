@@ -159,7 +159,7 @@ if [ ! -s ${CLD_COEFF_DIR}/fit_sw_drop5_${NBANDS} ] ; then
   Cscatter_average -s ${SPECFILE} -P 1 -t ${WGT_SCTAVG} \
     -f 5 ${CLD_COEFF_DIR}/fit_sw_drop5_${NBANDS} \
     ${CLD_COEFF_DIR}/mon_sw_drop5_${NBANDS} 1.e3 \
-    ${RAD_DATA}/cloud/scatter_drop_type5 -v
+    ${RAD_DATA}/cloud/scatter_drop_type5
 fi
 if [ ! -s ${CLD_COEFF_DIR}/fit_sw_ice8_${NBANDS} ] ; then
   echo 'Type 8 ice'
