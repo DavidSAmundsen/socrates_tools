@@ -246,6 +246,9 @@ EOF
 tidy_90 << EOF >> mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out
 ${SPEC_FILE}
 o
+8
+1
+0
 1
 ${COL_MASS_ELIM_H2O}
 ${COL_MASS_ELIM_CO2}
@@ -265,10 +268,8 @@ ${COL_MASS_STMJ_CH4}
 0.0
 ${COL_H2OC}
 ${COL_CO2C}
-n
-8
-1
-0
+1.0e+5
+y
 -1
 EOF
 

@@ -3,7 +3,7 @@
 NBANDS="15"
 SP_ID="dsa_arva"
 SP_FLDR="dsa_arva"
-SOLAR_SPEC="sun_2.9gya"
+SOLAR_SPEC="sun_3.8gya"
 PT_FILE="pt663"
 
 . ../set_paths_sw
@@ -355,6 +355,9 @@ EOF
 tidy_90 << EOF >> mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out
 ${SPEC_FILE}
 o
+8
+1
+0
 1
 2.5e1
 1.6e3
@@ -374,10 +377,8 @@ o
 0.0
 10.0
 1.0e2
-n
-8
-1
-0
+1.0e+5
+y
 -1
 EOF
 

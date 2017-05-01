@@ -218,6 +218,9 @@ EOF
 tidy_90 << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
 ${SPEC_FILE_DIR}/${SPEC_FILE}
 o
+8
+1
+0
 1
 ${COL_H2O}
 ${COL_CO2}
@@ -233,10 +236,8 @@ ${COL_N2O}
 ${COL_CH4}
 ${COL_H2OC}
 ${COL_CO2C}
-n
-8
-1
-0
+1.0e+5
+y
 -1
 EOF
 

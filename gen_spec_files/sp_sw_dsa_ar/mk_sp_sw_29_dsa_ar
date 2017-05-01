@@ -300,6 +300,8 @@ EOF
 tidy_90 << EOF >> mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out
 ${SPEC_FILE}
 o
+8
+1
 1
 2.5e1
 1.6e2
@@ -311,9 +313,8 @@ o
 1.6e2
 5.8e1
 10.0
-n
-8
-1
+1.0e+5
+y
 -1
 EOF
 
