@@ -473,5 +473,8 @@ else:
 
 fout.close()
 
+# Set permissions
+os.chmod(aer_nc, 0o664)
+
 print('Successfully created ' + aer_nc)
 print('All done')

@@ -2,9 +2,9 @@ from pylab import *
 
 # Mean molecular weights in grams per mole from NIST
 molar_weight = {
-    'H':        1.00794,
-    'H2':       2.01588,
-    'He':       4.002602,
+    'H':         1.00794,
+    'H2':        2.01588,
+    'He':        4.002602,
     'H2O':      18.0153,
     'CO':       28.0106,
     'CO2':      44.0095,
@@ -27,6 +27,7 @@ molar_weight = {
     'N2O':      44.0128,
     'H2S':      34.081,
     'AIR':      28.966,
+    'N2':       28.0134,
     }
 
 # Long names for gases
@@ -55,6 +56,7 @@ gas_name = {
     'N2O':  'Nitrous oxide',
     'H2S':  'Hydrogen sulphide',
     'AIR':  'Dry air',
+    'N2':   'Nitrogen',
     }
 
 # HITRAN molecule IDs
