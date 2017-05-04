@@ -1,0 +1,16 @@
+#!/bin/bash
+# Let group members read and write files, all others read files.
+
+# k-coefficients
+chmod -R g+rwX,o+rX ${K_COEFF_DIR}
+
+# Cloud fits
+chmod -R g+rwX,o+rX ${CLD_COEFF_DIR}
+
+# Spectral files
+chmod g+rwX,o+rX ${SPEC_FILE_DIR}/${SPEC_FILE}*
+
+# Stellar spectrum
+if [ -n "${SOLAR_SPEC}" ] ; then
+  chmod g+rwX,o+rX ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}
+fi

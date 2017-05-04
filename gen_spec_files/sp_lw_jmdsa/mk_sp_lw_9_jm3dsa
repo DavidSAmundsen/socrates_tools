@@ -639,6 +639,8 @@ o
 -1
 EOF
 
+. ../set_permissions
+
 echo "Spectral file ${SPEC_FILE} created. All done."
 echo "Please check mk_sp_lw_${NBANDS}_${SP_ID}_out for errors."
 

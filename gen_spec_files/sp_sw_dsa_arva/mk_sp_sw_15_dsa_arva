@@ -382,6 +382,8 @@ y
 -1
 EOF
 
+. ../set_permissions
+
 echo "Spectral file sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC} created. All done."
 echo "Please check mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out for errors."
 

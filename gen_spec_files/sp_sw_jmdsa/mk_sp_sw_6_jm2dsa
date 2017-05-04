@@ -520,6 +520,8 @@ a
 -1
 EOF
 
+. ../set_permissions
+
 echo "Spectral file sp_sw_ga7_dsa_${SOLAR_SPEC} created. All done."
 echo "Please check mk_sp_sw_ga7_dsa_${SOLAR_SPEC}_out for errors."
 
