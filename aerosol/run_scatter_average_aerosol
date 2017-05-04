@@ -152,4 +152,7 @@ for R in ${R_OC}; do
 done
 echo "Done"
 
+# Set permissions
+chmod g+rwX,o+rX ${SCATTER_OUT_DIR}
+
 echo "All done."
