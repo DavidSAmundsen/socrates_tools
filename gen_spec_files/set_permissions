@@ -16,5 +16,8 @@
 
 # Stellar spectrum
 if [ -n "${SOLAR_SPEC}" ] ; then
-  chmod g+rX,o+rX ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}
+  OWNER="$(stat --format '%U' "${SOLAR_SPEC_DIR}/${SOLAR_SPEC}")"
+  if [ "${OWNER}" = "${USER}" ] ; then
+    chmod g+rX,o+rX ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}
+  fi
 fi
