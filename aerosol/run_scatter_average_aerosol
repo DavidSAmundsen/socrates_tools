@@ -20,8 +20,9 @@ SOLAR_SPEC="sun"
 # Construct paths to data
 SOCRATES_DIR="/scr2/socrates"
 SOLAR_SPEC_DIR="${SOCRATES_DIR}/stellar_spectra"
-SCATTER_DIR="${SOCRATES_DIR}/data/aerosol"
-SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/${SPECTRAL_FILE_FOLDER}"
+SCATTER_DIR="${HOME}/socrates_data/aerosol"
+SPEC_FILE_DIR="${HOME}/spectral_files/${SPECTRAL_FILE_FOLDER}"
+SCATTER_IN_DIR="${SOCRATES_DIR}/data/aerosol/mie"
 
 # Create weighting argument and output directory, which depends on spectral
 # region

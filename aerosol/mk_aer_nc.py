@@ -2,6 +2,7 @@ from pylab import *
 from netCDF4 import *
 import os
 import glob
+import getpass
 from aer_density_component import aer_density_component
 
 ################################################################################
@@ -19,9 +20,9 @@ solar_spec='sun'
 # Spectral file for diagnostics
 spectral_file_name_550nm = 'sp_diag'
 
-socrates_dir = '/scr2/socrates'
-scatter_base_dir = os.path.join(socrates_dir, 'data', 'aerosol')
-spectral_file_dir = os.path.join(socrates_dir, 'spectral_files')
+socrates_data_dir = os.path.join('/home', getpass.getuser(), 'socrates_data')
+scatter_base_dir = os.path.join(socrates_data_dir, 'aerosol')
+spectral_file_dir = os.path.join('/home', getpass.getuser(), 'spectral_files')
 if spectral_file_name[3:5] == 'lw':
   scatter_data_dir = os.path.join(scatter_base_dir, spectral_file_name)
   aer_nc = os.path.join(spectral_file_dir, spectral_file_folder,

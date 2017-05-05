@@ -6,13 +6,13 @@ SOCRATES_DIR="/scr2/socrates"
 
 HITRAN_DIR="${SOCRATES_DIR}/hitran"
 CONT_DIR="${SOCRATES_DIR}/continua"
-K_COEFF_DIR="${SOCRATES_DIR}/data/sp_cmp/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
+K_COEFF_DIR="${HOME}/socrates_data/sp_cmp/sw_${SP_ID}/${PT_FILE}/${SOLAR_SPEC}"
 SW_DATA="${SOCRATES_DIR}/data/abs_coeff"
 SOLAR_SPEC_DIR="${SOCRATES_DIR}/stellar_spectra"
-CLD_COEFF_DIR="${SOCRATES_DIR}/data/sp_cmp/sw_${SP_ID}/cld/${SOLAR_SPEC}"
+CLD_COEFF_DIR="${HOME}/socrates_data/sp_cmp/sw_${SP_ID}/cld/${SOLAR_SPEC}"
 
 if [ -n "${SP_FLDR}" ] ; then
-  SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/sp_sw_${SP_FLDR}"
+  SPEC_FILE_DIR="${HOME}/spectral_files/sp_sw_${SP_FLDR}"
 else
-  SPEC_FILE_DIR="${SOCRATES_DIR}/spectral_files/sp_sw_${SP_ID}"
+  SPEC_FILE_DIR="${HOME}/spectral_files/sp_sw_${SP_ID}"
 fi
