@@ -224,7 +224,7 @@ ${COL_MASS_STMJ_CO2}
 ${COL_MASS_STMJ_CH4}
 10.0
 1.0e+5
-y
+n
 -1
 EOF
 

@@ -269,7 +269,7 @@ ${COL_MASS_STMJ_CH4}
 ${COL_H2OC}
 ${COL_CO2C}
 1.0e+5
-y
+n
 -1
 EOF
 

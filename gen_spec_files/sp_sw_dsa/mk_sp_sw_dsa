@@ -415,7 +415,7 @@ ${COL_MASS_STMJ_SO2}
 ${COL_MASS_STMJ_OCS}
 10.0
 1.0e+5
-y
+n
 -1
 EOF
 
