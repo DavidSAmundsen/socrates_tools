@@ -2,7 +2,6 @@
 Summary of spectral data.
 Number of spectral bands =   280
 Total number of gaseous absorbers =     4
-Total number of aerosols =     0
 Total number of generalised continua =     2
 List of indexing numbers and absorbers.
 Index       Absorber(identifier and name)
@@ -14,8 +13,6 @@ Listing of continuum indexing numbers and gases.
 Index     Gas 1(index and name)              Gas 2(index and name)
     1         1     Water Vapour                 1     Water Vapour        
     2         2     Carbon Dioxide               2     Carbon Dioxide      
-List of indexing numbers of aerosols.
-Index       Aerosol(type number and name)
 *END
 *BLOCK: TYPE =    1: SUBTYPE =    0: VERSION =    0
 Specification of spectral intervals

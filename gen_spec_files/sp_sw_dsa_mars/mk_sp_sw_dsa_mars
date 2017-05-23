@@ -103,7 +103,7 @@ if [ ! -s ${K_COEFF_DIR}/co2-co2_s${NBANDS}_c ] ; then
   Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-co2.cia \
     -R 1 ${NBANDS} -c 2500.0 -i 1.0 \
     -ct 2 2 ${COL_CO2C} -t 1.0e-3 \
-    -k -s ${SPECFILE} +p -lk \
+    -k -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2-co2_s${NBANDS}_c \
     -m ${K_COEFF_DIR}/co2-co2_s${NBANDS}_cm \
     -L $SW_DATA/co2-co2_lbl_sw.nc \
