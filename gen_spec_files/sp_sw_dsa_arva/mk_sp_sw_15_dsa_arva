@@ -3,7 +3,7 @@
 NBANDS="15"
 SP_ID="dsa_arva"
 SP_FLDR="dsa_arva"
-SOLAR_SPEC="sun_3.8gya"
+SOLAR_SPEC="sun"
 PT_FILE="pt663"
 
 . ../set_paths_sw
@@ -217,7 +217,7 @@ if [ ! -s ${K_COEFF_DIR}/co2-co2_s${NBANDS}_6c ] ; then
   rm -f ${K_COEFF_DIR}/co2-co2_s${NBANDS}_6c*
   Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-co2.cia \
     -R 15 15 -i 1.0 -ct 2 2 1.0e2 -t 1.0e-2 \
-    -k -s ${SPECFILE} +p -lk \
+    -k -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2-co2_s${NBANDS}_6c \
     -m ${K_COEFF_DIR}/co2-co2_s${NBANDS}_6cm \
     -L $SW_DATA/co2-co2_lbl_sw.nc \
