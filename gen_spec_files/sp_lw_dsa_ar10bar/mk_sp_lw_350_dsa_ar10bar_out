@@ -1,0 +1,7439 @@
+Enter the name of the spectral file.
+Type "a" to append data to the existing file;
+  or "n" to create a new file.
+Enter the name of the new file.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    1
+
+Adding gas to band    2
+
+Adding gas to band    3
+
+Adding gas to band    4
+
+Adding gas to band    5
+
+Adding gas to band    6
+
+Adding gas to band    7
+
+Adding gas to band    8
+
+Adding gas to band    9
+
+Adding gas to band   10
+
+Adding gas to band   11
+
+Adding gas to band   12
+
+Adding gas to band   13
+
+Adding gas to band   14
+
+Adding gas to band   15
+
+Adding gas to band   16
+
+Adding gas to band   17
+
+Adding gas to band   18
+
+Adding gas to band   19
+
+Adding gas to band   20
+
+Adding gas to band   21
+
+Adding gas to band   22
+
+Adding gas to band   23
+
+Adding gas to band   24
+
+Adding gas to band   25
+
+Adding gas to band   26
+
+Adding gas to band   27
+
+Adding gas to band   28
+
+Adding gas to band   29
+
+Adding gas to band   30
+
+Adding gas to band   31
+
+Adding gas to band   32
+
+Adding gas to band   33
+
+Adding gas to band   34
+
+Adding gas to band   35
+
+Adding gas to band   36
+
+Adding gas to band   37
+
+Adding gas to band   38
+
+Adding gas to band   39
+
+Adding gas to band   40
+
+Adding gas to band   41
+
+Adding gas to band   42
+
+Adding gas to band   43
+
+Adding gas to band   44
+
+Adding gas to band   45
+
+Adding gas to band   46
+
+Adding gas to band   47
+
+Adding gas to band   48
+
+Adding gas to band   49
+
+Adding gas to band   50
+
+Adding gas to band   51
+
+Adding gas to band   52
+
+Adding gas to band   53
+
+Adding gas to band   54
+
+Adding gas to band   55
+
+Adding gas to band   56
+
+Adding gas to band   57
+
+Adding gas to band   58
+
+Adding gas to band   59
+
+Adding gas to band   60
+
+Adding gas to band   61
+
+Adding gas to band   62
+
+Adding gas to band   63
+
+Adding gas to band   64
+
+Adding gas to band   65
+
+Adding gas to band   66
+
+Adding gas to band   67
+
+Adding gas to band   68
+
+Adding gas to band   69
+
+Adding gas to band   70
+
+Adding gas to band   71
+
+Adding gas to band   72
+
+Adding gas to band   73
+
+Adding gas to band   74
+
+Adding gas to band   75
+
+Adding gas to band   76
+
+Adding gas to band   77
+
+Adding gas to band   78
+
+Adding gas to band   79
+
+Adding gas to band   80
+
+Adding gas to band   81
+
+Adding gas to band   82
+
+Adding gas to band   83
+
+Adding gas to band   84
+
+Adding gas to band   85
+
+Adding gas to band   86
+
+Adding gas to band   87
+
+Adding gas to band   88
+
+Adding gas to band   89
+
+Adding gas to band   90
+
+Adding gas to band   91
+
+Adding gas to band   92
+
+Adding gas to band   93
+
+Adding gas to band   94
+
+Adding gas to band   95
+
+Adding gas to band   96
+
+Adding gas to band   97
+
+Adding gas to band   98
+
+Adding gas to band   99
+
+Adding gas to band  100
+
+Adding gas to band  101
+
+Adding gas to band  102
+
+Adding gas to band  103
+
+Adding gas to band  104
+
+Adding gas to band  105
+
+Adding gas to band  106
+
+Adding gas to band  107
+
+Adding gas to band  108
+
+Adding gas to band  109
+
+Adding gas to band  110
+
+Adding gas to band  111
+
+Adding gas to band  112
+
+Adding gas to band  113
+
+Adding gas to band  114
+
+Adding gas to band  115
+
+Adding gas to band  116
+
+Adding gas to band  117
+
+Adding gas to band  118
+
+Adding gas to band  119
+
+Adding gas to band  120
+
+Adding gas to band  121
+
+Adding gas to band  122
+
+Adding gas to band  123
+
+Adding gas to band  124
+
+Adding gas to band  125
+
+Adding gas to band  126
+
+Adding gas to band  127
+
+Adding gas to band  128
+
+Adding gas to band  129
+
+Adding gas to band  130
+
+Adding gas to band  131
+
+Adding gas to band  132
+
+Adding gas to band  133
+
+Adding gas to band  134
+
+Adding gas to band  135
+
+Adding gas to band  136
+
+Adding gas to band  137
+
+Adding gas to band  138
+
+Adding gas to band  139
+
+Adding gas to band  140
+
+Adding gas to band  141
+
+Adding gas to band  142
+
+Adding gas to band  143
+
+Adding gas to band  144
+
+Adding gas to band  145
+
+Adding gas to band  146
+
+Adding gas to band  147
+
+Adding gas to band  148
+
+Adding gas to band  149
+
+Adding gas to band  150
+
+Adding gas to band  151
+
+Adding gas to band  152
+
+Adding gas to band  153
+
+Adding gas to band  154
+
+Adding gas to band  155
+
+Adding gas to band  156
+
+Adding gas to band  157
+
+Adding gas to band  158
+
+Adding gas to band  159
+
+Adding gas to band  160
+
+Adding gas to band  161
+
+Adding gas to band  162
+
+Adding gas to band  163
+
+Adding gas to band  164
+
+Adding gas to band  165
+
+Adding gas to band  166
+
+Adding gas to band  167
+
+Adding gas to band  168
+
+Adding gas to band  169
+
+Adding gas to band  170
+
+Adding gas to band  171
+
+Adding gas to band  172
+
+Adding gas to band  173
+
+Adding gas to band  174
+
+Adding gas to band  175
+
+Adding gas to band  176
+
+Adding gas to band  177
+
+Adding gas to band  178
+
+Adding gas to band  179
+
+Adding gas to band  180
+
+Adding gas to band  181
+
+Adding gas to band  182
+
+Adding gas to band  183
+
+Adding gas to band  184
+
+Adding gas to band  185
+
+Adding gas to band  186
+
+Adding gas to band  187
+
+Adding gas to band  188
+
+Adding gas to band  189
+
+Adding gas to band  190
+
+Adding gas to band  191
+
+Adding gas to band  192
+
+Adding gas to band  193
+
+Adding gas to band  194
+
+Adding gas to band  195
+
+Adding gas to band  196
+
+Adding gas to band  197
+
+Adding gas to band  198
+
+Adding gas to band  199
+
+Adding gas to band  200
+
+Adding gas to band  201
+
+Adding gas to band  202
+
+Adding gas to band  203
+
+Adding gas to band  204
+
+Adding gas to band  205
+
+Adding gas to band  206
+
+Adding gas to band  207
+
+Adding gas to band  208
+
+Adding gas to band  209
+
+Adding gas to band  210
+
+Adding gas to band  211
+
+Adding gas to band  212
+
+Adding gas to band  213
+
+Adding gas to band  214
+
+Adding gas to band  215
+
+Adding gas to band  216
+
+Adding gas to band  217
+
+Adding gas to band  218
+
+Adding gas to band  219
+
+Adding gas to band  220
+
+Adding gas to band  221
+
+Adding gas to band  222
+
+Adding gas to band  223
+
+Adding gas to band  224
+
+Adding gas to band  225
+
+Adding gas to band  226
+
+Adding gas to band  227
+
+Adding gas to band  228
+
+Adding gas to band  229
+
+Adding gas to band  230
+
+Adding gas to band  231
+
+Adding gas to band  232
+
+Adding gas to band  233
+
+Adding gas to band  234
+
+Adding gas to band  235
+
+Adding gas to band  236
+
+Adding gas to band  237
+
+Adding gas to band  238
+
+Adding gas to band  239
+
+Adding gas to band  240
+
+Adding gas to band  241
+
+Adding gas to band  242
+
+Adding gas to band  243
+
+Adding gas to band  244
+
+Adding gas to band  245
+
+Adding gas to band  246
+
+Adding gas to band  247
+
+Adding gas to band  248
+
+Adding gas to band  249
+
+Adding gas to band  250
+
+Adding gas to band  251
+
+Adding gas to band  252
+
+Adding gas to band  253
+
+Adding gas to band  254
+
+Adding gas to band  255
+
+Adding gas to band  256
+
+Adding gas to band  257
+
+Adding gas to band  258
+
+Adding gas to band  259
+
+Adding gas to band  260
+
+Adding gas to band  261
+
+Adding gas to band  262
+
+Adding gas to band  263
+
+Adding gas to band  264
+
+Adding gas to band  265
+
+Adding gas to band  266
+
+Adding gas to band  267
+
+Adding gas to band  268
+
+Adding gas to band  269
+
+Adding gas to band  270
+
+Adding gas to band  271
+
+Adding gas to band  272
+
+Adding gas to band  273
+
+Adding gas to band  274
+
+Adding gas to band  275
+
+Adding gas to band  276
+
+Adding gas to band  277
+
+Adding gas to band  278
+
+Adding gas to band  279
+
+Adding gas to band  280
+
+Adding gas to band  281
+
+Adding gas to band  282
+
+Adding gas to band  283
+
+Adding gas to band  284
+
+Adding gas to band  285
+
+Adding gas to band  286
+
+Adding gas to band  287
+
+Adding gas to band  288
+
+Adding gas to band  289
+
+Adding gas to band  290
+
+Adding gas to band  291
+
+Adding gas to band  292
+
+Adding gas to band  293
+
+Adding gas to band  294
+
+Adding gas to band  295
+
+Adding gas to band  296
+
+Adding gas to band  297
+
+Adding gas to band  298
+
+Adding gas to band  299
+
+Adding gas to band  300
+
+Adding gas to band  301
+
+Adding gas to band  302
+
+Adding gas to band  303
+
+Adding gas to band  304
+
+Adding gas to band  305
+
+Adding gas to band  306
+
+Adding gas to band  307
+
+Adding gas to band  308
+
+Adding gas to band  309
+
+Adding gas to band  310
+
+Adding gas to band  311
+
+Adding gas to band  312
+
+Adding gas to band  313
+
+Adding gas to band  314
+
+Adding gas to band  315
+
+Adding gas to band  316
+
+Adding gas to band  317
+
+Adding gas to band  318
+
+Adding gas to band  319
+
+Adding gas to band  320
+
+Adding gas to band  321
+
+Adding gas to band  322
+
+Adding gas to band  323
+
+Adding gas to band  324
+
+Adding gas to band  325
+
+Adding gas to band  326
+
+Adding gas to band  327
+
+Adding gas to band  328
+
+Adding gas to band  329
+
+Adding gas to band  330
+
+Adding gas to band  331
+
+Adding gas to band  332
+
+Adding gas to band  333
+
+Adding gas to band  334
+
+Adding gas to band  335
+
+Adding gas to band  336
+
+Adding gas to band  337
+
+Adding gas to band  338
+
+Adding gas to band  339
+
+Adding gas to band  340
+
+Adding gas to band  341
+
+Adding gas to band  342
+
+Adding gas to band  343
+
+Adding gas to band  344
+
+Adding gas to band  345
+
+Adding gas to band  346
+
+Adding gas to band  347
+
+Adding gas to band  348
+
+Adding gas to band  349
+
+Adding gas to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    1
+
+Adding continuum to band    2
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Adding continuum to band    7
+
+Adding continuum to band    8
+
+Adding continuum to band    9
+
+Adding continuum to band   10
+
+Adding continuum to band   11
+
+Adding continuum to band   12
+
+Adding continuum to band   13
+
+Adding continuum to band   14
+
+Adding continuum to band   15
+
+Adding continuum to band   16
+
+Adding continuum to band   17
+
+Adding continuum to band   18
+
+Adding continuum to band   19
+
+Adding continuum to band   20
+
+Adding continuum to band   21
+
+Adding continuum to band   22
+
+Adding continuum to band   23
+
+Adding continuum to band   24
+
+Adding continuum to band   25
+
+Adding continuum to band   26
+
+Adding continuum to band   27
+
+Adding continuum to band   28
+
+Adding continuum to band   29
+
+Adding continuum to band   30
+
+Adding continuum to band   31
+
+Adding continuum to band   32
+
+Adding continuum to band   33
+
+Adding continuum to band   34
+
+Adding continuum to band   35
+
+Adding continuum to band   36
+
+Adding continuum to band   37
+
+Adding continuum to band   38
+
+Adding continuum to band   39
+
+Adding continuum to band   40
+
+Adding continuum to band   41
+
+Adding continuum to band   42
+
+Adding continuum to band   43
+
+Adding continuum to band   44
+
+Adding continuum to band   45
+
+Adding continuum to band   46
+
+Adding continuum to band   47
+
+Adding continuum to band   48
+
+Adding continuum to band   49
+
+Adding continuum to band   50
+
+Adding continuum to band   51
+
+Adding continuum to band   52
+
+Adding continuum to band   53
+
+Adding continuum to band   54
+
+Adding continuum to band   55
+
+Adding continuum to band   56
+
+Adding continuum to band   57
+
+Adding continuum to band   58
+
+Adding continuum to band   59
+
+Adding continuum to band   60
+
+Adding continuum to band   61
+
+Adding continuum to band   62
+
+Adding continuum to band   63
+
+Adding continuum to band   64
+
+Adding continuum to band   65
+
+Adding continuum to band   66
+
+Adding continuum to band   67
+
+Adding continuum to band   68
+
+Adding continuum to band   69
+
+Adding continuum to band   70
+
+Adding continuum to band   71
+
+Adding continuum to band   72
+
+Adding continuum to band   73
+
+Adding continuum to band   74
+
+Adding continuum to band   75
+
+Adding continuum to band   76
+
+Adding continuum to band   77
+
+Adding continuum to band   78
+
+Adding continuum to band   79
+
+Adding continuum to band   80
+
+Adding continuum to band   81
+
+Adding continuum to band   82
+
+Adding continuum to band   83
+
+Adding continuum to band   84
+
+Adding continuum to band   85
+
+Adding continuum to band   86
+
+Adding continuum to band   87
+
+Adding continuum to band   88
+
+Adding continuum to band   89
+
+Adding continuum to band   90
+
+Adding continuum to band   91
+
+Adding continuum to band   92
+
+Adding continuum to band   93
+
+Adding continuum to band   94
+
+Adding continuum to band   95
+
+Adding continuum to band   96
+
+Adding continuum to band   97
+
+Adding continuum to band   98
+
+Adding continuum to band   99
+
+Adding continuum to band  100
+
+Adding continuum to band  101
+
+Adding continuum to band  102
+
+Adding continuum to band  103
+
+Adding continuum to band  104
+
+Adding continuum to band  105
+
+Adding continuum to band  106
+
+Adding continuum to band  107
+
+Adding continuum to band  108
+
+Adding continuum to band  109
+
+Adding continuum to band  110
+
+Adding continuum to band  111
+
+Adding continuum to band  112
+
+Adding continuum to band  113
+
+Adding continuum to band  114
+
+Adding continuum to band  115
+
+Adding continuum to band  116
+
+Adding continuum to band  117
+
+Adding continuum to band  118
+
+Adding continuum to band  119
+
+Adding continuum to band  120
+
+Adding continuum to band  121
+
+Adding continuum to band  122
+
+Adding continuum to band  123
+
+Adding continuum to band  124
+
+Adding continuum to band  125
+
+Adding continuum to band  126
+
+Adding continuum to band  127
+
+Adding continuum to band  128
+
+Adding continuum to band  129
+
+Adding continuum to band  130
+
+Adding continuum to band  131
+
+Adding continuum to band  132
+
+Adding continuum to band  133
+
+Adding continuum to band  134
+
+Adding continuum to band  135
+
+Adding continuum to band  136
+
+Adding continuum to band  137
+
+Adding continuum to band  138
+
+Adding continuum to band  139
+
+Adding continuum to band  140
+
+Adding continuum to band  141
+
+Adding continuum to band  142
+
+Adding continuum to band  143
+
+Adding continuum to band  144
+
+Adding continuum to band  145
+
+Adding continuum to band  146
+
+Adding continuum to band  147
+
+Adding continuum to band  148
+
+Adding continuum to band  149
+
+Adding continuum to band  150
+
+Adding continuum to band  151
+
+Adding continuum to band  152
+
+Adding continuum to band  153
+
+Adding continuum to band  154
+
+Adding continuum to band  155
+
+Adding continuum to band  156
+
+Adding continuum to band  157
+
+Adding continuum to band  158
+
+Adding continuum to band  159
+
+Adding continuum to band  160
+
+Adding continuum to band  161
+
+Adding continuum to band  162
+
+Adding continuum to band  163
+
+Adding continuum to band  164
+
+Adding continuum to band  165
+
+Adding continuum to band  166
+
+Adding continuum to band  167
+
+Adding continuum to band  168
+
+Adding continuum to band  169
+
+Adding continuum to band  170
+
+Adding continuum to band  171
+
+Adding continuum to band  172
+
+Adding continuum to band  173
+
+Adding continuum to band  174
+
+Adding continuum to band  175
+
+Adding continuum to band  176
+
+Adding continuum to band  177
+
+Adding continuum to band  178
+
+Adding continuum to band  179
+
+Adding continuum to band  180
+
+Adding continuum to band  181
+
+Adding continuum to band  182
+
+Adding continuum to band  183
+
+Adding continuum to band  184
+
+Adding continuum to band  185
+
+Adding continuum to band  186
+
+Adding continuum to band  187
+
+Adding continuum to band  188
+
+Adding continuum to band  189
+
+Adding continuum to band  190
+
+Adding continuum to band  191
+
+Adding continuum to band  192
+
+Adding continuum to band  193
+
+Adding continuum to band  194
+
+Adding continuum to band  195
+
+Adding continuum to band  196
+
+Adding continuum to band  197
+
+Adding continuum to band  198
+
+Adding continuum to band  199
+
+Adding continuum to band  200
+
+Adding continuum to band  201
+
+Adding continuum to band  202
+
+Adding continuum to band  203
+
+Adding continuum to band  204
+
+Adding continuum to band  205
+
+Adding continuum to band  206
+
+Adding continuum to band  207
+
+Adding continuum to band  208
+
+Adding continuum to band  209
+
+Adding continuum to band  210
+
+Adding continuum to band  211
+
+Adding continuum to band  212
+
+Adding continuum to band  213
+
+Adding continuum to band  214
+
+Adding continuum to band  215
+
+Adding continuum to band  216
+
+Adding continuum to band  217
+
+Adding continuum to band  218
+
+Adding continuum to band  219
+
+Adding continuum to band  220
+
+Adding continuum to band  221
+
+Adding continuum to band  222
+
+Adding continuum to band  223
+
+Adding continuum to band  224
+
+Adding continuum to band  225
+
+Adding continuum to band  226
+
+Adding continuum to band  227
+
+Adding continuum to band  228
+
+Adding continuum to band  229
+
+Adding continuum to band  230
+
+Adding continuum to band  231
+
+Adding continuum to band  232
+
+Adding continuum to band  233
+
+Adding continuum to band  234
+
+Adding continuum to band  235
+
+Adding continuum to band  236
+
+Adding continuum to band  237
+
+Adding continuum to band  238
+
+Adding continuum to band  239
+
+Adding continuum to band  240
+
+Adding continuum to band  241
+
+Adding continuum to band  242
+
+Adding continuum to band  243
+
+Adding continuum to band  244
+
+Adding continuum to band  245
+
+Adding continuum to band  246
+
+Adding continuum to band  247
+
+Adding continuum to band  248
+
+Adding continuum to band  249
+
+Adding continuum to band  250
+
+Adding continuum to band  251
+
+Adding continuum to band  252
+
+Adding continuum to band  253
+
+Adding continuum to band  254
+
+Adding continuum to band  255
+
+Adding continuum to band  256
+
+Adding continuum to band  257
+
+Adding continuum to band  258
+
+Adding continuum to band  259
+
+Adding continuum to band  260
+
+Adding continuum to band  261
+
+Adding continuum to band  262
+
+Adding continuum to band  263
+
+Adding continuum to band  264
+
+Adding continuum to band  265
+
+Adding continuum to band  266
+
+Adding continuum to band  267
+
+Adding continuum to band  268
+
+Adding continuum to band  269
+
+Adding continuum to band  270
+
+Adding continuum to band  271
+
+Adding continuum to band  272
+
+Adding continuum to band  273
+
+Adding continuum to band  274
+
+Adding continuum to band  275
+
+Adding continuum to band  276
+
+Adding continuum to band  277
+
+Adding continuum to band  278
+
+Adding continuum to band  279
+
+Adding continuum to band  280
+
+Adding continuum to band  281
+
+Adding continuum to band  282
+
+Adding continuum to band  283
+
+Adding continuum to band  284
+
+Adding continuum to band  285
+
+Adding continuum to band  286
+
+Adding continuum to band  287
+
+Adding continuum to band  288
+
+Adding continuum to band  289
+
+Adding continuum to band  290
+
+Adding continuum to band  291
+
+Adding continuum to band  292
+
+Adding continuum to band  293
+
+Adding continuum to band  294
+
+Adding continuum to band  295
+
+Adding continuum to band  296
+
+Adding continuum to band  297
+
+Adding continuum to band  298
+
+Adding continuum to band  299
+
+Adding continuum to band  300
+
+Adding continuum to band  301
+
+Adding continuum to band  302
+
+Adding continuum to band  303
+
+Adding continuum to band  304
+
+Adding continuum to band  305
+
+Adding continuum to band  306
+
+Adding continuum to band  307
+
+Adding continuum to band  308
+
+Adding continuum to band  309
+
+Adding continuum to band  310
+
+Adding continuum to band  311
+
+Adding continuum to band  312
+
+Adding continuum to band  313
+
+Adding continuum to band  314
+
+Adding continuum to band  315
+
+Adding continuum to band  316
+
+Adding continuum to band  317
+
+Adding continuum to band  318
+
+Adding continuum to band  319
+
+Adding continuum to band  320
+
+Adding continuum to band  321
+
+Adding continuum to band  322
+
+Adding continuum to band  323
+
+Adding continuum to band  324
+
+Adding continuum to band  325
+
+Adding continuum to band  326
+
+Adding continuum to band  327
+
+Adding continuum to band  328
+
+Adding continuum to band  329
+
+Adding continuum to band  330
+
+Adding continuum to band  331
+
+Adding continuum to band  332
+
+Adding continuum to band  333
+
+Adding continuum to band  334
+
+Adding continuum to band  335
+
+Adding continuum to band  336
+
+Adding continuum to band  337
+
+Adding continuum to band  338
+
+Adding continuum to band  339
+
+Adding continuum to band  340
+
+Adding continuum to band  341
+
+Adding continuum to band  342
+
+Adding continuum to band  343
+
+Adding continuum to band  344
+
+Adding continuum to band  345
+
+Adding continuum to band  346
+
+Adding continuum to band  347
+
+Adding continuum to band  348
+
+Adding continuum to band  349
+
+Adding continuum to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    1
+
+Adding gas to band    2
+
+Adding gas to band    3
+
+Adding gas to band    4
+
+Adding gas to band    5
+
+Adding gas to band    6
+
+Adding gas to band    7
+
+Adding gas to band    8
+
+Adding gas to band    9
+
+Adding gas to band   10
+
+Adding gas to band   11
+
+Adding gas to band   12
+
+Adding gas to band   13
+
+Adding gas to band   14
+
+Adding gas to band   15
+
+Adding gas to band   16
+
+Adding gas to band   17
+
+Adding gas to band   18
+
+Adding gas to band   19
+
+Adding gas to band   20
+
+Adding gas to band   21
+
+Adding gas to band   22
+
+Adding gas to band   23
+
+Adding gas to band   24
+
+Adding gas to band   25
+
+Adding gas to band   26
+
+Adding gas to band   27
+
+Adding gas to band   28
+
+Adding gas to band   29
+
+Adding gas to band   30
+
+Adding gas to band   31
+
+Adding gas to band   32
+
+Adding gas to band   33
+
+Adding gas to band   34
+
+Adding gas to band   35
+
+Adding gas to band   36
+
+Adding gas to band   37
+
+Adding gas to band   38
+
+Adding gas to band   39
+
+Adding gas to band   40
+
+Adding gas to band   41
+
+Adding gas to band   42
+
+Adding gas to band   43
+
+Adding gas to band   44
+
+Adding gas to band   45
+
+Adding gas to band   46
+
+Adding gas to band   47
+
+Adding gas to band   48
+
+Adding gas to band   49
+
+Adding gas to band   50
+
+Adding gas to band   51
+
+Adding gas to band   52
+
+Adding gas to band   53
+
+Adding gas to band   54
+
+Adding gas to band   55
+
+Adding gas to band   56
+
+Adding gas to band   57
+
+Adding gas to band   58
+
+Adding gas to band   59
+
+Adding gas to band   60
+
+Adding gas to band   61
+
+Adding gas to band   62
+
+Adding gas to band   63
+
+Adding gas to band   64
+
+Adding gas to band   65
+
+Adding gas to band   66
+
+Adding gas to band   67
+
+Adding gas to band   68
+
+Adding gas to band   69
+
+Adding gas to band   70
+
+Adding gas to band   71
+
+Adding gas to band   72
+
+Adding gas to band   73
+
+Adding gas to band   74
+
+Adding gas to band   75
+
+Adding gas to band   76
+
+Adding gas to band   77
+
+Adding gas to band   78
+
+Adding gas to band   79
+
+Adding gas to band   80
+
+Adding gas to band   81
+
+Adding gas to band   82
+
+Adding gas to band   83
+
+Adding gas to band   84
+
+Adding gas to band   85
+
+Adding gas to band   86
+
+Adding gas to band   87
+
+Adding gas to band   88
+
+Adding gas to band   89
+
+Adding gas to band   90
+
+Adding gas to band   91
+
+Adding gas to band   92
+
+Adding gas to band   93
+
+Adding gas to band   94
+
+Adding gas to band   95
+
+Adding gas to band   96
+
+Adding gas to band   97
+
+Adding gas to band   98
+
+Adding gas to band   99
+
+Adding gas to band  100
+
+Adding gas to band  101
+
+Adding gas to band  102
+
+Adding gas to band  103
+
+Adding gas to band  104
+
+Adding gas to band  105
+
+Adding gas to band  106
+
+Adding gas to band  107
+
+Adding gas to band  108
+
+Adding gas to band  109
+
+Adding gas to band  110
+
+Adding gas to band  111
+
+Adding gas to band  112
+
+Adding gas to band  113
+
+Adding gas to band  114
+
+Adding gas to band  115
+
+Adding gas to band  116
+
+Adding gas to band  117
+
+Adding gas to band  118
+
+Adding gas to band  119
+
+Adding gas to band  120
+
+Adding gas to band  121
+
+Adding gas to band  122
+
+Adding gas to band  123
+
+Adding gas to band  124
+
+Adding gas to band  125
+
+Adding gas to band  126
+
+Adding gas to band  127
+
+Adding gas to band  128
+
+Adding gas to band  129
+
+Adding gas to band  130
+
+Adding gas to band  131
+
+Adding gas to band  132
+
+Adding gas to band  133
+
+Adding gas to band  134
+
+Adding gas to band  135
+
+Adding gas to band  136
+
+Adding gas to band  137
+
+Adding gas to band  138
+
+Adding gas to band  139
+
+Adding gas to band  140
+
+Adding gas to band  141
+
+Adding gas to band  142
+
+Adding gas to band  143
+
+Adding gas to band  144
+
+Adding gas to band  145
+
+Adding gas to band  146
+
+Adding gas to band  147
+
+Adding gas to band  148
+
+Adding gas to band  149
+
+Adding gas to band  150
+
+Adding gas to band  151
+
+Adding gas to band  152
+
+Adding gas to band  153
+
+Adding gas to band  154
+
+Adding gas to band  155
+
+Adding gas to band  156
+
+Adding gas to band  157
+
+Adding gas to band  158
+
+Adding gas to band  159
+
+Adding gas to band  160
+
+Adding gas to band  161
+
+Adding gas to band  162
+
+Adding gas to band  163
+
+Adding gas to band  164
+
+Adding gas to band  165
+
+Adding gas to band  166
+
+Adding gas to band  167
+
+Adding gas to band  168
+
+Adding gas to band  169
+
+Adding gas to band  170
+
+Adding gas to band  171
+
+Adding gas to band  172
+
+Adding gas to band  173
+
+Adding gas to band  174
+
+Adding gas to band  175
+
+Adding gas to band  176
+
+Adding gas to band  177
+
+Adding gas to band  178
+
+Adding gas to band  179
+
+Adding gas to band  180
+
+Adding gas to band  181
+
+Adding gas to band  182
+
+Adding gas to band  183
+
+Adding gas to band  184
+
+Adding gas to band  185
+
+Adding gas to band  186
+
+Adding gas to band  187
+
+Adding gas to band  188
+
+Adding gas to band  189
+
+Adding gas to band  190
+
+Adding gas to band  191
+
+Adding gas to band  192
+
+Adding gas to band  193
+
+Adding gas to band  194
+
+Adding gas to band  195
+
+Adding gas to band  196
+
+Adding gas to band  197
+
+Adding gas to band  198
+
+Adding gas to band  199
+
+Adding gas to band  200
+
+Adding gas to band  201
+
+Adding gas to band  202
+
+Adding gas to band  203
+
+Adding gas to band  204
+
+Adding gas to band  205
+
+Adding gas to band  206
+
+Adding gas to band  207
+
+Adding gas to band  208
+
+Adding gas to band  209
+
+Adding gas to band  210
+
+Adding gas to band  211
+
+Adding gas to band  212
+
+Adding gas to band  213
+
+Adding gas to band  214
+
+Adding gas to band  215
+
+Adding gas to band  216
+
+Adding gas to band  217
+
+Adding gas to band  218
+
+Adding gas to band  219
+
+Adding gas to band  220
+
+Adding gas to band  221
+
+Adding gas to band  222
+
+Adding gas to band  223
+
+Adding gas to band  224
+
+Adding gas to band  225
+
+Adding gas to band  226
+
+Adding gas to band  227
+
+Adding gas to band  228
+
+Adding gas to band  229
+
+Adding gas to band  230
+
+Adding gas to band  231
+
+Adding gas to band  232
+
+Adding gas to band  233
+
+Adding gas to band  234
+
+Adding gas to band  235
+
+Adding gas to band  236
+
+Adding gas to band  237
+
+Adding gas to band  238
+
+Adding gas to band  239
+
+Adding gas to band  240
+
+Adding gas to band  241
+
+Adding gas to band  242
+
+Adding gas to band  243
+
+Adding gas to band  244
+
+Adding gas to band  245
+
+Adding gas to band  246
+
+Adding gas to band  247
+
+Adding gas to band  248
+
+Adding gas to band  249
+
+Adding gas to band  250
+
+Adding gas to band  251
+
+Adding gas to band  252
+
+Adding gas to band  253
+
+Adding gas to band  254
+
+Adding gas to band  255
+
+Adding gas to band  256
+
+Adding gas to band  257
+
+Adding gas to band  258
+
+Adding gas to band  259
+
+Adding gas to band  260
+
+Adding gas to band  261
+
+Adding gas to band  262
+
+Adding gas to band  263
+
+Adding gas to band  264
+
+Adding gas to band  265
+
+Adding gas to band  266
+
+Adding gas to band  267
+
+Adding gas to band  268
+
+Adding gas to band  269
+
+Adding gas to band  270
+
+Adding gas to band  271
+
+Adding gas to band  272
+
+Adding gas to band  273
+
+Adding gas to band  274
+
+Adding gas to band  275
+
+Adding gas to band  276
+
+Adding gas to band  277
+
+Adding gas to band  278
+
+Adding gas to band  279
+
+Adding gas to band  280
+
+Adding gas to band  281
+
+Adding gas to band  282
+
+Adding gas to band  283
+
+Adding gas to band  284
+
+Adding gas to band  285
+
+Adding gas to band  286
+
+Adding gas to band  287
+
+Adding gas to band  288
+
+Adding gas to band  289
+
+Adding gas to band  290
+
+Adding gas to band  291
+
+Adding gas to band  292
+
+Adding gas to band  293
+
+Adding gas to band  294
+
+Adding gas to band  295
+
+Adding gas to band  296
+
+Adding gas to band  297
+
+Adding gas to band  298
+
+Adding gas to band  299
+
+Adding gas to band  300
+
+Adding gas to band  301
+
+Adding gas to band  302
+
+Adding gas to band  303
+
+Adding gas to band  304
+
+Adding gas to band  305
+
+Adding gas to band  306
+
+Adding gas to band  307
+
+Adding gas to band  308
+
+Adding gas to band  309
+
+Adding gas to band  310
+
+Adding gas to band  311
+
+Adding gas to band  312
+
+Adding gas to band  313
+
+Adding gas to band  314
+
+Adding gas to band  315
+
+Adding gas to band  316
+
+Adding gas to band  317
+
+Adding gas to band  318
+
+Adding gas to band  319
+
+Adding gas to band  320
+
+Adding gas to band  321
+
+Adding gas to band  322
+
+Adding gas to band  323
+
+Adding gas to band  324
+
+Adding gas to band  325
+
+Adding gas to band  326
+
+Adding gas to band  327
+
+Adding gas to band  328
+
+Adding gas to band  329
+
+Adding gas to band  330
+
+Adding gas to band  331
+
+Adding gas to band  332
+
+Adding gas to band  333
+
+Adding gas to band  334
+
+Adding gas to band  335
+
+Adding gas to band  336
+
+Adding gas to band  337
+
+Adding gas to band  338
+
+Adding gas to band  339
+
+Adding gas to band  340
+
+Adding gas to band  341
+
+Adding gas to band  342
+
+Adding gas to band  343
+
+Adding gas to band  344
+
+Adding gas to band  345
+
+Adding gas to band  346
+
+Adding gas to band  347
+
+Adding gas to band  348
+
+Adding gas to band  349
+
+Adding gas to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of esft data.
+
+Adding gas to band    1
+
+Adding gas to band    2
+
+Adding gas to band    3
+
+Adding gas to band    4
+
+Adding gas to band    5
+
+Adding gas to band    6
+
+Adding gas to band    7
+
+Adding gas to band    8
+
+Adding gas to band    9
+
+Adding gas to band   10
+
+Adding gas to band   11
+
+Adding gas to band   12
+
+Adding gas to band   13
+
+Adding gas to band   14
+
+Adding gas to band   15
+
+Adding gas to band   16
+
+Adding gas to band   17
+
+Adding gas to band   18
+
+Adding gas to band   19
+
+Adding gas to band   20
+
+Adding gas to band   21
+
+Adding gas to band   22
+
+Adding gas to band   23
+
+Adding gas to band   24
+
+Adding gas to band   25
+
+Adding gas to band   26
+
+Adding gas to band   27
+
+Adding gas to band   28
+
+Adding gas to band   29
+
+Adding gas to band   30
+
+Adding gas to band   31
+
+Adding gas to band   32
+
+Adding gas to band   33
+
+Adding gas to band   34
+
+Adding gas to band   35
+
+Adding gas to band   36
+
+Adding gas to band   37
+
+Adding gas to band   38
+
+Adding gas to band   39
+
+Adding gas to band   40
+
+Adding gas to band   41
+
+Adding gas to band   42
+
+Adding gas to band   43
+
+Adding gas to band   44
+
+Adding gas to band   45
+
+Adding gas to band   46
+
+Adding gas to band   47
+
+Adding gas to band   48
+
+Adding gas to band   49
+
+Adding gas to band   50
+
+Adding gas to band   51
+
+Adding gas to band   52
+
+Adding gas to band   53
+
+Adding gas to band   54
+
+Adding gas to band   55
+
+Adding gas to band   56
+
+Adding gas to band   57
+
+Adding gas to band   58
+
+Adding gas to band   59
+
+Adding gas to band   60
+
+Adding gas to band   61
+
+Adding gas to band   62
+
+Adding gas to band   63
+
+Adding gas to band   64
+
+Adding gas to band   65
+
+Adding gas to band   66
+
+Adding gas to band   67
+
+Adding gas to band   68
+
+Adding gas to band   69
+
+Adding gas to band   70
+
+Adding gas to band   71
+
+Adding gas to band   72
+
+Adding gas to band   73
+
+Adding gas to band   74
+
+Adding gas to band   75
+
+Adding gas to band   76
+
+Adding gas to band   77
+
+Adding gas to band   78
+
+Adding gas to band   79
+
+Adding gas to band   80
+
+Adding gas to band   81
+
+Adding gas to band   82
+
+Adding gas to band   83
+
+Adding gas to band   84
+
+Adding gas to band   85
+
+Adding gas to band   86
+
+Adding gas to band   87
+
+Adding gas to band   88
+
+Adding gas to band   89
+
+Adding gas to band   90
+
+Adding gas to band   91
+
+Adding gas to band   92
+
+Adding gas to band   93
+
+Adding gas to band   94
+
+Adding gas to band   95
+
+Adding gas to band   96
+
+Adding gas to band   97
+
+Adding gas to band   98
+
+Adding gas to band   99
+
+Adding gas to band  100
+
+Adding gas to band  101
+
+Adding gas to band  102
+
+Adding gas to band  103
+
+Adding gas to band  104
+
+Adding gas to band  105
+
+Adding gas to band  106
+
+Adding gas to band  107
+
+Adding gas to band  108
+
+Adding gas to band  109
+
+Adding gas to band  110
+
+Adding gas to band  111
+
+Adding gas to band  112
+
+Adding gas to band  113
+
+Adding gas to band  114
+
+Adding gas to band  115
+
+Adding gas to band  116
+
+Adding gas to band  117
+
+Adding gas to band  118
+
+Adding gas to band  119
+
+Adding gas to band  120
+
+Adding gas to band  121
+
+Adding gas to band  122
+
+Adding gas to band  123
+
+Adding gas to band  124
+
+Adding gas to band  125
+
+Adding gas to band  126
+
+Adding gas to band  127
+
+Adding gas to band  128
+
+Adding gas to band  129
+
+Adding gas to band  130
+
+Adding gas to band  131
+
+Adding gas to band  132
+
+Adding gas to band  133
+
+Adding gas to band  134
+
+Adding gas to band  135
+
+Adding gas to band  136
+
+Adding gas to band  137
+
+Adding gas to band  138
+
+Adding gas to band  139
+
+Adding gas to band  140
+
+Adding gas to band  141
+
+Adding gas to band  142
+
+Adding gas to band  143
+
+Adding gas to band  144
+
+Adding gas to band  145
+
+Adding gas to band  146
+
+Adding gas to band  147
+
+Adding gas to band  148
+
+Adding gas to band  149
+
+Adding gas to band  150
+
+Adding gas to band  151
+
+Adding gas to band  152
+
+Adding gas to band  153
+
+Adding gas to band  154
+
+Adding gas to band  155
+
+Adding gas to band  156
+
+Adding gas to band  157
+
+Adding gas to band  158
+
+Adding gas to band  159
+
+Adding gas to band  160
+
+Adding gas to band  161
+
+Adding gas to band  162
+
+Adding gas to band  163
+
+Adding gas to band  164
+
+Adding gas to band  165
+
+Adding gas to band  166
+
+Adding gas to band  167
+
+Adding gas to band  168
+
+Adding gas to band  169
+
+Adding gas to band  170
+
+Adding gas to band  171
+
+Adding gas to band  172
+
+Adding gas to band  173
+
+Adding gas to band  174
+
+Adding gas to band  175
+
+Adding gas to band  176
+
+Adding gas to band  177
+
+Adding gas to band  178
+
+Adding gas to band  179
+
+Adding gas to band  180
+
+Adding gas to band  181
+
+Adding gas to band  182
+
+Adding gas to band  183
+
+Adding gas to band  184
+
+Adding gas to band  185
+
+Adding gas to band  186
+
+Adding gas to band  187
+
+Adding gas to band  188
+
+Adding gas to band  189
+
+Adding gas to band  190
+
+Adding gas to band  191
+
+Adding gas to band  192
+
+Adding gas to band  193
+
+Adding gas to band  194
+
+Adding gas to band  195
+
+Adding gas to band  196
+
+Adding gas to band  197
+
+Adding gas to band  198
+
+Adding gas to band  199
+
+Adding gas to band  200
+
+Adding gas to band  201
+
+Adding gas to band  202
+
+Adding gas to band  203
+
+Adding gas to band  204
+
+Adding gas to band  205
+
+Adding gas to band  206
+
+Adding gas to band  207
+
+Adding gas to band  208
+
+Adding gas to band  209
+
+Adding gas to band  210
+
+Adding gas to band  211
+
+Adding gas to band  212
+
+Adding gas to band  213
+
+Adding gas to band  214
+
+Adding gas to band  215
+
+Adding gas to band  216
+
+Adding gas to band  217
+
+Adding gas to band  218
+
+Adding gas to band  219
+
+Adding gas to band  220
+
+Adding gas to band  221
+
+Adding gas to band  222
+
+Adding gas to band  223
+
+Adding gas to band  224
+
+Adding gas to band  225
+
+Adding gas to band  226
+
+Adding gas to band  227
+
+Adding gas to band  228
+
+Adding gas to band  229
+
+Adding gas to band  230
+
+Adding gas to band  231
+
+Adding gas to band  232
+
+Adding gas to band  233
+
+Adding gas to band  234
+
+Adding gas to band  235
+
+Adding gas to band  236
+
+Adding gas to band  237
+
+Adding gas to band  238
+
+Adding gas to band  239
+
+Adding gas to band  240
+
+Adding gas to band  241
+
+Adding gas to band  242
+
+Adding gas to band  243
+
+Adding gas to band  244
+
+Adding gas to band  245
+
+Adding gas to band  246
+
+Adding gas to band  247
+
+Adding gas to band  248
+
+Adding gas to band  249
+
+Adding gas to band  250
+
+Adding gas to band  251
+
+Adding gas to band  252
+
+Adding gas to band  253
+
+Adding gas to band  254
+
+Adding gas to band  255
+
+Adding gas to band  256
+
+Adding gas to band  257
+
+Adding gas to band  258
+
+Adding gas to band  259
+
+Adding gas to band  260
+
+Adding gas to band  261
+
+Adding gas to band  262
+
+Adding gas to band  263
+
+Adding gas to band  264
+
+Adding gas to band  265
+
+Adding gas to band  266
+
+Adding gas to band  267
+
+Adding gas to band  268
+
+Adding gas to band  269
+
+Adding gas to band  270
+
+Adding gas to band  271
+
+Adding gas to band  272
+
+Adding gas to band  273
+
+Adding gas to band  274
+
+Adding gas to band  275
+
+Adding gas to band  276
+
+Adding gas to band  277
+
+Adding gas to band  278
+
+Adding gas to band  279
+
+Adding gas to band  280
+
+Adding gas to band  281
+
+Adding gas to band  282
+
+Adding gas to band  283
+
+Adding gas to band  284
+
+Adding gas to band  285
+
+Adding gas to band  286
+
+Adding gas to band  287
+
+Adding gas to band  288
+
+Adding gas to band  289
+
+Adding gas to band  290
+
+Adding gas to band  291
+
+Adding gas to band  292
+
+Adding gas to band  293
+
+Adding gas to band  294
+
+Adding gas to band  295
+
+Adding gas to band  296
+
+Adding gas to band  297
+
+Adding gas to band  298
+
+Adding gas to band  299
+
+Adding gas to band  300
+
+Adding gas to band  301
+
+Adding gas to band  302
+
+Adding gas to band  303
+
+Adding gas to band  304
+
+Adding gas to band  305
+
+Adding gas to band  306
+
+Adding gas to band  307
+
+Adding gas to band  308
+
+Adding gas to band  309
+
+Adding gas to band  310
+
+Adding gas to band  311
+
+Adding gas to band  312
+
+Adding gas to band  313
+
+Adding gas to band  314
+
+Adding gas to band  315
+
+Adding gas to band  316
+
+Adding gas to band  317
+
+Adding gas to band  318
+
+Adding gas to band  319
+
+Adding gas to band  320
+
+Adding gas to band  321
+
+Adding gas to band  322
+
+Adding gas to band  323
+
+Adding gas to band  324
+
+Adding gas to band  325
+
+Adding gas to band  326
+
+Adding gas to band  327
+
+Adding gas to band  328
+
+Adding gas to band  329
+
+Adding gas to band  330
+
+Adding gas to band  331
+
+Adding gas to band  332
+
+Adding gas to band  333
+
+Adding gas to band  334
+
+Adding gas to band  335
+
+Adding gas to band  336
+
+Adding gas to band  337
+
+Adding gas to band  338
+
+Adding gas to band  339
+
+Adding gas to band  340
+
+Adding gas to band  341
+
+Adding gas to band  342
+
+Adding gas to band  343
+
+Adding gas to band  344
+
+Adding gas to band  345
+
+Adding gas to band  346
+
+Adding gas to band  347
+
+Adding gas to band  348
+
+Adding gas to band  349
+
+Adding gas to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    1
+
+Adding continuum to band    2
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Adding continuum to band    7
+
+Adding continuum to band    8
+
+Adding continuum to band    9
+
+Adding continuum to band   10
+
+Adding continuum to band   11
+
+Adding continuum to band   12
+
+Adding continuum to band   13
+
+Adding continuum to band   14
+
+Adding continuum to band   15
+
+Adding continuum to band   16
+
+Adding continuum to band   17
+
+Adding continuum to band   18
+
+Adding continuum to band   19
+
+Adding continuum to band   20
+
+Adding continuum to band   21
+
+Adding continuum to band   22
+
+Adding continuum to band   23
+
+Adding continuum to band   24
+
+Adding continuum to band   25
+
+Adding continuum to band   26
+
+Adding continuum to band   27
+
+Adding continuum to band   28
+
+Adding continuum to band   29
+
+Adding continuum to band   30
+
+Adding continuum to band   31
+
+Adding continuum to band   32
+
+Adding continuum to band   33
+
+Adding continuum to band   34
+
+Adding continuum to band   35
+
+Adding continuum to band   36
+
+Adding continuum to band   37
+
+Adding continuum to band   38
+
+Adding continuum to band   39
+
+Adding continuum to band   40
+
+Adding continuum to band   41
+
+Adding continuum to band   42
+
+Adding continuum to band   43
+
+Adding continuum to band   44
+
+Adding continuum to band   45
+
+Adding continuum to band   46
+
+Adding continuum to band   47
+
+Adding continuum to band   48
+
+Adding continuum to band   49
+
+Adding continuum to band   50
+
+Adding continuum to band   51
+
+Adding continuum to band   52
+
+Adding continuum to band   53
+
+Adding continuum to band   54
+
+Adding continuum to band   55
+
+Adding continuum to band   56
+
+Adding continuum to band   57
+
+Adding continuum to band   58
+
+Adding continuum to band   59
+
+Adding continuum to band   60
+
+Adding continuum to band   61
+
+Adding continuum to band   62
+
+Adding continuum to band   63
+
+Adding continuum to band   64
+
+Adding continuum to band   65
+
+Adding continuum to band   66
+
+Adding continuum to band   67
+
+Adding continuum to band   68
+
+Adding continuum to band   69
+
+Adding continuum to band   70
+
+Adding continuum to band   71
+
+Adding continuum to band   72
+
+Adding continuum to band   73
+
+Adding continuum to band   74
+
+Adding continuum to band   75
+
+Adding continuum to band   76
+
+Adding continuum to band   77
+
+Adding continuum to band   78
+
+Adding continuum to band   79
+
+Adding continuum to band   80
+
+Adding continuum to band   81
+
+Adding continuum to band   82
+
+Adding continuum to band   83
+
+Adding continuum to band   84
+
+Adding continuum to band   85
+
+Adding continuum to band   86
+
+Adding continuum to band   87
+
+Adding continuum to band   88
+
+Adding continuum to band   89
+
+Adding continuum to band   90
+
+Adding continuum to band   91
+
+Adding continuum to band   92
+
+Adding continuum to band   93
+
+Adding continuum to band   94
+
+Adding continuum to band   95
+
+Adding continuum to band   96
+
+Adding continuum to band   97
+
+Adding continuum to band   98
+
+Adding continuum to band   99
+
+Adding continuum to band  100
+
+Adding continuum to band  101
+
+Adding continuum to band  102
+
+Adding continuum to band  103
+
+Adding continuum to band  104
+
+Adding continuum to band  105
+
+Adding continuum to band  106
+
+Adding continuum to band  107
+
+Adding continuum to band  108
+
+Adding continuum to band  109
+
+Adding continuum to band  110
+
+Adding continuum to band  111
+
+Adding continuum to band  112
+
+Adding continuum to band  113
+
+Adding continuum to band  114
+
+Adding continuum to band  115
+
+Adding continuum to band  116
+
+Adding continuum to band  117
+
+Adding continuum to band  118
+
+Adding continuum to band  119
+
+Adding continuum to band  120
+
+Adding continuum to band  121
+
+Adding continuum to band  122
+
+Adding continuum to band  123
+
+Adding continuum to band  124
+
+Adding continuum to band  125
+
+Adding continuum to band  126
+
+Adding continuum to band  127
+
+Adding continuum to band  128
+
+Adding continuum to band  129
+
+Adding continuum to band  130
+
+Adding continuum to band  131
+
+Adding continuum to band  132
+
+Adding continuum to band  133
+
+Adding continuum to band  134
+
+Adding continuum to band  135
+
+Adding continuum to band  136
+
+Adding continuum to band  137
+
+Adding continuum to band  138
+
+Adding continuum to band  139
+
+Adding continuum to band  140
+
+Adding continuum to band  141
+
+Adding continuum to band  142
+
+Adding continuum to band  143
+
+Adding continuum to band  144
+
+Adding continuum to band  145
+
+Adding continuum to band  146
+
+Adding continuum to band  147
+
+Adding continuum to band  148
+
+Adding continuum to band  149
+
+Adding continuum to band  150
+
+Adding continuum to band  151
+
+Adding continuum to band  152
+
+Adding continuum to band  153
+
+Adding continuum to band  154
+
+Adding continuum to band  155
+
+Adding continuum to band  156
+
+Adding continuum to band  157
+
+Adding continuum to band  158
+
+Adding continuum to band  159
+
+Adding continuum to band  160
+
+Adding continuum to band  161
+
+Adding continuum to band  162
+
+Adding continuum to band  163
+
+Adding continuum to band  164
+
+Adding continuum to band  165
+
+Adding continuum to band  166
+
+Adding continuum to band  167
+
+Adding continuum to band  168
+
+Adding continuum to band  169
+
+Adding continuum to band  170
+
+Adding continuum to band  171
+
+Adding continuum to band  172
+
+Adding continuum to band  173
+
+Adding continuum to band  174
+
+Adding continuum to band  175
+
+Adding continuum to band  176
+
+Adding continuum to band  177
+
+Adding continuum to band  178
+
+Adding continuum to band  179
+
+Adding continuum to band  180
+
+Adding continuum to band  181
+
+Adding continuum to band  182
+
+Adding continuum to band  183
+
+Adding continuum to band  184
+
+Adding continuum to band  185
+
+Adding continuum to band  186
+
+Adding continuum to band  187
+
+Adding continuum to band  188
+
+Adding continuum to band  189
+
+Adding continuum to band  190
+
+Adding continuum to band  191
+
+Adding continuum to band  192
+
+Adding continuum to band  193
+
+Adding continuum to band  194
+
+Adding continuum to band  195
+
+Adding continuum to band  196
+
+Adding continuum to band  197
+
+Adding continuum to band  198
+
+Adding continuum to band  199
+
+Adding continuum to band  200
+
+Adding continuum to band  201
+
+Adding continuum to band  202
+
+Adding continuum to band  203
+
+Adding continuum to band  204
+
+Adding continuum to band  205
+
+Adding continuum to band  206
+
+Adding continuum to band  207
+
+Adding continuum to band  208
+
+Adding continuum to band  209
+
+Adding continuum to band  210
+
+Adding continuum to band  211
+
+Adding continuum to band  212
+
+Adding continuum to band  213
+
+Adding continuum to band  214
+
+Adding continuum to band  215
+
+Adding continuum to band  216
+
+Adding continuum to band  217
+
+Adding continuum to band  218
+
+Adding continuum to band  219
+
+Adding continuum to band  220
+
+Adding continuum to band  221
+
+Adding continuum to band  222
+
+Adding continuum to band  223
+
+Adding continuum to band  224
+
+Adding continuum to band  225
+
+Adding continuum to band  226
+
+Adding continuum to band  227
+
+Adding continuum to band  228
+
+Adding continuum to band  229
+
+Adding continuum to band  230
+
+Adding continuum to band  231
+
+Adding continuum to band  232
+
+Adding continuum to band  233
+
+Adding continuum to band  234
+
+Adding continuum to band  235
+
+Adding continuum to band  236
+
+Adding continuum to band  237
+
+Adding continuum to band  238
+
+Adding continuum to band  239
+
+Adding continuum to band  240
+
+Adding continuum to band  241
+
+Adding continuum to band  242
+
+Adding continuum to band  243
+
+Adding continuum to band  244
+
+Adding continuum to band  245
+
+Adding continuum to band  246
+
+Adding continuum to band  247
+
+Adding continuum to band  248
+
+Adding continuum to band  249
+
+Adding continuum to band  250
+
+Adding continuum to band  251
+
+Adding continuum to band  252
+
+Adding continuum to band  253
+
+Adding continuum to band  254
+
+Adding continuum to band  255
+
+Adding continuum to band  256
+
+Adding continuum to band  257
+
+Adding continuum to band  258
+
+Adding continuum to band  259
+
+Adding continuum to band  260
+
+Adding continuum to band  261
+
+Adding continuum to band  262
+
+Adding continuum to band  263
+
+Adding continuum to band  264
+
+Adding continuum to band  265
+
+Adding continuum to band  266
+
+Adding continuum to band  267
+
+Adding continuum to band  268
+
+Adding continuum to band  269
+
+Adding continuum to band  270
+
+Adding continuum to band  271
+
+Adding continuum to band  272
+
+Adding continuum to band  273
+
+Adding continuum to band  274
+
+Adding continuum to band  275
+
+Adding continuum to band  276
+
+Adding continuum to band  277
+
+Adding continuum to band  278
+
+Adding continuum to band  279
+
+Adding continuum to band  280
+
+Adding continuum to band  281
+
+Adding continuum to band  282
+
+Adding continuum to band  283
+
+Adding continuum to band  284
+
+Adding continuum to band  285
+
+Adding continuum to band  286
+
+Adding continuum to band  287
+
+Adding continuum to band  288
+
+Adding continuum to band  289
+
+Adding continuum to band  290
+
+Adding continuum to band  291
+
+Adding continuum to band  292
+
+Adding continuum to band  293
+
+Adding continuum to band  294
+
+Adding continuum to band  295
+
+Adding continuum to band  296
+
+Adding continuum to band  297
+
+Adding continuum to band  298
+
+Adding continuum to band  299
+
+Adding continuum to band  300
+
+Adding continuum to band  301
+
+Adding continuum to band  302
+
+Adding continuum to band  303
+
+Adding continuum to band  304
+
+Adding continuum to band  305
+
+Adding continuum to band  306
+
+Adding continuum to band  307
+
+Adding continuum to band  308
+
+Adding continuum to band  309
+
+Adding continuum to band  310
+
+Adding continuum to band  311
+
+Adding continuum to band  312
+
+Adding continuum to band  313
+
+Adding continuum to band  314
+
+Adding continuum to band  315
+
+Adding continuum to band  316
+
+Adding continuum to band  317
+
+Adding continuum to band  318
+
+Adding continuum to band  319
+
+Adding continuum to band  320
+
+Adding continuum to band  321
+
+Adding continuum to band  322
+
+Adding continuum to band  323
+
+Adding continuum to band  324
+
+Adding continuum to band  325
+
+Adding continuum to band  326
+
+Adding continuum to band  327
+
+Adding continuum to band  328
+
+Adding continuum to band  329
+
+Adding continuum to band  330
+
+Adding continuum to band  331
+
+Adding continuum to band  332
+
+Adding continuum to band  333
+
+Adding continuum to band  334
+
+Adding continuum to band  335
+
+Adding continuum to band  336
+
+Adding continuum to band  337
+
+Adding continuum to band  338
+
+Adding continuum to band  339
+
+Adding continuum to band  340
+
+Adding continuum to band  341
+
+Adding continuum to band  342
+
+Adding continuum to band  343
+
+Adding continuum to band  344
+
+Adding continuum to band  345
+
+Adding continuum to band  346
+
+Adding continuum to band  347
+
+Adding continuum to band  348
+
+Adding continuum to band  349
+
+Adding continuum to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    1
+
+Adding continuum to band    2
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Adding continuum to band    7
+
+Adding continuum to band    8
+
+Adding continuum to band    9
+
+Adding continuum to band   10
+
+Adding continuum to band   11
+
+Adding continuum to band   12
+
+Adding continuum to band   13
+
+Adding continuum to band   14
+
+Adding continuum to band   15
+
+Adding continuum to band   16
+
+Adding continuum to band   17
+
+Adding continuum to band   18
+
+Adding continuum to band   19
+
+Adding continuum to band   20
+
+Adding continuum to band   21
+
+Adding continuum to band   22
+
+Adding continuum to band   23
+
+Adding continuum to band   24
+
+Adding continuum to band   25
+
+Adding continuum to band   26
+
+Adding continuum to band   27
+
+Adding continuum to band   28
+
+Adding continuum to band   29
+
+Adding continuum to band   30
+
+Adding continuum to band   31
+
+Adding continuum to band   32
+
+Adding continuum to band   33
+
+Adding continuum to band   34
+
+Adding continuum to band   35
+
+Adding continuum to band   36
+
+Adding continuum to band   37
+
+Adding continuum to band   38
+
+Adding continuum to band   39
+
+Adding continuum to band   40
+
+Adding continuum to band   41
+
+Adding continuum to band   42
+
+Adding continuum to band   43
+
+Adding continuum to band   44
+
+Adding continuum to band   45
+
+Adding continuum to band   46
+
+Adding continuum to band   47
+
+Adding continuum to band   48
+
+Adding continuum to band   49
+
+Adding continuum to band   50
+
+Adding continuum to band   51
+
+Adding continuum to band   52
+
+Adding continuum to band   53
+
+Adding continuum to band   54
+
+Adding continuum to band   55
+
+Adding continuum to band   56
+
+Adding continuum to band   57
+
+Adding continuum to band   58
+
+Adding continuum to band   59
+
+Adding continuum to band   60
+
+Adding continuum to band   61
+
+Adding continuum to band   62
+
+Adding continuum to band   63
+
+Adding continuum to band   64
+
+Adding continuum to band   65
+
+Adding continuum to band   66
+
+Adding continuum to band   67
+
+Adding continuum to band   68
+
+Adding continuum to band   69
+
+Adding continuum to band   70
+
+Adding continuum to band   71
+
+Adding continuum to band   72
+
+Adding continuum to band   73
+
+Adding continuum to band   74
+
+Adding continuum to band   75
+
+Adding continuum to band   76
+
+Adding continuum to band   77
+
+Adding continuum to band   78
+
+Adding continuum to band   79
+
+Adding continuum to band   80
+
+Adding continuum to band   81
+
+Adding continuum to band   82
+
+Adding continuum to band   83
+
+Adding continuum to band   84
+
+Adding continuum to band   85
+
+Adding continuum to band   86
+
+Adding continuum to band   87
+
+Adding continuum to band   88
+
+Adding continuum to band   89
+
+Adding continuum to band   90
+
+Adding continuum to band   91
+
+Adding continuum to band   92
+
+Adding continuum to band   93
+
+Adding continuum to band   94
+
+Adding continuum to band   95
+
+Adding continuum to band   96
+
+Adding continuum to band   97
+
+Adding continuum to band   98
+
+Adding continuum to band   99
+
+Adding continuum to band  100
+
+Adding continuum to band  101
+
+Adding continuum to band  102
+
+Adding continuum to band  103
+
+Adding continuum to band  104
+
+Adding continuum to band  105
+
+Adding continuum to band  106
+
+Adding continuum to band  107
+
+Adding continuum to band  108
+
+Adding continuum to band  109
+
+Adding continuum to band  110
+
+Adding continuum to band  111
+
+Adding continuum to band  112
+
+Adding continuum to band  113
+
+Adding continuum to band  114
+
+Adding continuum to band  115
+
+Adding continuum to band  116
+
+Adding continuum to band  117
+
+Adding continuum to band  118
+
+Adding continuum to band  119
+
+Adding continuum to band  120
+
+Adding continuum to band  121
+
+Adding continuum to band  122
+
+Adding continuum to band  123
+
+Adding continuum to band  124
+
+Adding continuum to band  125
+
+Adding continuum to band  126
+
+Adding continuum to band  127
+
+Adding continuum to band  128
+
+Adding continuum to band  129
+
+Adding continuum to band  130
+
+Adding continuum to band  131
+
+Adding continuum to band  132
+
+Adding continuum to band  133
+
+Adding continuum to band  134
+
+Adding continuum to band  135
+
+Adding continuum to band  136
+
+Adding continuum to band  137
+
+Adding continuum to band  138
+
+Adding continuum to band  139
+
+Adding continuum to band  140
+
+Adding continuum to band  141
+
+Adding continuum to band  142
+
+Adding continuum to band  143
+
+Adding continuum to band  144
+
+Adding continuum to band  145
+
+Adding continuum to band  146
+
+Adding continuum to band  147
+
+Adding continuum to band  148
+
+Adding continuum to band  149
+
+Adding continuum to band  150
+
+Adding continuum to band  151
+
+Adding continuum to band  152
+
+Adding continuum to band  153
+
+Adding continuum to band  154
+
+Adding continuum to band  155
+
+Adding continuum to band  156
+
+Adding continuum to band  157
+
+Adding continuum to band  158
+
+Adding continuum to band  159
+
+Adding continuum to band  160
+
+Adding continuum to band  161
+
+Adding continuum to band  162
+
+Adding continuum to band  163
+
+Adding continuum to band  164
+
+Adding continuum to band  165
+
+Adding continuum to band  166
+
+Adding continuum to band  167
+
+Adding continuum to band  168
+
+Adding continuum to band  169
+
+Adding continuum to band  170
+
+Adding continuum to band  171
+
+Adding continuum to band  172
+
+Adding continuum to band  173
+
+Adding continuum to band  174
+
+Adding continuum to band  175
+
+Adding continuum to band  176
+
+Adding continuum to band  177
+
+Adding continuum to band  178
+
+Adding continuum to band  179
+
+Adding continuum to band  180
+
+Adding continuum to band  181
+
+Adding continuum to band  182
+
+Adding continuum to band  183
+
+Adding continuum to band  184
+
+Adding continuum to band  185
+
+Adding continuum to band  186
+
+Adding continuum to band  187
+
+Adding continuum to band  188
+
+Adding continuum to band  189
+
+Adding continuum to band  190
+
+Adding continuum to band  191
+
+Adding continuum to band  192
+
+Adding continuum to band  193
+
+Adding continuum to band  194
+
+Adding continuum to band  195
+
+Adding continuum to band  196
+
+Adding continuum to band  197
+
+Adding continuum to band  198
+
+Adding continuum to band  199
+
+Adding continuum to band  200
+
+Adding continuum to band  201
+
+Adding continuum to band  202
+
+Adding continuum to band  203
+
+Adding continuum to band  204
+
+Adding continuum to band  205
+
+Adding continuum to band  206
+
+Adding continuum to band  207
+
+Adding continuum to band  208
+
+Adding continuum to band  209
+
+Adding continuum to band  210
+
+Adding continuum to band  211
+
+Adding continuum to band  212
+
+Adding continuum to band  213
+
+Adding continuum to band  214
+
+Adding continuum to band  215
+
+Adding continuum to band  216
+
+Adding continuum to band  217
+
+Adding continuum to band  218
+
+Adding continuum to band  219
+
+Adding continuum to band  220
+
+Adding continuum to band  221
+
+Adding continuum to band  222
+
+Adding continuum to band  223
+
+Adding continuum to band  224
+
+Adding continuum to band  225
+
+Adding continuum to band  226
+
+Adding continuum to band  227
+
+Adding continuum to band  228
+
+Adding continuum to band  229
+
+Adding continuum to band  230
+
+Adding continuum to band  231
+
+Adding continuum to band  232
+
+Adding continuum to band  233
+
+Adding continuum to band  234
+
+Adding continuum to band  235
+
+Adding continuum to band  236
+
+Adding continuum to band  237
+
+Adding continuum to band  238
+
+Adding continuum to band  239
+
+Adding continuum to band  240
+
+Adding continuum to band  241
+
+Adding continuum to band  242
+
+Adding continuum to band  243
+
+Adding continuum to band  244
+
+Adding continuum to band  245
+
+Adding continuum to band  246
+
+Adding continuum to band  247
+
+Adding continuum to band  248
+
+Adding continuum to band  249
+
+Adding continuum to band  250
+
+Adding continuum to band  251
+
+Adding continuum to band  252
+
+Adding continuum to band  253
+
+Adding continuum to band  254
+
+Adding continuum to band  255
+
+Adding continuum to band  256
+
+Adding continuum to band  257
+
+Adding continuum to band  258
+
+Adding continuum to band  259
+
+Adding continuum to band  260
+
+Adding continuum to band  261
+
+Adding continuum to band  262
+
+Adding continuum to band  263
+
+Adding continuum to band  264
+
+Adding continuum to band  265
+
+Adding continuum to band  266
+
+Adding continuum to band  267
+
+Adding continuum to band  268
+
+Adding continuum to band  269
+
+Adding continuum to band  270
+
+Adding continuum to band  271
+
+Adding continuum to band  272
+
+Adding continuum to band  273
+
+Adding continuum to band  274
+
+Adding continuum to band  275
+
+Adding continuum to band  276
+
+Adding continuum to band  277
+
+Adding continuum to band  278
+
+Adding continuum to band  279
+
+Adding continuum to band  280
+
+Adding continuum to band  281
+
+Adding continuum to band  282
+
+Adding continuum to band  283
+
+Adding continuum to band  284
+
+Adding continuum to band  285
+
+Adding continuum to band  286
+
+Adding continuum to band  287
+
+Adding continuum to band  288
+
+Adding continuum to band  289
+
+Adding continuum to band  290
+
+Adding continuum to band  291
+
+Adding continuum to band  292
+
+Adding continuum to band  293
+
+Adding continuum to band  294
+
+Adding continuum to band  295
+
+Adding continuum to band  296
+
+Adding continuum to band  297
+
+Adding continuum to band  298
+
+Adding continuum to band  299
+
+Adding continuum to band  300
+
+Adding continuum to band  301
+
+Adding continuum to band  302
+
+Adding continuum to band  303
+
+Adding continuum to band  304
+
+Adding continuum to band  305
+
+Adding continuum to band  306
+
+Adding continuum to band  307
+
+Adding continuum to band  308
+
+Adding continuum to band  309
+
+Adding continuum to band  310
+
+Adding continuum to band  311
+
+Adding continuum to band  312
+
+Adding continuum to band  313
+
+Adding continuum to band  314
+
+Adding continuum to band  315
+
+Adding continuum to band  316
+
+Adding continuum to band  317
+
+Adding continuum to band  318
+
+Adding continuum to band  319
+
+Adding continuum to band  320
+
+Adding continuum to band  321
+
+Adding continuum to band  322
+
+Adding continuum to band  323
+
+Adding continuum to band  324
+
+Adding continuum to band  325
+
+Adding continuum to band  326
+
+Adding continuum to band  327
+
+Adding continuum to band  328
+
+Adding continuum to band  329
+
+Adding continuum to band  330
+
+Adding continuum to band  331
+
+Adding continuum to band  332
+
+Adding continuum to band  333
+
+Adding continuum to band  334
+
+Adding continuum to band  335
+
+Adding continuum to band  336
+
+Adding continuum to band  337
+
+Adding continuum to band  338
+
+Adding continuum to band  339
+
+Adding continuum to band  340
+
+Adding continuum to band  341
+
+Adding continuum to band  342
+
+Adding continuum to band  343
+
+Adding continuum to band  344
+
+Adding continuum to band  345
+
+Adding continuum to band  346
+
+Adding continuum to band  347
+
+Adding continuum to band  348
+
+Adding continuum to band  349
+
+Adding continuum to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    1
+
+Adding continuum to band    2
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Adding continuum to band    7
+
+Adding continuum to band    8
+
+Adding continuum to band    9
+
+Adding continuum to band   10
+
+Adding continuum to band   11
+
+Adding continuum to band   12
+
+Adding continuum to band   13
+
+Adding continuum to band   14
+
+Adding continuum to band   15
+
+Adding continuum to band   16
+
+Adding continuum to band   17
+
+Adding continuum to band   18
+
+Adding continuum to band   19
+
+Adding continuum to band   20
+
+Adding continuum to band   21
+
+Adding continuum to band   22
+
+Adding continuum to band   23
+
+Adding continuum to band   24
+
+Adding continuum to band   25
+
+Adding continuum to band   26
+
+Adding continuum to band   27
+
+Adding continuum to band   28
+
+Adding continuum to band   29
+
+Adding continuum to band   30
+
+Adding continuum to band   31
+
+Adding continuum to band   32
+
+Adding continuum to band   33
+
+Adding continuum to band   34
+
+Adding continuum to band   35
+
+Adding continuum to band   36
+
+Adding continuum to band   37
+
+Adding continuum to band   38
+
+Adding continuum to band   39
+
+Adding continuum to band   40
+
+Adding continuum to band   41
+
+Adding continuum to band   42
+
+Adding continuum to band   43
+
+Adding continuum to band   44
+
+Adding continuum to band   45
+
+Adding continuum to band   46
+
+Adding continuum to band   47
+
+Adding continuum to band   48
+
+Adding continuum to band   49
+
+Adding continuum to band   50
+
+Adding continuum to band   51
+
+Adding continuum to band   52
+
+Adding continuum to band   53
+
+Adding continuum to band   54
+
+Adding continuum to band   55
+
+Adding continuum to band   56
+
+Adding continuum to band   57
+
+Adding continuum to band   58
+
+Adding continuum to band   59
+
+Adding continuum to band   60
+
+Adding continuum to band   61
+
+Adding continuum to band   62
+
+Adding continuum to band   63
+
+Adding continuum to band   64
+
+Adding continuum to band   65
+
+Adding continuum to band   66
+
+Adding continuum to band   67
+
+Adding continuum to band   68
+
+Adding continuum to band   69
+
+Adding continuum to band   70
+
+Adding continuum to band   71
+
+Adding continuum to band   72
+
+Adding continuum to band   73
+
+Adding continuum to band   74
+
+Adding continuum to band   75
+
+Adding continuum to band   76
+
+Adding continuum to band   77
+
+Adding continuum to band   78
+
+Adding continuum to band   79
+
+Adding continuum to band   80
+
+Adding continuum to band   81
+
+Adding continuum to band   82
+
+Adding continuum to band   83
+
+Adding continuum to band   84
+
+Adding continuum to band   85
+
+Adding continuum to band   86
+
+Adding continuum to band   87
+
+Adding continuum to band   88
+
+Adding continuum to band   89
+
+Adding continuum to band   90
+
+Adding continuum to band   91
+
+Adding continuum to band   92
+
+Adding continuum to band   93
+
+Adding continuum to band   94
+
+Adding continuum to band   95
+
+Adding continuum to band   96
+
+Adding continuum to band   97
+
+Adding continuum to band   98
+
+Adding continuum to band   99
+
+Adding continuum to band  100
+
+Adding continuum to band  101
+
+Adding continuum to band  102
+
+Adding continuum to band  103
+
+Adding continuum to band  104
+
+Adding continuum to band  105
+
+Adding continuum to band  106
+
+Adding continuum to band  107
+
+Adding continuum to band  108
+
+Adding continuum to band  109
+
+Adding continuum to band  110
+
+Adding continuum to band  111
+
+Adding continuum to band  112
+
+Adding continuum to band  113
+
+Adding continuum to band  114
+
+Adding continuum to band  115
+
+Adding continuum to band  116
+
+Adding continuum to band  117
+
+Adding continuum to band  118
+
+Adding continuum to band  119
+
+Adding continuum to band  120
+
+Adding continuum to band  121
+
+Adding continuum to band  122
+
+Adding continuum to band  123
+
+Adding continuum to band  124
+
+Adding continuum to band  125
+
+Adding continuum to band  126
+
+Adding continuum to band  127
+
+Adding continuum to band  128
+
+Adding continuum to band  129
+
+Adding continuum to band  130
+
+Adding continuum to band  131
+
+Adding continuum to band  132
+
+Adding continuum to band  133
+
+Adding continuum to band  134
+
+Adding continuum to band  135
+
+Adding continuum to band  136
+
+Adding continuum to band  137
+
+Adding continuum to band  138
+
+Adding continuum to band  139
+
+Adding continuum to band  140
+
+Adding continuum to band  141
+
+Adding continuum to band  142
+
+Adding continuum to band  143
+
+Adding continuum to band  144
+
+Adding continuum to band  145
+
+Adding continuum to band  146
+
+Adding continuum to band  147
+
+Adding continuum to band  148
+
+Adding continuum to band  149
+
+Adding continuum to band  150
+
+Adding continuum to band  151
+
+Adding continuum to band  152
+
+Adding continuum to band  153
+
+Adding continuum to band  154
+
+Adding continuum to band  155
+
+Adding continuum to band  156
+
+Adding continuum to band  157
+
+Adding continuum to band  158
+
+Adding continuum to band  159
+
+Adding continuum to band  160
+
+Adding continuum to band  161
+
+Adding continuum to band  162
+
+Adding continuum to band  163
+
+Adding continuum to band  164
+
+Adding continuum to band  165
+
+Adding continuum to band  166
+
+Adding continuum to band  167
+
+Adding continuum to band  168
+
+Adding continuum to band  169
+
+Adding continuum to band  170
+
+Adding continuum to band  171
+
+Adding continuum to band  172
+
+Adding continuum to band  173
+
+Adding continuum to band  174
+
+Adding continuum to band  175
+
+Adding continuum to band  176
+
+Adding continuum to band  177
+
+Adding continuum to band  178
+
+Adding continuum to band  179
+
+Adding continuum to band  180
+
+Adding continuum to band  181
+
+Adding continuum to band  182
+
+Adding continuum to band  183
+
+Adding continuum to band  184
+
+Adding continuum to band  185
+
+Adding continuum to band  186
+
+Adding continuum to band  187
+
+Adding continuum to band  188
+
+Adding continuum to band  189
+
+Adding continuum to band  190
+
+Adding continuum to band  191
+
+Adding continuum to band  192
+
+Adding continuum to band  193
+
+Adding continuum to band  194
+
+Adding continuum to band  195
+
+Adding continuum to band  196
+
+Adding continuum to band  197
+
+Adding continuum to band  198
+
+Adding continuum to band  199
+
+Adding continuum to band  200
+
+Adding continuum to band  201
+
+Adding continuum to band  202
+
+Adding continuum to band  203
+
+Adding continuum to band  204
+
+Adding continuum to band  205
+
+Adding continuum to band  206
+
+Adding continuum to band  207
+
+Adding continuum to band  208
+
+Adding continuum to band  209
+
+Adding continuum to band  210
+
+Adding continuum to band  211
+
+Adding continuum to band  212
+
+Adding continuum to band  213
+
+Adding continuum to band  214
+
+Adding continuum to band  215
+
+Adding continuum to band  216
+
+Adding continuum to band  217
+
+Adding continuum to band  218
+
+Adding continuum to band  219
+
+Adding continuum to band  220
+
+Adding continuum to band  221
+
+Adding continuum to band  222
+
+Adding continuum to band  223
+
+Adding continuum to band  224
+
+Adding continuum to band  225
+
+Adding continuum to band  226
+
+Adding continuum to band  227
+
+Adding continuum to band  228
+
+Adding continuum to band  229
+
+Adding continuum to band  230
+
+Adding continuum to band  231
+
+Adding continuum to band  232
+
+Adding continuum to band  233
+
+Adding continuum to band  234
+
+Adding continuum to band  235
+
+Adding continuum to band  236
+
+Adding continuum to band  237
+
+Adding continuum to band  238
+
+Adding continuum to band  239
+
+Adding continuum to band  240
+
+Adding continuum to band  241
+
+Adding continuum to band  242
+
+Adding continuum to band  243
+
+Adding continuum to band  244
+
+Adding continuum to band  245
+
+Adding continuum to band  246
+
+Adding continuum to band  247
+
+Adding continuum to band  248
+
+Adding continuum to band  249
+
+Adding continuum to band  250
+
+Adding continuum to band  251
+
+Adding continuum to band  252
+
+Adding continuum to band  253
+
+Adding continuum to band  254
+
+Adding continuum to band  255
+
+Adding continuum to band  256
+
+Adding continuum to band  257
+
+Adding continuum to band  258
+
+Adding continuum to band  259
+
+Adding continuum to band  260
+
+Adding continuum to band  261
+
+Adding continuum to band  262
+
+Adding continuum to band  263
+
+Adding continuum to band  264
+
+Adding continuum to band  265
+
+Adding continuum to band  266
+
+Adding continuum to band  267
+
+Adding continuum to band  268
+
+Adding continuum to band  269
+
+Adding continuum to band  270
+
+Adding continuum to band  271
+
+Adding continuum to band  272
+
+Adding continuum to band  273
+
+Adding continuum to band  274
+
+Adding continuum to band  275
+
+Adding continuum to band  276
+
+Adding continuum to band  277
+
+Adding continuum to band  278
+
+Adding continuum to band  279
+
+Adding continuum to band  280
+
+Adding continuum to band  281
+
+Adding continuum to band  282
+
+Adding continuum to band  283
+
+Adding continuum to band  284
+
+Adding continuum to band  285
+
+Adding continuum to band  286
+
+Adding continuum to band  287
+
+Adding continuum to band  288
+
+Adding continuum to band  289
+
+Adding continuum to band  290
+
+Adding continuum to band  291
+
+Adding continuum to band  292
+
+Adding continuum to band  293
+
+Adding continuum to band  294
+
+Adding continuum to band  295
+
+Adding continuum to band  296
+
+Adding continuum to band  297
+
+Adding continuum to band  298
+
+Adding continuum to band  299
+
+Adding continuum to band  300
+
+Adding continuum to band  301
+
+Adding continuum to band  302
+
+Adding continuum to band  303
+
+Adding continuum to band  304
+
+Adding continuum to band  305
+
+Adding continuum to band  306
+
+Adding continuum to band  307
+
+Adding continuum to band  308
+
+Adding continuum to band  309
+
+Adding continuum to band  310
+
+Adding continuum to band  311
+
+Adding continuum to band  312
+
+Adding continuum to band  313
+
+Adding continuum to band  314
+
+Adding continuum to band  315
+
+Adding continuum to band  316
+
+Adding continuum to band  317
+
+Adding continuum to band  318
+
+Adding continuum to band  319
+
+Adding continuum to band  320
+
+Adding continuum to band  321
+
+Adding continuum to band  322
+
+Adding continuum to band  323
+
+Adding continuum to band  324
+
+Adding continuum to band  325
+
+Adding continuum to band  326
+
+Adding continuum to band  327
+
+Adding continuum to band  328
+
+Adding continuum to band  329
+
+Adding continuum to band  330
+
+Adding continuum to band  331
+
+Adding continuum to band  332
+
+Adding continuum to band  333
+
+Adding continuum to band  334
+
+Adding continuum to band  335
+
+Adding continuum to band  336
+
+Adding continuum to band  337
+
+Adding continuum to band  338
+
+Adding continuum to band  339
+
+Adding continuum to band  340
+
+Adding continuum to band  341
+
+Adding continuum to band  342
+
+Adding continuum to band  343
+
+Adding continuum to band  344
+
+Adding continuum to band  345
+
+Adding continuum to band  346
+
+Adding continuum to band  347
+
+Adding continuum to band  348
+
+Adding continuum to band  349
+
+Adding continuum to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    1
+
+Adding continuum to band    2
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Adding continuum to band    7
+
+Adding continuum to band    8
+
+Adding continuum to band    9
+
+Adding continuum to band   10
+
+Adding continuum to band   11
+
+Adding continuum to band   12
+
+Adding continuum to band   13
+
+Adding continuum to band   14
+
+Adding continuum to band   15
+
+Adding continuum to band   16
+
+Adding continuum to band   17
+
+Adding continuum to band   18
+
+Adding continuum to band   19
+
+Adding continuum to band   20
+
+Adding continuum to band   21
+
+Adding continuum to band   22
+
+Adding continuum to band   23
+
+Adding continuum to band   24
+
+Adding continuum to band   25
+
+Adding continuum to band   26
+
+Adding continuum to band   27
+
+Adding continuum to band   28
+
+Adding continuum to band   29
+
+Adding continuum to band   30
+
+Adding continuum to band   31
+
+Adding continuum to band   32
+
+Adding continuum to band   33
+
+Adding continuum to band   34
+
+Adding continuum to band   35
+
+Adding continuum to band   36
+
+Adding continuum to band   37
+
+Adding continuum to band   38
+
+Adding continuum to band   39
+
+Adding continuum to band   40
+
+Adding continuum to band   41
+
+Adding continuum to band   42
+
+Adding continuum to band   43
+
+Adding continuum to band   44
+
+Adding continuum to band   45
+
+Adding continuum to band   46
+
+Adding continuum to band   47
+
+Adding continuum to band   48
+
+Adding continuum to band   49
+
+Adding continuum to band   50
+
+Adding continuum to band   51
+
+Adding continuum to band   52
+
+Adding continuum to band   53
+
+Adding continuum to band   54
+
+Adding continuum to band   55
+
+Adding continuum to band   56
+
+Adding continuum to band   57
+
+Adding continuum to band   58
+
+Adding continuum to band   59
+
+Adding continuum to band   60
+
+Adding continuum to band   61
+
+Adding continuum to band   62
+
+Adding continuum to band   63
+
+Adding continuum to band   64
+
+Adding continuum to band   65
+
+Adding continuum to band   66
+
+Adding continuum to band   67
+
+Adding continuum to band   68
+
+Adding continuum to band   69
+
+Adding continuum to band   70
+
+Adding continuum to band   71
+
+Adding continuum to band   72
+
+Adding continuum to band   73
+
+Adding continuum to band   74
+
+Adding continuum to band   75
+
+Adding continuum to band   76
+
+Adding continuum to band   77
+
+Adding continuum to band   78
+
+Adding continuum to band   79
+
+Adding continuum to band   80
+
+Adding continuum to band   81
+
+Adding continuum to band   82
+
+Adding continuum to band   83
+
+Adding continuum to band   84
+
+Adding continuum to band   85
+
+Adding continuum to band   86
+
+Adding continuum to band   87
+
+Adding continuum to band   88
+
+Adding continuum to band   89
+
+Adding continuum to band   90
+
+Adding continuum to band   91
+
+Adding continuum to band   92
+
+Adding continuum to band   93
+
+Adding continuum to band   94
+
+Adding continuum to band   95
+
+Adding continuum to band   96
+
+Adding continuum to band   97
+
+Adding continuum to band   98
+
+Adding continuum to band   99
+
+Adding continuum to band  100
+
+Adding continuum to band  101
+
+Adding continuum to band  102
+
+Adding continuum to band  103
+
+Adding continuum to band  104
+
+Adding continuum to band  105
+
+Adding continuum to band  106
+
+Adding continuum to band  107
+
+Adding continuum to band  108
+
+Adding continuum to band  109
+
+Adding continuum to band  110
+
+Adding continuum to band  111
+
+Adding continuum to band  112
+
+Adding continuum to band  113
+
+Adding continuum to band  114
+
+Adding continuum to band  115
+
+Adding continuum to band  116
+
+Adding continuum to band  117
+
+Adding continuum to band  118
+
+Adding continuum to band  119
+
+Adding continuum to band  120
+
+Adding continuum to band  121
+
+Adding continuum to band  122
+
+Adding continuum to band  123
+
+Adding continuum to band  124
+
+Adding continuum to band  125
+
+Adding continuum to band  126
+
+Adding continuum to band  127
+
+Adding continuum to band  128
+
+Adding continuum to band  129
+
+Adding continuum to band  130
+
+Adding continuum to band  131
+
+Adding continuum to band  132
+
+Adding continuum to band  133
+
+Adding continuum to band  134
+
+Adding continuum to band  135
+
+Adding continuum to band  136
+
+Adding continuum to band  137
+
+Adding continuum to band  138
+
+Adding continuum to band  139
+
+Adding continuum to band  140
+
+Adding continuum to band  141
+
+Adding continuum to band  142
+
+Adding continuum to band  143
+
+Adding continuum to band  144
+
+Adding continuum to band  145
+
+Adding continuum to band  146
+
+Adding continuum to band  147
+
+Adding continuum to band  148
+
+Adding continuum to band  149
+
+Adding continuum to band  150
+
+Adding continuum to band  151
+
+Adding continuum to band  152
+
+Adding continuum to band  153
+
+Adding continuum to band  154
+
+Adding continuum to band  155
+
+Adding continuum to band  156
+
+Adding continuum to band  157
+
+Adding continuum to band  158
+
+Adding continuum to band  159
+
+Adding continuum to band  160
+
+Adding continuum to band  161
+
+Adding continuum to band  162
+
+Adding continuum to band  163
+
+Adding continuum to band  164
+
+Adding continuum to band  165
+
+Adding continuum to band  166
+
+Adding continuum to band  167
+
+Adding continuum to band  168
+
+Adding continuum to band  169
+
+Adding continuum to band  170
+
+Adding continuum to band  171
+
+Adding continuum to band  172
+
+Adding continuum to band  173
+
+Adding continuum to band  174
+
+Adding continuum to band  175
+
+Adding continuum to band  176
+
+Adding continuum to band  177
+
+Adding continuum to band  178
+
+Adding continuum to band  179
+
+Adding continuum to band  180
+
+Adding continuum to band  181
+
+Adding continuum to band  182
+
+Adding continuum to band  183
+
+Adding continuum to band  184
+
+Adding continuum to band  185
+
+Adding continuum to band  186
+
+Adding continuum to band  187
+
+Adding continuum to band  188
+
+Adding continuum to band  189
+
+Adding continuum to band  190
+
+Adding continuum to band  191
+
+Adding continuum to band  192
+
+Adding continuum to band  193
+
+Adding continuum to band  194
+
+Adding continuum to band  195
+
+Adding continuum to band  196
+
+Adding continuum to band  197
+
+Adding continuum to band  198
+
+Adding continuum to band  199
+
+Adding continuum to band  200
+
+Adding continuum to band  201
+
+Adding continuum to band  202
+
+Adding continuum to band  203
+
+Adding continuum to band  204
+
+Adding continuum to band  205
+
+Adding continuum to band  206
+
+Adding continuum to band  207
+
+Adding continuum to band  208
+
+Adding continuum to band  209
+
+Adding continuum to band  210
+
+Adding continuum to band  211
+
+Adding continuum to band  212
+
+Adding continuum to band  213
+
+Adding continuum to band  214
+
+Adding continuum to band  215
+
+Adding continuum to band  216
+
+Adding continuum to band  217
+
+Adding continuum to band  218
+
+Adding continuum to band  219
+
+Adding continuum to band  220
+
+Adding continuum to band  221
+
+Adding continuum to band  222
+
+Adding continuum to band  223
+
+Adding continuum to band  224
+
+Adding continuum to band  225
+
+Adding continuum to band  226
+
+Adding continuum to band  227
+
+Adding continuum to band  228
+
+Adding continuum to band  229
+
+Adding continuum to band  230
+
+Adding continuum to band  231
+
+Adding continuum to band  232
+
+Adding continuum to band  233
+
+Adding continuum to band  234
+
+Adding continuum to band  235
+
+Adding continuum to band  236
+
+Adding continuum to band  237
+
+Adding continuum to band  238
+
+Adding continuum to band  239
+
+Adding continuum to band  240
+
+Adding continuum to band  241
+
+Adding continuum to band  242
+
+Adding continuum to band  243
+
+Adding continuum to band  244
+
+Adding continuum to band  245
+
+Adding continuum to band  246
+
+Adding continuum to band  247
+
+Adding continuum to band  248
+
+Adding continuum to band  249
+
+Adding continuum to band  250
+
+Adding continuum to band  251
+
+Adding continuum to band  252
+
+Adding continuum to band  253
+
+Adding continuum to band  254
+
+Adding continuum to band  255
+
+Adding continuum to band  256
+
+Adding continuum to band  257
+
+Adding continuum to band  258
+
+Adding continuum to band  259
+
+Adding continuum to band  260
+
+Adding continuum to band  261
+
+Adding continuum to band  262
+
+Adding continuum to band  263
+
+Adding continuum to band  264
+
+Adding continuum to band  265
+
+Adding continuum to band  266
+
+Adding continuum to band  267
+
+Adding continuum to band  268
+
+Adding continuum to band  269
+
+Adding continuum to band  270
+
+Adding continuum to band  271
+
+Adding continuum to band  272
+
+Adding continuum to band  273
+
+Adding continuum to band  274
+
+Adding continuum to band  275
+
+Adding continuum to band  276
+
+Adding continuum to band  277
+
+Adding continuum to band  278
+
+Adding continuum to band  279
+
+Adding continuum to band  280
+
+Adding continuum to band  281
+
+Adding continuum to band  282
+
+Adding continuum to band  283
+
+Adding continuum to band  284
+
+Adding continuum to band  285
+
+Adding continuum to band  286
+
+Adding continuum to band  287
+
+Adding continuum to band  288
+
+Adding continuum to band  289
+
+Adding continuum to band  290
+
+Adding continuum to band  291
+
+Adding continuum to band  292
+
+Adding continuum to band  293
+
+Adding continuum to band  294
+
+Adding continuum to band  295
+
+Adding continuum to band  296
+
+Adding continuum to band  297
+
+Adding continuum to band  298
+
+Adding continuum to band  299
+
+Adding continuum to band  300
+
+Adding continuum to band  301
+
+Adding continuum to band  302
+
+Adding continuum to band  303
+
+Adding continuum to band  304
+
+Adding continuum to band  305
+
+Adding continuum to band  306
+
+Adding continuum to band  307
+
+Adding continuum to band  308
+
+Adding continuum to band  309
+
+Adding continuum to band  310
+
+Adding continuum to band  311
+
+Adding continuum to band  312
+
+Adding continuum to band  313
+
+Adding continuum to band  314
+
+Adding continuum to band  315
+
+Adding continuum to band  316
+
+Adding continuum to band  317
+
+Adding continuum to band  318
+
+Adding continuum to band  319
+
+Adding continuum to band  320
+
+Adding continuum to band  321
+
+Adding continuum to band  322
+
+Adding continuum to band  323
+
+Adding continuum to band  324
+
+Adding continuum to band  325
+
+Adding continuum to band  326
+
+Adding continuum to band  327
+
+Adding continuum to band  328
+
+Adding continuum to band  329
+
+Adding continuum to band  330
+
+Adding continuum to band  331
+
+Adding continuum to band  332
+
+Adding continuum to band  333
+
+Adding continuum to band  334
+
+Adding continuum to band  335
+
+Adding continuum to band  336
+
+Adding continuum to band  337
+
+Adding continuum to band  338
+
+Adding continuum to band  339
+
+Adding continuum to band  340
+
+Adding continuum to band  341
+
+Adding continuum to band  342
+
+Adding continuum to band  343
+
+Adding continuum to band  344
+
+Adding continuum to band  345
+
+Adding continuum to band  346
+
+Adding continuum to band  347
+
+Adding continuum to band  348
+
+Adding continuum to band  349
+
+Adding continuum to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    1
+
+Adding continuum to band    2
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Adding continuum to band    7
+
+Adding continuum to band    8
+
+Adding continuum to band    9
+
+Adding continuum to band   10
+
+Adding continuum to band   11
+
+Adding continuum to band   12
+
+Adding continuum to band   13
+
+Adding continuum to band   14
+
+Adding continuum to band   15
+
+Adding continuum to band   16
+
+Adding continuum to band   17
+
+Adding continuum to band   18
+
+Adding continuum to band   19
+
+Adding continuum to band   20
+
+Adding continuum to band   21
+
+Adding continuum to band   22
+
+Adding continuum to band   23
+
+Adding continuum to band   24
+
+Adding continuum to band   25
+
+Adding continuum to band   26
+
+Adding continuum to band   27
+
+Adding continuum to band   28
+
+Adding continuum to band   29
+
+Adding continuum to band   30
+
+Adding continuum to band   31
+
+Adding continuum to band   32
+
+Adding continuum to band   33
+
+Adding continuum to band   34
+
+Adding continuum to band   35
+
+Adding continuum to band   36
+
+Adding continuum to band   37
+
+Adding continuum to band   38
+
+Adding continuum to band   39
+
+Adding continuum to band   40
+
+Adding continuum to band   41
+
+Adding continuum to band   42
+
+Adding continuum to band   43
+
+Adding continuum to band   44
+
+Adding continuum to band   45
+
+Adding continuum to band   46
+
+Adding continuum to band   47
+
+Adding continuum to band   48
+
+Adding continuum to band   49
+
+Adding continuum to band   50
+
+Adding continuum to band   51
+
+Adding continuum to band   52
+
+Adding continuum to band   53
+
+Adding continuum to band   54
+
+Adding continuum to band   55
+
+Adding continuum to band   56
+
+Adding continuum to band   57
+
+Adding continuum to band   58
+
+Adding continuum to band   59
+
+Adding continuum to band   60
+
+Adding continuum to band   61
+
+Adding continuum to band   62
+
+Adding continuum to band   63
+
+Adding continuum to band   64
+
+Adding continuum to band   65
+
+Adding continuum to band   66
+
+Adding continuum to band   67
+
+Adding continuum to band   68
+
+Adding continuum to band   69
+
+Adding continuum to band   70
+
+Adding continuum to band   71
+
+Adding continuum to band   72
+
+Adding continuum to band   73
+
+Adding continuum to band   74
+
+Adding continuum to band   75
+
+Adding continuum to band   76
+
+Adding continuum to band   77
+
+Adding continuum to band   78
+
+Adding continuum to band   79
+
+Adding continuum to band   80
+
+Adding continuum to band   81
+
+Adding continuum to band   82
+
+Adding continuum to band   83
+
+Adding continuum to band   84
+
+Adding continuum to band   85
+
+Adding continuum to band   86
+
+Adding continuum to band   87
+
+Adding continuum to band   88
+
+Adding continuum to band   89
+
+Adding continuum to band   90
+
+Adding continuum to band   91
+
+Adding continuum to band   92
+
+Adding continuum to band   93
+
+Adding continuum to band   94
+
+Adding continuum to band   95
+
+Adding continuum to band   96
+
+Adding continuum to band   97
+
+Adding continuum to band   98
+
+Adding continuum to band   99
+
+Adding continuum to band  100
+
+Adding continuum to band  101
+
+Adding continuum to band  102
+
+Adding continuum to band  103
+
+Adding continuum to band  104
+
+Adding continuum to band  105
+
+Adding continuum to band  106
+
+Adding continuum to band  107
+
+Adding continuum to band  108
+
+Adding continuum to band  109
+
+Adding continuum to band  110
+
+Adding continuum to band  111
+
+Adding continuum to band  112
+
+Adding continuum to band  113
+
+Adding continuum to band  114
+
+Adding continuum to band  115
+
+Adding continuum to band  116
+
+Adding continuum to band  117
+
+Adding continuum to band  118
+
+Adding continuum to band  119
+
+Adding continuum to band  120
+
+Adding continuum to band  121
+
+Adding continuum to band  122
+
+Adding continuum to band  123
+
+Adding continuum to band  124
+
+Adding continuum to band  125
+
+Adding continuum to band  126
+
+Adding continuum to band  127
+
+Adding continuum to band  128
+
+Adding continuum to band  129
+
+Adding continuum to band  130
+
+Adding continuum to band  131
+
+Adding continuum to band  132
+
+Adding continuum to band  133
+
+Adding continuum to band  134
+
+Adding continuum to band  135
+
+Adding continuum to band  136
+
+Adding continuum to band  137
+
+Adding continuum to band  138
+
+Adding continuum to band  139
+
+Adding continuum to band  140
+
+Adding continuum to band  141
+
+Adding continuum to band  142
+
+Adding continuum to band  143
+
+Adding continuum to band  144
+
+Adding continuum to band  145
+
+Adding continuum to band  146
+
+Adding continuum to band  147
+
+Adding continuum to band  148
+
+Adding continuum to band  149
+
+Adding continuum to band  150
+
+Adding continuum to band  151
+
+Adding continuum to band  152
+
+Adding continuum to band  153
+
+Adding continuum to band  154
+
+Adding continuum to band  155
+
+Adding continuum to band  156
+
+Adding continuum to band  157
+
+Adding continuum to band  158
+
+Adding continuum to band  159
+
+Adding continuum to band  160
+
+Adding continuum to band  161
+
+Adding continuum to band  162
+
+Adding continuum to band  163
+
+Adding continuum to band  164
+
+Adding continuum to band  165
+
+Adding continuum to band  166
+
+Adding continuum to band  167
+
+Adding continuum to band  168
+
+Adding continuum to band  169
+
+Adding continuum to band  170
+
+Adding continuum to band  171
+
+Adding continuum to band  172
+
+Adding continuum to band  173
+
+Adding continuum to band  174
+
+Adding continuum to band  175
+
+Adding continuum to band  176
+
+Adding continuum to band  177
+
+Adding continuum to band  178
+
+Adding continuum to band  179
+
+Adding continuum to band  180
+
+Adding continuum to band  181
+
+Adding continuum to band  182
+
+Adding continuum to band  183
+
+Adding continuum to band  184
+
+Adding continuum to band  185
+
+Adding continuum to band  186
+
+Adding continuum to band  187
+
+Adding continuum to band  188
+
+Adding continuum to band  189
+
+Adding continuum to band  190
+
+Adding continuum to band  191
+
+Adding continuum to band  192
+
+Adding continuum to band  193
+
+Adding continuum to band  194
+
+Adding continuum to band  195
+
+Adding continuum to band  196
+
+Adding continuum to band  197
+
+Adding continuum to band  198
+
+Adding continuum to band  199
+
+Adding continuum to band  200
+
+Adding continuum to band  201
+
+Adding continuum to band  202
+
+Adding continuum to band  203
+
+Adding continuum to band  204
+
+Adding continuum to band  205
+
+Adding continuum to band  206
+
+Adding continuum to band  207
+
+Adding continuum to band  208
+
+Adding continuum to band  209
+
+Adding continuum to band  210
+
+Adding continuum to band  211
+
+Adding continuum to band  212
+
+Adding continuum to band  213
+
+Adding continuum to band  214
+
+Adding continuum to band  215
+
+Adding continuum to band  216
+
+Adding continuum to band  217
+
+Adding continuum to band  218
+
+Adding continuum to band  219
+
+Adding continuum to band  220
+
+Adding continuum to band  221
+
+Adding continuum to band  222
+
+Adding continuum to band  223
+
+Adding continuum to band  224
+
+Adding continuum to band  225
+
+Adding continuum to band  226
+
+Adding continuum to band  227
+
+Adding continuum to band  228
+
+Adding continuum to band  229
+
+Adding continuum to band  230
+
+Adding continuum to band  231
+
+Adding continuum to band  232
+
+Adding continuum to band  233
+
+Adding continuum to band  234
+
+Adding continuum to band  235
+
+Adding continuum to band  236
+
+Adding continuum to band  237
+
+Adding continuum to band  238
+
+Adding continuum to band  239
+
+Adding continuum to band  240
+
+Adding continuum to band  241
+
+Adding continuum to band  242
+
+Adding continuum to band  243
+
+Adding continuum to band  244
+
+Adding continuum to band  245
+
+Adding continuum to band  246
+
+Adding continuum to band  247
+
+Adding continuum to band  248
+
+Adding continuum to band  249
+
+Adding continuum to band  250
+
+Adding continuum to band  251
+
+Adding continuum to band  252
+
+Adding continuum to band  253
+
+Adding continuum to band  254
+
+Adding continuum to band  255
+
+Adding continuum to band  256
+
+Adding continuum to band  257
+
+Adding continuum to band  258
+
+Adding continuum to band  259
+
+Adding continuum to band  260
+
+Adding continuum to band  261
+
+Adding continuum to band  262
+
+Adding continuum to band  263
+
+Adding continuum to band  264
+
+Adding continuum to band  265
+
+Adding continuum to band  266
+
+Adding continuum to band  267
+
+Adding continuum to band  268
+
+Adding continuum to band  269
+
+Adding continuum to band  270
+
+Adding continuum to band  271
+
+Adding continuum to band  272
+
+Adding continuum to band  273
+
+Adding continuum to band  274
+
+Adding continuum to band  275
+
+Adding continuum to band  276
+
+Adding continuum to band  277
+
+Adding continuum to band  278
+
+Adding continuum to band  279
+
+Adding continuum to band  280
+
+Adding continuum to band  281
+
+Adding continuum to band  282
+
+Adding continuum to band  283
+
+Adding continuum to band  284
+
+Adding continuum to band  285
+
+Adding continuum to band  286
+
+Adding continuum to band  287
+
+Adding continuum to band  288
+
+Adding continuum to band  289
+
+Adding continuum to band  290
+
+Adding continuum to band  291
+
+Adding continuum to band  292
+
+Adding continuum to band  293
+
+Adding continuum to band  294
+
+Adding continuum to band  295
+
+Adding continuum to band  296
+
+Adding continuum to band  297
+
+Adding continuum to band  298
+
+Adding continuum to band  299
+
+Adding continuum to band  300
+
+Adding continuum to band  301
+
+Adding continuum to band  302
+
+Adding continuum to band  303
+
+Adding continuum to band  304
+
+Adding continuum to band  305
+
+Adding continuum to band  306
+
+Adding continuum to band  307
+
+Adding continuum to band  308
+
+Adding continuum to band  309
+
+Adding continuum to band  310
+
+Adding continuum to band  311
+
+Adding continuum to band  312
+
+Adding continuum to band  313
+
+Adding continuum to band  314
+
+Adding continuum to band  315
+
+Adding continuum to band  316
+
+Adding continuum to band  317
+
+Adding continuum to band  318
+
+Adding continuum to band  319
+
+Adding continuum to band  320
+
+Adding continuum to band  321
+
+Adding continuum to band  322
+
+Adding continuum to band  323
+
+Adding continuum to band  324
+
+Adding continuum to band  325
+
+Adding continuum to band  326
+
+Adding continuum to band  327
+
+Adding continuum to band  328
+
+Adding continuum to band  329
+
+Adding continuum to band  330
+
+Adding continuum to band  331
+
+Adding continuum to band  332
+
+Adding continuum to band  333
+
+Adding continuum to band  334
+
+Adding continuum to band  335
+
+Adding continuum to band  336
+
+Adding continuum to band  337
+
+Adding continuum to band  338
+
+Adding continuum to band  339
+
+Adding continuum to band  340
+
+Adding continuum to band  341
+
+Adding continuum to band  342
+
+Adding continuum to band  343
+
+Adding continuum to band  344
+
+Adding continuum to band  345
+
+Adding continuum to band  346
+
+Adding continuum to band  347
+
+Adding continuum to band  348
+
+Adding continuum to band  349
+
+Adding continuum to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+This block already exists
+Continue ? (y/n)
+
+
+enter the name of the file of continuum esft data.
+
+Adding continuum to band    1
+
+Adding continuum to band    2
+
+Adding continuum to band    3
+
+Adding continuum to band    4
+
+Adding continuum to band    5
+
+Adding continuum to band    6
+
+Adding continuum to band    7
+
+Adding continuum to band    8
+
+Adding continuum to band    9
+
+Adding continuum to band   10
+
+Adding continuum to band   11
+
+Adding continuum to band   12
+
+Adding continuum to band   13
+
+Adding continuum to band   14
+
+Adding continuum to band   15
+
+Adding continuum to band   16
+
+Adding continuum to band   17
+
+Adding continuum to band   18
+
+Adding continuum to band   19
+
+Adding continuum to band   20
+
+Adding continuum to band   21
+
+Adding continuum to band   22
+
+Adding continuum to band   23
+
+Adding continuum to band   24
+
+Adding continuum to band   25
+
+Adding continuum to band   26
+
+Adding continuum to band   27
+
+Adding continuum to band   28
+
+Adding continuum to band   29
+
+Adding continuum to band   30
+
+Adding continuum to band   31
+
+Adding continuum to band   32
+
+Adding continuum to band   33
+
+Adding continuum to band   34
+
+Adding continuum to band   35
+
+Adding continuum to band   36
+
+Adding continuum to band   37
+
+Adding continuum to band   38
+
+Adding continuum to band   39
+
+Adding continuum to band   40
+
+Adding continuum to band   41
+
+Adding continuum to band   42
+
+Adding continuum to band   43
+
+Adding continuum to band   44
+
+Adding continuum to band   45
+
+Adding continuum to band   46
+
+Adding continuum to band   47
+
+Adding continuum to band   48
+
+Adding continuum to band   49
+
+Adding continuum to band   50
+
+Adding continuum to band   51
+
+Adding continuum to band   52
+
+Adding continuum to band   53
+
+Adding continuum to band   54
+
+Adding continuum to band   55
+
+Adding continuum to band   56
+
+Adding continuum to band   57
+
+Adding continuum to band   58
+
+Adding continuum to band   59
+
+Adding continuum to band   60
+
+Adding continuum to band   61
+
+Adding continuum to band   62
+
+Adding continuum to band   63
+
+Adding continuum to band   64
+
+Adding continuum to band   65
+
+Adding continuum to band   66
+
+Adding continuum to band   67
+
+Adding continuum to band   68
+
+Adding continuum to band   69
+
+Adding continuum to band   70
+
+Adding continuum to band   71
+
+Adding continuum to band   72
+
+Adding continuum to band   73
+
+Adding continuum to band   74
+
+Adding continuum to band   75
+
+Adding continuum to band   76
+
+Adding continuum to band   77
+
+Adding continuum to band   78
+
+Adding continuum to band   79
+
+Adding continuum to band   80
+
+Adding continuum to band   81
+
+Adding continuum to band   82
+
+Adding continuum to band   83
+
+Adding continuum to band   84
+
+Adding continuum to band   85
+
+Adding continuum to band   86
+
+Adding continuum to band   87
+
+Adding continuum to band   88
+
+Adding continuum to band   89
+
+Adding continuum to band   90
+
+Adding continuum to band   91
+
+Adding continuum to band   92
+
+Adding continuum to band   93
+
+Adding continuum to band   94
+
+Adding continuum to band   95
+
+Adding continuum to band   96
+
+Adding continuum to band   97
+
+Adding continuum to band   98
+
+Adding continuum to band   99
+
+Adding continuum to band  100
+
+Adding continuum to band  101
+
+Adding continuum to band  102
+
+Adding continuum to band  103
+
+Adding continuum to band  104
+
+Adding continuum to band  105
+
+Adding continuum to band  106
+
+Adding continuum to band  107
+
+Adding continuum to band  108
+
+Adding continuum to band  109
+
+Adding continuum to band  110
+
+Adding continuum to band  111
+
+Adding continuum to band  112
+
+Adding continuum to band  113
+
+Adding continuum to band  114
+
+Adding continuum to band  115
+
+Adding continuum to band  116
+
+Adding continuum to band  117
+
+Adding continuum to band  118
+
+Adding continuum to band  119
+
+Adding continuum to band  120
+
+Adding continuum to band  121
+
+Adding continuum to band  122
+
+Adding continuum to band  123
+
+Adding continuum to band  124
+
+Adding continuum to band  125
+
+Adding continuum to band  126
+
+Adding continuum to band  127
+
+Adding continuum to band  128
+
+Adding continuum to band  129
+
+Adding continuum to band  130
+
+Adding continuum to band  131
+
+Adding continuum to band  132
+
+Adding continuum to band  133
+
+Adding continuum to band  134
+
+Adding continuum to band  135
+
+Adding continuum to band  136
+
+Adding continuum to band  137
+
+Adding continuum to band  138
+
+Adding continuum to band  139
+
+Adding continuum to band  140
+
+Adding continuum to band  141
+
+Adding continuum to band  142
+
+Adding continuum to band  143
+
+Adding continuum to band  144
+
+Adding continuum to band  145
+
+Adding continuum to band  146
+
+Adding continuum to band  147
+
+Adding continuum to band  148
+
+Adding continuum to band  149
+
+Adding continuum to band  150
+
+Adding continuum to band  151
+
+Adding continuum to band  152
+
+Adding continuum to band  153
+
+Adding continuum to band  154
+
+Adding continuum to band  155
+
+Adding continuum to band  156
+
+Adding continuum to band  157
+
+Adding continuum to band  158
+
+Adding continuum to band  159
+
+Adding continuum to band  160
+
+Adding continuum to band  161
+
+Adding continuum to band  162
+
+Adding continuum to band  163
+
+Adding continuum to band  164
+
+Adding continuum to band  165
+
+Adding continuum to band  166
+
+Adding continuum to band  167
+
+Adding continuum to band  168
+
+Adding continuum to band  169
+
+Adding continuum to band  170
+
+Adding continuum to band  171
+
+Adding continuum to band  172
+
+Adding continuum to band  173
+
+Adding continuum to band  174
+
+Adding continuum to band  175
+
+Adding continuum to band  176
+
+Adding continuum to band  177
+
+Adding continuum to band  178
+
+Adding continuum to band  179
+
+Adding continuum to band  180
+
+Adding continuum to band  181
+
+Adding continuum to band  182
+
+Adding continuum to band  183
+
+Adding continuum to band  184
+
+Adding continuum to band  185
+
+Adding continuum to band  186
+
+Adding continuum to band  187
+
+Adding continuum to band  188
+
+Adding continuum to band  189
+
+Adding continuum to band  190
+
+Adding continuum to band  191
+
+Adding continuum to band  192
+
+Adding continuum to band  193
+
+Adding continuum to band  194
+
+Adding continuum to band  195
+
+Adding continuum to band  196
+
+Adding continuum to band  197
+
+Adding continuum to band  198
+
+Adding continuum to band  199
+
+Adding continuum to band  200
+
+Adding continuum to band  201
+
+Adding continuum to band  202
+
+Adding continuum to band  203
+
+Adding continuum to band  204
+
+Adding continuum to band  205
+
+Adding continuum to band  206
+
+Adding continuum to band  207
+
+Adding continuum to band  208
+
+Adding continuum to band  209
+
+Adding continuum to band  210
+
+Adding continuum to band  211
+
+Adding continuum to band  212
+
+Adding continuum to band  213
+
+Adding continuum to band  214
+
+Adding continuum to band  215
+
+Adding continuum to band  216
+
+Adding continuum to band  217
+
+Adding continuum to band  218
+
+Adding continuum to band  219
+
+Adding continuum to band  220
+
+Adding continuum to band  221
+
+Adding continuum to band  222
+
+Adding continuum to band  223
+
+Adding continuum to band  224
+
+Adding continuum to band  225
+
+Adding continuum to band  226
+
+Adding continuum to band  227
+
+Adding continuum to band  228
+
+Adding continuum to band  229
+
+Adding continuum to band  230
+
+Adding continuum to band  231
+
+Adding continuum to band  232
+
+Adding continuum to band  233
+
+Adding continuum to band  234
+
+Adding continuum to band  235
+
+Adding continuum to band  236
+
+Adding continuum to band  237
+
+Adding continuum to band  238
+
+Adding continuum to band  239
+
+Adding continuum to band  240
+
+Adding continuum to band  241
+
+Adding continuum to band  242
+
+Adding continuum to band  243
+
+Adding continuum to band  244
+
+Adding continuum to band  245
+
+Adding continuum to band  246
+
+Adding continuum to band  247
+
+Adding continuum to band  248
+
+Adding continuum to band  249
+
+Adding continuum to band  250
+
+Adding continuum to band  251
+
+Adding continuum to band  252
+
+Adding continuum to band  253
+
+Adding continuum to band  254
+
+Adding continuum to band  255
+
+Adding continuum to band  256
+
+Adding continuum to band  257
+
+Adding continuum to band  258
+
+Adding continuum to band  259
+
+Adding continuum to band  260
+
+Adding continuum to band  261
+
+Adding continuum to band  262
+
+Adding continuum to band  263
+
+Adding continuum to band  264
+
+Adding continuum to band  265
+
+Adding continuum to band  266
+
+Adding continuum to band  267
+
+Adding continuum to band  268
+
+Adding continuum to band  269
+
+Adding continuum to band  270
+
+Adding continuum to band  271
+
+Adding continuum to band  272
+
+Adding continuum to band  273
+
+Adding continuum to band  274
+
+Adding continuum to band  275
+
+Adding continuum to band  276
+
+Adding continuum to band  277
+
+Adding continuum to band  278
+
+Adding continuum to band  279
+
+Adding continuum to band  280
+
+Adding continuum to band  281
+
+Adding continuum to band  282
+
+Adding continuum to band  283
+
+Adding continuum to band  284
+
+Adding continuum to band  285
+
+Adding continuum to band  286
+
+Adding continuum to band  287
+
+Adding continuum to band  288
+
+Adding continuum to band  289
+
+Adding continuum to band  290
+
+Adding continuum to band  291
+
+Adding continuum to band  292
+
+Adding continuum to band  293
+
+Adding continuum to band  294
+
+Adding continuum to band  295
+
+Adding continuum to band  296
+
+Adding continuum to band  297
+
+Adding continuum to band  298
+
+Adding continuum to band  299
+
+Adding continuum to band  300
+
+Adding continuum to band  301
+
+Adding continuum to band  302
+
+Adding continuum to band  303
+
+Adding continuum to band  304
+
+Adding continuum to band  305
+
+Adding continuum to band  306
+
+Adding continuum to band  307
+
+Adding continuum to band  308
+
+Adding continuum to band  309
+
+Adding continuum to band  310
+
+Adding continuum to band  311
+
+Adding continuum to band  312
+
+Adding continuum to band  313
+
+Adding continuum to band  314
+
+Adding continuum to band  315
+
+Adding continuum to band  316
+
+Adding continuum to band  317
+
+Adding continuum to band  318
+
+Adding continuum to band  319
+
+Adding continuum to band  320
+
+Adding continuum to band  321
+
+Adding continuum to band  322
+
+Adding continuum to band  323
+
+Adding continuum to band  324
+
+Adding continuum to band  325
+
+Adding continuum to band  326
+
+Adding continuum to band  327
+
+Adding continuum to band  328
+
+Adding continuum to band  329
+
+Adding continuum to band  330
+
+Adding continuum to band  331
+
+Adding continuum to band  332
+
+Adding continuum to band  333
+
+Adding continuum to band  334
+
+Adding continuum to band  335
+
+Adding continuum to band  336
+
+Adding continuum to band  337
+
+Adding continuum to band  338
+
+Adding continuum to band  339
+
+Adding continuum to band  340
+
+Adding continuum to band  341
+
+Adding continuum to band  342
+
+Adding continuum to band  343
+
+Adding continuum to band  344
+
+Adding continuum to band  345
+
+Adding continuum to band  346
+
+Adding continuum to band  347
+
+Adding continuum to band  348
+
+Adding continuum to band  349
+
+Adding continuum to band  350
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+Is a filter function required (Y/N)?
+
+Should a Table or Polynomial fit be used for the band-integrated Planck function (T/P)?
+
+enter the range of temperatures over which the table/fit is required.
+
+enter the number of temperature points for the table.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+Enter the name of the spectral file.
+Type "a" to append data to the existing file;
+  or "n" to create a new file.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+enter the number for the type of droplets for which data are to be provided.
+
+Enter the name of the file containing the fitted parameters for the droplets.
+
+Enter the range of validity of the parametrization.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+
+Enter the number for the type of ice crystals for which data are to be provided.
+
+Enter the name of the file containing the fitted parameters for ice crystals.
+
+Enter the range of validity of the parametrization.
+
+Select from the following types of data:
+      2.   Block 2: Solar spectrum in each band.
+      3.   Block 3: Rayleigh scattering in each band.
+      5.   Block 5: k-terms and p, T scaling data.
+      6.   Block 6: Thermal source function in each band.
+      9.   Block 9: Continuum extinction and scaling data.
+      10.  Block 10: Droplet parameters in each band.
+      11.  Block 11: Aerosol parameters in each band.
+      12.  Block 12: Ice crystal parameters in each band.
+      17.  Block 17: Spectral variability data in sub-bands.
+      19.  Block 19: Continuum k-terms and T scaling data.
+      -1.  To write spectral file and exit.
+      -2.  To quit without writing spectral file.
+
+
+Enter the name of the spectral file.
+
+Type
+      "o" to overwrite the existing file;
+      "n" to create a new file;
+      "q" to quit.
+
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+
+Enter the overlap treatment for generalised continua.
+Enter 0 to use the overlapping gaseous absorption treatment,
+or the type index of the gas for which the continuum is perfectly correlated.
+The type index of the continuum gases are given in parentheses after gas name.
+    Overlap treatment for Water Vapour (  1) -- Water Vapour (  1) continuum
+    Overlap treatment for Nitrogen ( 13) -- Methane (  6) continuum
+    Overlap treatment for Nitrogen ( 13) -- Nitrogen ( 13) continuum
+    Overlap treatment for Nitrogen ( 13) -- Hydrogen ( 23) continuum
+    Overlap treatment for Hydrogen ( 23) -- Carbon Dioxide (  2) continuum
+    Overlap treatment for Hydrogen ( 23) -- Methane (  6) continuum
+    Overlap treatment for Hydrogen ( 23) -- Hydrogen ( 23) continuum
+
+specify next process.
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+
+
+For each absorber enter the amounts of the gas to test for
+neglecting the gas in a band.
+    Column amount for Water Vapour        
+    Column amount for Carbon Dioxide      
+    Column amount for Methane             
+    Column amount for Nitrogen            
+    Column amount for Hydrogen            
+    Column amount for Water Vapour -- Water Vapour continuum
+    Column amount for Nitrogen -- Methane continuum
+    Column amount for Nitrogen -- Nitrogen continuum
+    Column amount for Nitrogen -- Hydrogen continuum
+    Column amount for Hydrogen -- Carbon Dioxide continuum
+    Column amount for Hydrogen -- Methane continuum
+    Column amount for Hydrogen -- Hydrogen continuum
+
+Enter the transmission for neglecting gases and continua.
+
+specify next process.
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+
+
+For each absorber enter the amounts of the gas to find
+the major gas in each band.
+    Column amount for Water Vapour        
+    Column amount for Carbon Dioxide      
+    Column amount for Methane             
+    Column amount for Nitrogen            
+    Column amount for Hydrogen            
+    Column amount for Water Vapour -- Water Vapour continuum
+    Column amount for Nitrogen -- Methane continuum
+    Column amount for Nitrogen -- Nitrogen continuum
+    Column amount for Nitrogen -- Hydrogen continuum
+    Column amount for Hydrogen -- Carbon Dioxide continuum
+    Column amount for Hydrogen -- Methane continuum
+    Column amount for Hydrogen -- Hydrogen continuum
+
+Enter the surface pressure.
+
+Do you wish to allow continua to become the major absorber? (Y/N)
+
+specify next process.
+
+
+Select from the following list of operations.
+
+      1.   Remove gases and continua from bands where they are weak.
+      2.   Force the sum of esft weights to be 1.
+      3.   Remove negative pressure scalings from esft data.
+      5.   Remove negative pressure scalings continuum data.
+      6.   Set the major gas and continuum in each band.
+      7.   Reorder the aerosols.
+      8.   Set overlap treatment for generalised continua.
+
+     -1.  to finish.
+
+
