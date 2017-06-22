@@ -2,8 +2,8 @@ from pylab import *
 from scipy.interpolate import interp2d
 
 file_in = 'CO2-H2_200_250_300_350.cia'
-file_out = 'co2-h2.cia'
-chem_sym = 'CO2-H2'
+file_out = 'h2-co2.cia'
+chem_sym = 'H2-CO2'
 
 # file_in = 'CO2-CH4_200_250_300_350.cia'
 # file_out = 'co2-ch4.cia'
