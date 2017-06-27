@@ -18,12 +18,7 @@ mean_molar_weight = None
 
 # List of possible flags
 mean_molar_weight = {
-    'Charnay_et_al_Case_A': 28.017,
-    'Charnay_et_al_Case_B': 28.149,
-    'Charnay_et_al_Case_C': 29.589,
-    'Vlad_Case_A': 29.613,
-    'Vlad_Case_B': 29.612,
-    'Vlad_Case_C': 28.189,
+    'mars': 44.0095,
     }
 
 # U.S. standard atmosphere 1976
@@ -102,35 +97,8 @@ def mass_mixing_ratio(gas, P, T, flag='', return_dry = False,
     mmr = 10.0**ip(log10(P))
 
   elif (gas == 'CO2'):
-    if (flag == 'Charnay_et_al_Case_A'):
-      mmr = 0.9/1000.0
-    elif (flag == 'Charnay_et_al_Case_B' or flag == 'Vlad_Case_C'):
-      mmr = 0.01
-    elif (flag == 'Charnay_et_al_Case_C'):
-      mmr = 0.1
-    elif (flag == 'Vlad_Case_A' or flag == 'Vlad_Case_B'):
-      mmr = 0.1
-
-  elif (gas == 'CH4'):
-    if (flag == 'Charnay_et_al_Case_A'):
-      mmr = 0.9/1000.0
-    elif (flag == 'Charnay_et_al_Case_B'):
-      mmr = 2.0/1000.0
-    elif (flag == 'Charnay_et_al_Case_C'):
-      mmr = 2.0/1000.0
-    elif (flag == 'Vlad_Case_A' or flag == 'Vlad_Case_B' or
-          flag == 'Vlad_Case_C'):
-      mmr = 1.0e-5
-
-  elif (gas == 'N2O'):
-    if (flag[:19] == 'Charnay_et_al_Case_'):
-      mmr = 0.0
-    elif (flag == 'Vlad_Case_A'):
-      mmr = 2.0e-5
-    elif (flag == 'Vlad_Case_B'):
-      mmr = 1.0e-4
-    elif (flag == 'Vlad_Case_C'):
-      mmr = 1.0e-3
+    if (flag == 'mars'):
+      mmr = 1.0*ones(len(P))
 
   else:
     return 0.0

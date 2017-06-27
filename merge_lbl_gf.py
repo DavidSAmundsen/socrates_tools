@@ -7,10 +7,10 @@ import sys
 
 lbl_dir = '/scr2/socrates/data/abs_coeff'
 file_in = [
-    'co2_sblbl_lw_pt663_gf0.1.nc',
+    'co2_sblbl_lw_pt663_gf0.9.nc',
     'co2_sblbl_lw_pt663_gf1.0.nc',
     ]
-file_out = 'co2_sblbl_lw_pt663.nc'
+file_out = 'co2_sblbl_lw_pt663_gf0.9-1.0.nc'
 
 # Get combined gas fractions
 gas_frac = array([])

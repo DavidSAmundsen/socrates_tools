@@ -1,5 +1,5 @@
 # Contains a function to calculate mass mixing ratios for various cases suitable
-# for Archean Earth.
+# for Paleo Mars.
 
 from pylab import *
 from scipy.interpolate import interp1d
@@ -18,12 +18,10 @@ mean_molar_weight = None
 
 # List of possible flags
 mean_molar_weight = {
-    'Charnay_et_al_Case_A': 28.017,
-    'Charnay_et_al_Case_B': 28.149,
-    'Charnay_et_al_Case_C': 29.589,
-    'Vlad_Case_A': 29.613,
-    'Vlad_Case_B': 29.612,
-    'Vlad_Case_C': 28.189,
+    'setup_1': 28.04,
+    'setup_2':  2.56,
+    'setup_3': 15.31,
+    'setup_4': 39.53,
     }
 
 # U.S. standard atmosphere 1976
@@ -96,50 +94,46 @@ def mass_mixing_ratio(gas, P, T, flag='', return_dry = False,
 
   # Set number mixing ratio
 
-  if (gas == 'H2O'):
+  if gas == 'H2O':
     ip = interp1d(log10(p_std), log10(h2o_vmr_std), 
         bounds_error = False, fill_value = 'extrapolate')
     mmr = 10.0**ip(log10(P))
 
-  elif (gas == 'CO2'):
-    if (flag == 'Charnay_et_al_Case_A'):
-      mmr = 0.9/1000.0
-    elif (flag == 'Charnay_et_al_Case_B' or flag == 'Vlad_Case_C'):
-      mmr = 0.01
-    elif (flag == 'Charnay_et_al_Case_C'):
-      mmr = 0.1
-    elif (flag == 'Vlad_Case_A' or flag == 'Vlad_Case_B'):
-      mmr = 0.1
+  elif gas == 'CO2':
+    if flag == 'setup_1' or flag == 'setup_2' or flag == 'setup_3':
+      mmr = 0.01*ones(len(P))
+    elif flag == 'setup_4':
+      mmr = 0.89*ones(len(P))
 
-  elif (gas == 'CH4'):
-    if (flag == 'Charnay_et_al_Case_A'):
-      mmr = 0.9/1000.0
-    elif (flag == 'Charnay_et_al_Case_B'):
-      mmr = 2.0/1000.0
-    elif (flag == 'Charnay_et_al_Case_C'):
-      mmr = 2.0/1000.0
-    elif (flag == 'Vlad_Case_A' or flag == 'Vlad_Case_B' or
-          flag == 'Vlad_Case_C'):
-      mmr = 1.0e-5
+  elif gas == 'CH4':
+    mmr = 0.01*ones(len(P))
 
-  elif (gas == 'N2O'):
-    if (flag[:19] == 'Charnay_et_al_Case_'):
-      mmr = 0.0
-    elif (flag == 'Vlad_Case_A'):
-      mmr = 2.0e-5
-    elif (flag == 'Vlad_Case_B'):
-      mmr = 1.0e-4
-    elif (flag == 'Vlad_Case_C'):
-      mmr = 1.0e-3
+  elif gas == 'N2':
+    if flag == 'setup_1':
+      mmr = 0.98*ones(len(P))
+    elif flag == 'setup_3':
+      mmr = 0.49*ones(len(P))
+    else:
+      mmr = 0.0*ones(len(P))
+
+  elif gas == 'H2':
+    if flag == 'setup_2':
+      mmr = 0.98*ones(len(P))
+    elif flag == 'setup_3':
+      mmr = 0.49*ones(len(P))
+    elif flag == 'setup_4':
+      mmr = mmr = 0.1*ones(len(P))
+    else:
+      mmr = 0.0*ones(len(P))
 
   else:
-    return 0.0
+    return 0.0*ones(len(P))
 
   # Calculate mass mixing ratio from number mixing ratio
   mmr = mmr*molar_weight[gas]/mean_molar_weight[flag]
 
   # Convert the dry mass mixing ratio to specific if requested
-  if (not return_dry):
+  if not return_dry:
     mmr = mmr/(1 + mass_mixing_ratio('H2O', P, T, flag = flag,
         return_dry = True, mix_ratio_override = mix_ratio_override))
 

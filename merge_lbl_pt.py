@@ -7,15 +7,10 @@ import sys
 
 lbl_dir = '/scr2/socrates/data/abs_coeff'
 file_in = [
-    'co2_sblbl_lw_pt663_gf1.0.nc',
-    'co2_sblbl_lw_pt130_gf1.0.nc',
+    'co2_sblbl_lw_pt663_gf0.8.nc',
+    'co2_sblbl_lw_pt130_gf0.8.nc',
     ]
-file_out = 'co2_sblbl_lw_pt793_gf1.0.nc'
-# file_in = [
-#     'h2o_lbl_lwf_pt663.nc',
-#     'h2o_lbl_lwf_pt130.nc',
-#     ]
-# file_out = 'h2o_lbl_lwf_pt793.nc'
+file_out = 'co2_sblbl_lw_pt793_gf0.8.nc'
 
 # Get combined P-T grid
 p_calc = array([])
