@@ -2,7 +2,6 @@
 Summary of spectral data.
 Number of spectral bands =     6
 Total number of gaseous absorbers =     8
-Total number of aerosols =     0
 List of indexing numbers and absorbers.
 Index       Absorber(identifier and name)
     1           1       Water Vapour        
@@ -13,8 +12,6 @@ Index       Absorber(identifier and name)
     6           7       Oxygen              
     7           9       Sulphur dioxide     
     8          25       Carbonyl sulphide   
-List of indexing numbers of aerosols.
-Index       Aerosol(type number and name)
 *END
 *BLOCK: TYPE =    1: SUBTYPE =    0: VERSION =    0
 Specification of spectral intervals

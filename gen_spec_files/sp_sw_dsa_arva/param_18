@@ -3,7 +3,7 @@
 # Setting for k-coefficient calculation
 SP_ID="dsa_arva"
 SP_FLDR="dsa_arva"
-NBANDS="15"
+NBANDS="18"
 SOLAR_SPEC="sun"
 PT_FILE="pt663"
 TOL="-b 1.0e-3"
@@ -21,17 +21,17 @@ COL_MASS_K_H2O="1.0e+02"
 COL_H2OC="10.0"
 COL_MASS_K_CO2="1.6e+03"
 COL_CO2C="1.0e2"
-COL_MASS_K_N2O="1.6"
+COL_MASS_K_N2O="16"
 COL_MASS_K_CH4="5.8e-02"
 
 # Column masses for all molecules for eliminating weak absorbers
 COL_MASS_ELIM_H2O="2.5e+01"
 COL_MASS_ELIM_CO2="1.6e+03"
-COL_MASS_ELIM_N2O="1.6"
+COL_MASS_ELIM_N2O="16"
 COL_MASS_ELIM_CH4="5.8e-02"
 
 # Column masses for all molecules for eliminating weak absorbers
 COL_MASS_STMJ_H2O="2.5e+02"
 COL_MASS_STMJ_CO2="1.6e+03"
-COL_MASS_STMJ_N2O="1.6"
+COL_MASS_STMJ_N2O="16"
 COL_MASS_STMJ_CH4="5.8e-02"

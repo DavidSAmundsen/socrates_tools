@@ -138,7 +138,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_1l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 1 1 -c 2500.0 -i 0.1 -l 1 1.0e+03 -b 2.0e-3 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_1l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_1lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -151,7 +151,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_2l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 2 2 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 5.0e-3 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_2l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_2lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -164,7 +164,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_3-5l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 3 5 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 6.0e-3 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_3-5l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_3-5lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -177,7 +177,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_6l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 6 6 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 1.0e-2 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_6l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_6lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -190,7 +190,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_7l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 7 7 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 2.0e-2 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_7l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_7lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -203,7 +203,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_8-9l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 8 9 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 1.0e-2 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_8-9l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_8-9lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -216,7 +216,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_10-12l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 10 12 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 1.0e-2 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_10-12l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_10-12lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -229,7 +229,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_13l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 13 13 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 7.5e-3 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_13l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_13lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -242,7 +242,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_14l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 14 14 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 7.5e-3 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_14l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_14lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -255,7 +255,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_15l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 15 15 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 7.5e-3 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_15l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_15lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -268,7 +268,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_16-17l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 16 17 -c 2500.0 -i 0.1 -l 1 1.0e+03 -t 2.0e-2 \
     -s ${SPECFILE} +p -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_l${NBANDS}_16-17l \
     -m ${K_COEFF_DIR}/h2o_l${NBANDS}_16-17lm \
     -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
@@ -282,7 +282,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_1-17c ] ; then
   Ccorr_k -F ../pt_cont \
     -R 1 17 -c 2500.0 -i 0.1 \
     -ct 1 1 100.0 -t 1.0e-3 \
-    -e ${RAD_DATA}/continua/caviar_s296 ${RAD_DATA}/continua/caviar_s260 \
+    -e ${CONT_DIR}/mt_ckd_v3.0_s296 ${CONT_DIR}/mt_ckd_v3.0_s260 \
     -k -s ${SPECFILE} +p -lk \
     -o ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_1-17c \
     -m ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_1-17cm \

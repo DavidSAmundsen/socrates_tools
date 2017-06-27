@@ -1,6 +1,5 @@
 #!/bin/bash
 
-. set_paths
 SP_SKEL="sp_sw_6_jm2dsa_$1_skel"
 rm -f ${SP_SKEL}
 

@@ -1,8 +1,7 @@
 *BLOCK: TYPE =    0: SUBTYPE =    0: VERSION =    2
 Summary of spectral data.
-Number of spectral bands =    16
-Total number of gaseous absorbers =     4
-Total number of aerosols =     0
+Number of spectral bands =    18
+Total number of gaseous absorbers =     6
 Total number of generalised continua =     2
 List of indexing numbers and absorbers.
 Index       Absorber(identifier and name)
@@ -10,33 +9,35 @@ Index       Absorber(identifier and name)
     2           2       Carbon Dioxide      
     3           4       Dinitrogen Oxide    
     4           6       Methane             
+    5          13       Nitrogen            
+    6          37       Argon               
 Listing of continuum indexing numbers and gases.
 Index     Gas 1(index and name)              Gas 2(index and name)
     1         1     Water Vapour                 1     Water Vapour        
     2         2     Carbon Dioxide               2     Carbon Dioxide      
-List of indexing numbers of aerosols.
-Index       Aerosol(type number and name)
 *END
 *BLOCK: TYPE =    1: SUBTYPE =    0: VERSION =    0
 Specification of spectral intervals
 Limits of spectral intervals (wavelengths in m.)
 Band        Lower limit         Upper limit
-    1        2.500000000E-05     1.000000000E-02
-    2        1.960784314E-05     2.500000000E-05
-    3        1.818181818E-05     1.960784314E-05
-    4        1.724137931E-05     1.818181818E-05
-    5        1.298701299E-05     1.724137931E-05
-    6        1.204819277E-05     1.298701299E-05
-    7        1.086956522E-05     1.204819277E-05
-    8        1.000000000E-05     1.086956522E-05
-    9        9.009009009E-06     1.000000000E-05
-   10        8.196721311E-06     9.009009009E-06
-   11        7.352941176E-06     8.196721311E-06
-   12        5.347593583E-06     7.352941176E-06
-   13        4.950495050E-06     5.347593583E-06
-   14        4.694835681E-06     4.950495050E-06
-   15        4.132231405E-06     4.694835681E-06
-   16        3.333333333E-06     4.132231405E-06
+    1        2.000000000E-07     3.200000000E-07
+    2        3.200000000E-07     5.050000000E-07
+    3        5.050000000E-07     6.900000000E-07
+    4        6.900000000E-07     1.200000000E-06
+    5        1.200000000E-06     1.240000000E-06
+    6        1.240000000E-06     1.420000000E-06
+    7        1.420000000E-06     1.460000000E-06
+    8        1.460000000E-06     1.520000000E-06
+    9        1.520000000E-06     1.680000000E-06
+   10        1.680000000E-06     1.780000000E-06
+   11        1.780000000E-06     1.940000000E-06
+   12        1.940000000E-06     2.000000000E-06
+   13        2.000000000E-06     2.100000000E-06
+   14        2.100000000E-06     2.320000000E-06
+   15        2.320000000E-06     2.650000000E-06
+   16        2.650000000E-06     2.850000000E-06
+   17        2.850000000E-06     3.050000000E-06
+   18        3.050000000E-06     2.000000000E-05
 *END
 *BLOCK: TYPE =    4: SUBTYPE =    0: VERSION =    0
 Gaseous absorbers in each interval
@@ -60,6 +61,8 @@ Band        Number of active absorbers followed by indexing numbers
    14           0
    15           0
    16           0
+   17           0
+   18           0
 *END
 *BLOCK: TYPE =    8: SUBTYPE =    0: VERSION =    0
 Continuum absorbers in each interval
@@ -83,6 +86,8 @@ Band         Number of active continua followed by indexing numbers
    14           0
    15           0
    16           0
+   17           0
+   18           0
 Indexing numbers of gases for continua:
      Index of water =     1
 *END
@@ -109,4 +114,6 @@ Band        Number of active continua, flag for continuum being major absorber,
    14           0           F
    15           0           F
    16           0           F
+   17           0           F
+   18           0           F
 *END

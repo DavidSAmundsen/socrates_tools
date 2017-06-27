@@ -2,7 +2,6 @@
 Summary of spectral data.
 Number of spectral bands =    12
 Total number of gaseous absorbers =     7
-Total number of aerosols =     0
 List of indexing numbers and absorbers.
 Index       Absorber(identifier and name)
     1           1       Water Vapour        
@@ -12,8 +11,6 @@ Index       Absorber(identifier and name)
     5           6       Methane             
     6           7       Oxygen              
     7           9       Sulphur dioxide     
-List of indexing numbers of aerosols.
-Index       Aerosol(type number and name)
 *END
 *BLOCK: TYPE =    1: SUBTYPE =    0: VERSION =    0
 Specification of spectral intervals
@@ -35,18 +32,18 @@ Band        Lower limit         Upper limit
 *BLOCK: TYPE =    2: SUBTYPE =    0: VERSION =    0
 Normalized solar flux in each spectral interval.
 Band        Normalized flux
-    1        3.732259996E-04
-    2        5.623544579E-04
-    3        8.244827167E-04
-    4        2.568840866E-03
-    5        5.355526105E-03
-    6        8.628888581E-03
-    7        5.619116732E-02
-    8        1.420824796E-01
-    9        2.310978727E-01
-   10        3.260955096E-01
-   11        1.867205445E-01
-   12        3.949910763E-02
+    1        4.309077898E-04
+    2        6.893548152E-04
+    3        9.646024501E-04
+    4        2.835191784E-03
+    5        5.899495639E-03
+    6        9.071294814E-03
+    7        5.897055068E-02
+    8        1.440994244E-01
+    9        2.318742495E-01
+   10        3.206006851E-01
+   11        1.865548683E-01
+   12        3.800937471E-02
 *END
 *BLOCK: TYPE =    4: SUBTYPE =    0: VERSION =    0
 Gaseous absorbers in each interval

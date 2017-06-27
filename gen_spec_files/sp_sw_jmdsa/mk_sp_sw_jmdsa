@@ -230,7 +230,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBANDS}_l ] || \
     -R ${BAND_NIR_START} ${NBANDS} -c 2500.0 -i 1.0 \
     -l 1 ${COL_MASS_K_H2O} ${TOL_LINE} \
     -s ${SPECFILE} ${WGT} -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_s${NBANDS}_l -m ${K_COEFF_DIR}/h2o_s${NBANDS}_lm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
     -sm $SW_DATA/h2o_map_${specfile}.nc \
@@ -242,7 +242,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBANDS}_s ] ; then
   rm -f ${K_COEFF_DIR}/h2o_s${NBANDS}_s*
   Ccorr_k -C 33 1.0e-4 1.0e4 -F ../${PT_FILE} -D $HITRAN_H2O \
     -P 7 -R ${BAND_NIR_START} ${NBANDS} -c 2500.0 -i 1.0 \
-    -e $RAD_DATA/continua/caviar_s296 $RAD_DATA/continua/caviar_s260 \
+    -e ${CONT_DIR}/mt_ckd_v3.0_s296 ${CONT_DIR}/mt_ckd_v3.0_s260 \
     -k -s ${SPECFILE} ${WGT} -q -r $ref_pt_file \
     -o ${K_COEFF_DIR}/h2o_s${NBANDS}_s -m ${K_COEFF_DIR}/h2o_s${NBANDS}_sm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \

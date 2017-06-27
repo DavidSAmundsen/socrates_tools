@@ -2,7 +2,6 @@
 Summary of spectral data.
 Number of spectral bands =   350
 Total number of gaseous absorbers =    12
-Total number of aerosols =     0
 List of indexing numbers and absorbers.
 Index       Absorber(identifier and name)
     1           1       Water Vapour        
@@ -17,8 +16,6 @@ Index       Absorber(identifier and name)
    10          17       HCFC22              
    11          19       HFC134A             
    12          25       Carbonyl sulphide   
-List of indexing numbers of aerosols.
-Index       Aerosol(type number and name)
 *END
 *BLOCK: TYPE =    1: SUBTYPE =    0: VERSION =    0
 Specification of spectral intervals

@@ -102,7 +102,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBANDS}_3l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 7 9 -c 2500.0 -i 1.0 -l 1 ${COL_H2O} -t 5.0e-3 \
     -s ${SPECFILE} ${WGT} -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_s${NBANDS}_3l -m ${K_COEFF_DIR}/h2o_s${NBANDS}_3lm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
     -sm ${K_COEFF_DIR}/h2o_s${NBANDS}_3-6map.nc \
@@ -115,7 +115,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBANDS}_4l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 10 17 -c 2500.0 -i 1.0 -l 1 ${COL_H2O} -t 6.0e-3 \
     -s ${SPECFILE} ${WGT} -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_s${NBANDS}_4l -m ${K_COEFF_DIR}/h2o_s${NBANDS}_4lm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
     -sm ${K_COEFF_DIR}/h2o_s${NBANDS}_3-6map.nc \
@@ -128,7 +128,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBANDS}_5l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 18 31 -c 2500.0 -i 1.0 -l 1 ${COL_H2O} -t 6.0e-3 \
     -s ${SPECFILE} ${WGT} -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_s${NBANDS}_5l -m ${K_COEFF_DIR}/h2o_s${NBANDS}_5lm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
     -sm ${K_COEFF_DIR}/h2o_s${NBANDS}_3-6map.nc \
@@ -141,7 +141,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o_s${NBANDS}_6l ] ; then
   Ccorr_k -F ../${PT_FILE} -D $HITRAN_H2O \
     -R 32 ${NBANDS} -c 2500.0 -i 1.0 -l 1 ${COL_H2O} -t 6.0e-3 \
     -s ${SPECFILE} ${WGT} -lk \
-    -k -x $RAD_DATA/continua/caviar_frn \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
     -o ${K_COEFF_DIR}/h2o_s${NBANDS}_6l -m ${K_COEFF_DIR}/h2o_s${NBANDS}_6lm \
     -L $SW_DATA/h2o_lbl_swf_${PT_FILE}.nc \
     -sm ${K_COEFF_DIR}/h2o_s${NBANDS}_3-6map.nc \
@@ -154,7 +154,7 @@ if [ ! -s ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_3-6c ] ; then
   rm -f ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_3-6c*
   Ccorr_k -F ../pt_cont \
     -R 7 ${NBANDS} -i 1.0 -ct 1 1 ${COL_H2OC} -t 1.0e-3 \
-    -e $RAD_DATA/continua/caviar_s296 $RAD_DATA/continua/caviar_s260 \
+    -e ${CONT_DIR}/mt_ckd_v3.0_s296 ${CONT_DIR}/mt_ckd_v3.0_s260 \
     -k -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_3-6c \
     -m ${K_COEFF_DIR}/h2o-h2o_s${NBANDS}_3-6cm \

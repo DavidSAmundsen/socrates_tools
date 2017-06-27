@@ -1,6 +1,5 @@
 #!/bin/bash
 
-. set_paths
 SP_SKEL="sp_sw_12_jm2dsa_$1_skel"
 rm -f ${SP_SKEL}
 
@@ -15,6 +14,7 @@ ${SP_SKEL}
 6
 7
 9
+0
 0
 m
 2.00E-07     2.20E-07
