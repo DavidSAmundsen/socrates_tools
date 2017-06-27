@@ -1,0 +1,8 @@
+IMPORTANT NOTE: In order to generate spectral files using the CKD water
+vapor continuum the source file the SOCRATES source file
+src/correlated_k/caviar_continuum_v1_0.f90
+should be replaced by
+src/correlated_k/ckd_continuum_v2_4.f90
+
+The code then need to be re-compiled before running the scripts in
+this folder.
