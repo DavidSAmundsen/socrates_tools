@@ -52,7 +52,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_s${NBANDS}_4l ] ; then
     -sb gas_fractions -lp 2 \
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_s${NBANDS}_4l -m ${K_COEFF_DIR}/co2_s${NBANDS}_4lm \
-    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf1.0.nc > \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.9-1.0.nc > \
     ${K_COEFF_DIR}/co2_s${NBANDS}_4log \
     && echo "CO2 band 4 done" &
 fi
@@ -64,7 +64,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_s${NBANDS}_5l ] ; then
     -sb gas_fractions -lp 2 \
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_s${NBANDS}_5l -m ${K_COEFF_DIR}/co2_s${NBANDS}_5lm \
-    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf1.0.nc > \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.9-1.0.nc > \
     ${K_COEFF_DIR}/co2_s${NBANDS}_5log \
     && echo "CO2 band 5 done" &
 fi
@@ -76,7 +76,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_s${NBANDS}_6l ] ; then
     -sb gas_fractions -lp 2 \
     -s ${SPECFILE} ${WGT} -lk \
     -o ${K_COEFF_DIR}/co2_s${NBANDS}_6l -m ${K_COEFF_DIR}/co2_s${NBANDS}_6lm \
-    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf1.0.nc > \
+    -L $SW_DATA/co2_sblbl_sw_${PT_FILE}_gf0.9-1.0.nc > \
     ${K_COEFF_DIR}/co2_s${NBANDS}_6log \
     && echo "CO2 band 6 done" &
 fi

@@ -39,7 +39,7 @@ mkdir -p ${K_COEFF_DIR}
 echo "Jobs running in background:"
 
 if [ ! -s ${K_COEFF_DIR}/co2_l${NBANDS}_l ] || \
-    [ ! -s ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf1.0.nc ] ; then
+    [ ! -s ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.9-1.0.nc ] ; then
   echo "CO2"
   rm -f ${K_COEFF_DIR}/co2_l${NBANDS}_l*
   Ccorr_k -F ../${PT_FILE} -D ${HITRAN_CO2} \
@@ -47,7 +47,7 @@ if [ ! -s ${K_COEFF_DIR}/co2_l${NBANDS}_l ] || \
     -t 5.0e-4 -s ${SPECFILE} +p -lk -np 8 \
     -sb gas_fractions -lp 2 \
     -o ${K_COEFF_DIR}/co2_l${NBANDS}_l -m ${K_COEFF_DIR}/co2_l${NBANDS}_lm \
-    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf1.0.nc \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.9-1.0.nc \
     > ${K_COEFF_DIR}/co2_l${NBANDS}_log && echo "CO2 done" &
 fi
 
