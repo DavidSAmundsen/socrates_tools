@@ -1,0 +1,304 @@
+#!/bin/bash
+
+NBANDS="350" # Number of bands
+SP_ID="dsa_pm" # Spectral file ID
+PT_FILE="pt793" # P-T grid
+
+# Min 80% CO2, max 1% CH4, max 20% H2, max 20% N2
+COL_H2O="1.0e+03"
+COL_CO2="1.0e+05"
+COL_CH4="5.8e+02"
+COL_H2OC="1.0e+03"
+COL_CO2C="1.0e6"
+COL_CO2_CH4="5.0e+3"
+COL_CO2_H2="1.0e+4"
+COL_N2_N2="3.0e+04" # Non-negligible likely due to lack of CO2-N2 CIA
+
+# The following continua are not included due to very small effect on fluxes:
+# N2-CH4: ~< 0.1 W/m2
+# H2-H2:  ~< 0.3 W/m2
+# H2-CH4: ~< 0.1 W/m2
+# N2-H2:  ~< 0.3 W/m2
+
+. ../set_paths_lw
+
+################################################################################
+# Calculate k-coefficients
+################################################################################
+
+echo "Calculating k-coefficients."
+
+# Set paths to files
+HITRAN_H2O="${HITRAN_DIR}/01_hit12.par"
+HITRAN_CO2="${HITRAN_DIR}/02_hit12.par"
+HITRAN_CH4="${HITRAN_DIR}/06_hit12.par"
+
+if [ $RAD_BIN ] ; then
+  echo "Using code compiled in "$RAD_BIN
+else
+  echo "Path to code not set."
+  exit 1
+fi
+
+# Create skeleton spectral file
+SPECFILE="sp_lw_${NBANDS}_${SP_ID}_skel"
+rm -f ${SPECFILE}
+. mk_sp_lw_${NBANDS}_${SP_ID}_skel > /dev/null
+
+# Create directory for k-coefficients
+mkdir -p ${K_COEFF_DIR}
+
+echo "Jobs running in background:"
+
+if [ ! -s ${K_COEFF_DIR}/co2_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.9-1.0.nc ] ; then
+  echo "CO2"
+  rm -f ${K_COEFF_DIR}/co2_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D ${HITRAN_CO2} \
+    -R 1 ${NBANDS} -c 50000.0 -i 0.1 -l 2 ${COL_CO2} \
+    -t 5.0e-4 -s ${SPECFILE} +p -lk \
+    -sb gas_fractions -lp 2 \
+    -o ${K_COEFF_DIR}/co2_l${NBANDS}_l -m ${K_COEFF_DIR}/co2_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/co2_sblbl_lw_${PT_FILE}_gf0.8-1.0.nc \
+    > ${K_COEFF_DIR}/co2_l${NBANDS}_log && echo "CO2 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc ] ; then
+  echo "CH4"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D ${HITRAN_CH4} \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 6 ${COL_CH4} \
+    -t 5.0e-4 -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/ch4_l${NBANDS}_l -m ${K_COEFF_DIR}/ch4_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/ch4_l${NBANDS}_log && echo "CH4 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c ] ; then
+  echo "CO2-CO2 CIA"
+  rm -f ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-co2.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 2 2 ${COL_CO2C} -t 1.0e-3 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/co2-co2_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/co2-co2_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/co2-co2_lbl_lw.nc \
+     > ${K_COEFF_DIR}/co2-co2_l${NBANDS}_clog \
+     && echo "CO2-CO2 CIA done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/co2-ch4_l${NBANDS}_c ] ; then
+  echo "CO2-CH4 CIA"
+  rm -f ${K_COEFF_DIR}/co2-ch4_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/co2-ch4.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 2 6 ${COL_CO2_CH4} -t 1.0e-3 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/co2-ch4_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/co2-ch4_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/co2-ch4_lbl_lw.nc \
+     > ${K_COEFF_DIR}/co2-ch4_l${NBANDS}_clog \
+     && echo "CO2-CH4 CIA done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/co2-h2_l${NBANDS}_c ] ; then
+  echo "CO2-H2 CIA"
+  rm -f ${K_COEFF_DIR}/co2-h2_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/h2-co2.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 2 23 ${COL_CO2_H2} -t 1.0e-3 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/co2-h2_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/co2-h2_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/h2-co2_lbl_lw.nc \
+     > ${K_COEFF_DIR}/co2-h2_l${NBANDS}_clog \
+     && echo "CO2-H2 CIA done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2-n2_l${NBANDS}_c ] || \
+    [ ! -s ${ABS_COEFF_DIR}/n2-n2_lbl_lw.nc ] ; then
+  echo "N2-N2 CIA"
+  rm -f ${K_COEFF_DIR}/n2-n2_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont -CIA ${CONT_DIR}/n2-n2_2011_clean.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 13 13 ${COL_N2_N2} -t 1.0e-3 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/n2-n2_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/n2-n2_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/n2-n2_lbl_lw.nc \
+     > ${K_COEFF_DIR}/n2-n2_l${NBANDS}_clog \
+     && echo "N2-N2 CIA done" &
+fi
+
+echo "Jobs running in foreground:"
+
+if [ ! -s ${K_COEFF_DIR}/h2o_l${NBANDS}_l ] || \
+    [ ! -s ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc ] ; then
+  echo "H2O lines"
+  rm -f ${K_COEFF_DIR}/h2o_l${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D ${HITRAN_H2O} \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 -l 1 ${COL_H2O} \
+    -t 5.0e-4 -s ${SPECFILE} +p -lk \
+    -k -x ${CONT_DIR}/mt_ckd_v3.0_frn \
+    -o ${K_COEFF_DIR}/h2o_l${NBANDS}_l -m ${K_COEFF_DIR}/h2o_l${NBANDS}_lm \
+    -L ${ABS_COEFF_DIR}/h2o_lbl_lwf_${PT_FILE}.nc \
+    -sm ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
+    > ${K_COEFF_DIR}/h2o_l${NBANDS}_log \
+    && echo "H2O lines and foreign continuum done"
+fi
+
+if [ ! -s ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c ] ; then
+  echo "H2O self-broadened continuum"
+  rm -f ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c*
+  Ccorr_k -F ../pt_cont \
+    -R 1 ${NBANDS} -c 2500.0 -i 0.1 \
+    -ct 1 1 ${COL_H2OC} -t 5.0e-4 \
+    -e ${CONT_DIR}/mt_ckd_v3.0_s296 ${CONT_DIR}/mt_ckd_v3.0_s260 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c \
+    -m ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_cm \
+    -L ${ABS_COEFF_DIR}/h2o-h2o_lbl_lw.nc \
+    -lw ${K_COEFF_DIR}/h2o_l${NBANDS}_map.nc \
+     > ${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_clog \
+     && echo "H2O self-broadened continuum done"
+fi
+
+wait
+echo "Calculation of k-coefficients completed."
+
+################################################################################
+# Calculate optical properties
+################################################################################
+
+echo "Calculating cloud optical properties."
+
+mkdir -p ${CLD_COEFF_DIR}
+
+if [ ! -s ${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS} ] ; then
+  rm -f ${CLD_COEFF_DIR}/mon_lw_drop5_${NBANDS}
+  Cscatter_average -s ${SPECFILE} -P 1 -t -p 250 \
+    -f 5 ${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_lw_drop5_${NBANDS} 1.e3 \
+    ${RAD_DATA}/cloud/scatter_drop_type5
+fi
+if [ ! -s ${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS} ] ; then
+  rm -f ${CLD_COEFF_DIR}/mon_lw_ice8_${NBANDS}
+  Cscatter_average -s ${SPECFILE} -P 1 -w -p 250 \
+    -f 12 ${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS} \
+    ${CLD_COEFF_DIR}/mon_lw_ice8_${NBANDS} 920 \
+    ${RAD_DATA}/cloud/scatter_ice_lw_type8
+fi
+
+echo "Calculation of cloud optical properties completed."
+
+################################################################################
+# Create spectral file
+################################################################################
+
+echo "Creating spectral file."
+
+# Create name of spectral file
+SPEC_FILE="sp_lw_${NBANDS}_${SP_ID}"
+
+mkdir -p ${SPEC_FILE_DIR}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}_k
+
+# Construct spectral file
+prep_spec << EOF > mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE}_skel
+n
+${SPEC_FILE_DIR}/${SPEC_FILE}
+5
+${K_COEFF_DIR}/h2o_l${NBANDS}_l
+19
+${K_COEFF_DIR}/h2o-h2o_l${NBANDS}_c
+5
+y
+${K_COEFF_DIR}/co2_l${NBANDS}_l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBANDS}_l
+19
+y
+${K_COEFF_DIR}/co2-co2_l${NBANDS}_c
+19
+y
+${K_COEFF_DIR}/co2-ch4_l${NBANDS}_c
+19
+y
+${K_COEFF_DIR}/co2-h2_l${NBANDS}_c
+19
+y
+${K_COEFF_DIR}/n2-n2_l${NBANDS}_c
+6
+n
+t
+1 500
+500
+-1
+EOF
+
+# Add cloud properties
+prep_spec << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE_DIR}/${SPEC_FILE}
+a
+10
+5
+${CLD_COEFF_DIR}/fit_lw_drop5_${NBANDS}
+7.60000E-06 5.00000E-05
+12
+8
+${CLD_COEFF_DIR}/fit_lw_ice8_${NBANDS}
+1.30000E-05 3.10000E-04
+-1
+EOF
+
+# Remove weak absorbers in bands and set major absorbers
+tidy_90 << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE_DIR}/${SPEC_FILE}
+o
+8
+1
+0
+0
+0
+0
+1
+${COL_H2O}
+${COL_CO2}
+${COL_CH4}
+0.0
+0.0
+0.0
+${COL_H2OC}
+${COL_CO2C}
+${COL_CO2_CH4}
+${COL_CO2_H2}
+${COL_N2_N2}
+0.99990
+6
+${COL_H2O}
+${COL_CO2}
+${COL_CH4}
+0.0
+0.0
+0.0
+${COL_H2OC}
+${COL_CO2C}
+${COL_CO2_CH4}
+${COL_CO2_H2}
+${COL_N2_N2}
+1.0e+6
+n
+-1
+EOF
+
+. ../set_permissions
+
+echo "Spectral file ${SPEC_FILE} created. All done."
+echo "Please check mk_sp_lw_${NBANDS}_${SP_ID}_out for errors."
+
+exit 0
