@@ -29,7 +29,7 @@ COL_H2_H2="90"
 # The following continua have not been included due to weak absorption
 # CO2-CH4: ~< 0.01 W/m2
 # N2-CH4:  ~< 0.01 W/m2
-# N2-N2:    = 0.00 W/m2
+# N2-N2:   ~< 0.02 W/m2
 # N2-H2:   ~< 0.20 W/m2
 # H2-CH4:  ~< 0.01 W/m2
 
