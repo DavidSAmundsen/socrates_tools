@@ -8,13 +8,13 @@ COL_H2O="1.0e+03" # 1 bar atmosphere
 COL_TIDY_H2O="2.5e2" # 1 bar atmosphere
 COL_CO2="1.6e+03" # 1% CO2 in a 1 bar atmosphere
 COL_CH4="5.8e+02" # 1% CH4 in a 1 bar atmosphere
+COL_H2OC="1.0e+03"
 COL_N2_CH4="4.0e+03"
 COL_N2_N2="7.0e+05"
 COL_N2_H2="3.0e+04"
 COL_H2_CO2="1.0e+04"
 COL_H2_CH4="4.0e+03"
 COL_H2_H2="5.0e+04"
-COL_H2OC="1.0e+03"
 
 . ../set_paths_lw
 
