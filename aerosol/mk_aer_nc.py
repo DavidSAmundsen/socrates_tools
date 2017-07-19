@@ -9,16 +9,25 @@ from aer_density_component import aer_density_component
 # User definitions
 ################################################################################
 
-spectral_file_name = 'sp_sw_21_dsa'
-spectral_file_folder = 'sp_sw_dsa'
-solar_spec='sun'
+# Long-wave
+# spectral_file_name = 'sp_lw_12_dsa'
+# spectral_file_folder = 'sp_lw_dsa'
+
+# Short-wave
+# spectral_file_name = 'sp_sw_21_dsa'
+# spectral_file_folder = 'sp_sw_dsa'
+# solar_spec='sun'
+
+# Diagnostics
+spectral_file_name = 'sp_diag_std'
+spectral_file_folder = 'sp_diag'
 
 ################################################################################
-# Diagnostics, paths and aerosol types
+# Paths and aerosol types
 ################################################################################
 
-# Spectral file for diagnostics
-spectral_file_name_550nm = 'sp_diag'
+# Determine if diagnostics file is being made
+l_diag = spectral_file_name[3:7] == 'diag'
 
 socrates_data_dir = os.path.join('/home', getpass.getuser(), 'socrates_data')
 scatter_base_dir = os.path.join(socrates_data_dir, 'aerosol')
@@ -32,11 +41,14 @@ elif spectral_file_name[3:5] == 'sw':
       solar_spec)
   aer_nc = os.path.join(spectral_file_dir, spectral_file_folder,
       'aer_' + spectral_file_name[3:] + '_' + solar_spec + '.nc')
+elif l_diag:
+  scatter_data_dir = os.path.join(scatter_base_dir, spectral_file_name)
+  os.makedirs(os.path.join(spectral_file_dir, spectral_file_folder),
+      exist_ok=True)
+  aer_nc = os.path.join(spectral_file_dir, spectral_file_folder,
+      'aer_' + spectral_file_name[3:] + '.nc')
 else:
-  print('Spectral region not recognised.')
-  sys.exit(1)
-scatter_data_550nm_dir = os.path.join(scatter_base_dir,
-    spectral_file_name_550nm)
+  raise NameError('Spectral region not recognised.')
 
 # List of aerosol types
 aer_type = array([
@@ -76,7 +88,7 @@ def get_radius(scatter_data_dir, aer_type):
 
 def get_n_band(scatter_file, l_humidity):
 
-  fid = open(scatter_file)
+  fid = open(scatter_file, 'r')
 
   # Skip to data
   while True:
@@ -104,6 +116,31 @@ def get_n_band(scatter_file, l_humidity):
       n_newline = 0
 
   return n_band
+
+
+def get_wavelength(spectral_file, n_band):
+
+  fid = open(spectral_file, 'r')
+
+  # Search for block 1 with bands
+  while True:
+    line = fid.readline()
+    if line[:19] == '*BLOCK: TYPE =    1':
+      break
+
+  # Skip header
+  for i in arange(3):
+    fid.readline()
+
+  # Read bands
+  wavelength = zeros(n_band)
+  for i in arange(n_band):
+    line = fid.readline()
+    wl_band_min = float(line[12:28])
+    wl_band_max = float(line[32:])
+    wavelength[i] = mean(array([wl_band_min, wl_band_max]))
+
+  return wavelength
 
 
 def humidity_dependence(fname):
@@ -256,12 +293,6 @@ def read_scatter_file(scatter_file, n_band, l_humidity, n_humidity=1):
 # Begin main code
 ################################################################################
 
-# Check if spectral file is for short-wave or long-wave
-if "_lw_" in spectral_file_name:
-  l_diag = True
-else:
-  l_diag = False
-
 # Find number of radii
 n_radius = zeros(len(aer_type), dtype='i4')
 for i_aer in arange(len(aer_type)):
@@ -285,6 +316,11 @@ aer_file = os.path.join(scatter_data_dir,
     aer_type[0] + '_' + radius[0] + '.avg')
 n_band = get_n_band(aer_file, l_humidity[0])
 
+# Read diagnostic wavelengths
+if l_diag:
+  wavelength = get_wavelength(
+      os.path.join(spectral_file_dir, 'sp_diag', spectral_file_name), n_band)
+
 # Read aerosol optical properties from .avg files
 aer_cmp = zeros(len(aer_type), dtype='i4')
 radius_eff_dry = zeros([len(aer_type), n_radius_max])
@@ -293,18 +329,12 @@ band = zeros(n_band)
 k_abs = zeros([len(aer_type), n_radius_max, n_humidity_max, n_band])
 k_scat = zeros([len(aer_type), n_radius_max, n_humidity_max, n_band])
 g_asym = zeros([len(aer_type), n_radius_max, n_humidity_max, n_band])
-k_abs_550nm = zeros([len(aer_type), n_radius_max, n_humidity_max, 1])
-k_scat_550nm = zeros([len(aer_type), n_radius_max, n_humidity_max, 1])
-g_asym_550nm = zeros([len(aer_type), n_radius_max, n_humidity_max, 1])
 for i_aer in arange(len(aer_type)):
   radius = get_radius(scatter_data_dir, aer_type[i_aer])
 
   for i_radius in arange(len(radius)):
     aer_file = os.path.join(scatter_data_dir,
         aer_type[i_aer] + '_' + radius[i_radius] + '.avg')
-    if l_diag:
-      aer_file_550nm = os.path.join(scatter_data_550nm_dir,
-          aer_type[i_aer] + '_' + radius[i_radius] + '.avg')
 
     l_humidity[i_aer], n_humidity[i_aer] = humidity_dependence(aer_file)
     if l_humidity[i_aer]:
@@ -313,24 +343,11 @@ for i_aer in arange(len(aer_type)):
           k_scat[i_aer,i_radius,:,:], g_asym[i_aer,i_radius,:,:]) = (
           read_scatter_file(aer_file, n_band,
           l_humidity[i_aer], n_humidity=n_humidity[i_aer]))
-      if l_diag:
-        (aer_cmp_tmp, humidity_tmp, radius_eff_tmp,
-            radius_eff_dry_tmp, band_tmp, k_abs_550nm[i_aer,i_radius,:,:],
-            k_scat_550nm[i_aer,i_radius,:,:],
-            g_asym_550nm[i_aer,i_radius,:,:]) = (
-            read_scatter_file(aer_file_550nm, 1, l_humidity[i_aer],
-            n_humidity=n_humidity[i_aer]))
     else:
       (aer_cmp[i_aer], radius_eff_dry[i_aer,i_radius],
           band, k_abs[i_aer,i_radius,0,:], k_scat[i_aer,i_radius,0,:],
           g_asym[i_aer,i_radius,0,:]) = (
           read_scatter_file(aer_file, n_band, l_humidity[i_aer]))
-      if l_diag:
-        (aer_cmp_tmp, radius_eff_dry_tmp,
-            band_tmp, k_abs_550nm[i_aer,i_radius,0,:],
-            k_scat_550nm[i_aer,i_radius,0,:],
-            g_asym_550nm[i_aer,i_radius,0,:]) = (
-            read_scatter_file(aer_file_550nm, 1, l_humidity[i_aer]))
 
 # Create nc file and add necessary dimensions
 fout = Dataset(aer_nc, 'w', format='NETCDF3_CLASSIC')
@@ -378,16 +395,9 @@ g_asym_nc = fout.createVariable('g_asym', 'f8',
     dimensions=('component', 'radius', 'humidity', 'band'))
 density_nc = fout.createVariable('density', 'f8',
     dimensions=('component',))
-
-# If short-wave file add variables for calculation of tau at 550 nm for
-# diagnostics
 if l_diag:
-  k_abs_550nm_nc = fout.createVariable('k_abs_550nm', 'f8',
-    dimensions=('component', 'radius', 'humidity'))
-  k_scat_550nm_nc = fout.createVariable('k_scat_550nm', 'f8',
-    dimensions=('component', 'radius', 'humidity'))
-  g_asym_550nm_nc = fout.createVariable('g_asym_550nm', 'f8',
-    dimensions=('component', 'radius', 'humidity'))
+  wavelength_nc = fout.createVariable('wavelength', 'f8',
+      dimensions=('band'))
 
 # Add attributes to data variables
 l_humidity_nc.title = 'logical for humidity dependence'
@@ -403,14 +413,8 @@ g_asym_nc.long_name = 'asymmetry parameter'
 density_nc.title = 'bulk density'
 density_nc.long_name = 'bulk density of aerosol component'
 if l_diag:
-  k_abs_550nm_nc.title = 'absorption coefficient at 550 nm'
-  k_abs_550nm_nc.long_name = 'absorption coefficient at 550 nm for diagnostics'
-  k_abs_550nm_nc.units = 'm2/kg'
-  k_scat_550nm_nc.title = 'scattering coefficient at 550 nm'
-  k_scat_550nm_nc.long_name = 'scattering coefficient at 550 nm for diagnostics'
-  k_scat_550nm_nc.units = 'm2/kg'
-  g_asym_550nm_nc.title = 'asymmetry parameter at 550 nm'
-  g_asym_550nm_nc.long_name = 'asymmetry parameter at 550 nm for diagnostics'
+  wavelength_nc.title = 'wavelength'
+  wavelength_nc.long_name = 'wavelength of diagnostic AOD'
 
 # Get indices of unique aerosol components
 aer_cmp_unique, i_aer_cmp_unique = unique(aer_cmp, return_index=True)
@@ -422,6 +426,8 @@ n_radius_nc[:] = n_radius[i_aer_cmp_unique]
 l_humidity_nc[:] = l_humidity[i_aer_cmp_unique]
 for i in arange(len(aer_cmp_unique)):
   density_nc[i] = aer_density_component(aer_cmp_unique[i])
+if l_diag:
+  wavelength_nc[:] = wavelength
 
 # If humidity does not exist there are no aerosols with humidity dependence
 if 'humidity' in locals():
@@ -446,10 +452,6 @@ for i in arange(len(aer_cmp_unique)):
     k_abs_nc[i,:,:,:] = mean(k_abs[i_aer_average,:,:,:], axis=0)
     k_scat_nc[i,:,:,:] = mean(k_scat[i_aer_average,:,:,:], axis=0)
     g_asym_nc[i,:,:,:] = mean(g_asym[i_aer_average,:,:,:], axis=0)
-    if l_diag:
-      k_abs_550nm_nc[i,:,:] = mean(k_abs_550nm[i_aer_average,:,:,0], axis=0)
-      k_scat_550nm_nc[i,:,:] = mean(k_scat_550nm[i_aer_average,:,:,0], axis=0)
-      g_asym_550nm_nc[i,:,:] = mean(g_asym_550nm[i_aer_average,:,:,0], axis=0)
   else:
     # No humidity dependence, use same values for all humidities
     for i_humid in arange(max(n_humidity)):
@@ -457,20 +459,17 @@ for i in arange(len(aer_cmp_unique)):
       k_abs_nc[i,:,i_humid,:] = mean(k_abs[i_aer_average,:,0,:], axis=0)
       k_scat_nc[i,:,i_humid,:] = mean(k_scat[i_aer_average,:,0,:], axis=0)
       g_asym_nc[i,:,i_humid,:] = mean(g_asym[i_aer_average,:,0,:], axis=0)
-      if l_diag:
-        k_abs_550nm_nc[i,:,i_humid] = mean(k_abs_550nm[i_aer_average,:,0,0],
-            axis=0)
-        k_scat_550nm_nc[i,:,i_humid] = mean(k_scat_550nm[i_aer_average,:,0,0],
-            axis=0)
-        g_asym_550nm_nc[i,:,i_humid] = mean(g_asym_550nm[i_aer_average,:,0,0],
-            axis=0)
 
 # Add global attributes
 fout.spectral_file = spectral_file_name
-if l_diag:
+if spectral_file_name[3:5] == 'lw':
   fout.spectral_region = 'lw'
-else:
+elif spectral_file_name[3:5] == 'sw':
   fout.spectral_region = 'sw'
+elif l_diag:
+  fout.spectral_region = 'diag'
+else:
+  raise NameError('Spectral region not recognised.')
 
 fout.close()
 

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+SP_ID="std"
+
+. ../set_paths_diag
+
+# Create diagnostic spectral file
+SPECFILE="sp_diag_${SP_ID}"
+rm -f ${SPECFILE}
+prep_spec << EOF
+${SPECFILE}
+1
+0
+0
+0
+m
+5.495000000E-07     5.505000000E-07
+0
+0
+n
+-1
+EOF
+
+# Copy diagnostic spectral file to desired location
+mkdir -p ${SPEC_FILE_DIR}
+cp ${SPECFILE} ${SPEC_FILE_DIR}/${SPECFILE}

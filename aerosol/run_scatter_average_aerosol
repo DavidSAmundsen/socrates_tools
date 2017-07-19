@@ -6,12 +6,18 @@
 # User input
 ################################################################################
 
-SPECTRAL_FILE_NAME="sp_sw_21_dsa"
-SPECTRAL_FILE_FOLDER="sp_sw_dsa"
-SOLAR_SPEC="sun"
+# Long-wave
+# SPECTRAL_FILE_NAME="sp_lw_12_dsa"
+# SPECTRAL_FILE_FOLDER="sp_lw_dsa"
 
-# SPECTRAL_FILE_NAME="sp_diag"
-# WGT="-u"
+# Short-wave
+# SPECTRAL_FILE_NAME="sp_sw_21_dsa"
+# SPECTRAL_FILE_FOLDER="sp_sw_dsa"
+# SOLAR_SPEC="sun"
+
+# Diagnostics
+SPECTRAL_FILE_NAME="sp_diag_std"
+SPECTRAL_FILE_FOLDER="sp_diag"
 
 ################################################################################
 # End user input
@@ -32,6 +38,9 @@ if [ "${SPECTRAL_FILE_NAME:3:2}" = "lw" ] ; then
 elif [ "${SPECTRAL_FILE_NAME:3:2}" = "sw" ] ; then
   WGT="-S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
   SCATTER_OUT_DIR="${SCATTER_DIR}/${SPECTRAL_FILE_NAME}/${SOLAR_SPEC}"
+elif [ "${SPECTRAL_FILE_NAME:3:4}" = "diag" ] ; then
+  WGT="-u"
+  SCATTER_OUT_DIR="${SCATTER_DIR}/${SPECTRAL_FILE_NAME}"
 else
   echo "Spectral region not recognised."
   exit
@@ -49,9 +58,6 @@ if [ ! -f ${SPECTRAL_FILE} ] ; then
     exit 1
   fi
 fi
-
-# Construct paths to directories for scattering input/output data
-SCATTER_IN_DIR="${SCATTER_DIR}/mie"
 
 # Create directory for averaged single scattering properties
 mkdir -p "${SCATTER_OUT_DIR}"
