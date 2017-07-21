@@ -6,7 +6,7 @@ file_out = r'/scr2/socrates/continua/n2-n2_2011_clean.cia'
 # Count negative entries
 fid_in = open(file_in, 'r')
 line_in = fid_in.readline()
-n_entry = 0
+n_entry = 1
 n_neg = [0]
 while True:
   n_nu = int(line_in[40:47])
@@ -15,7 +15,7 @@ while True:
     nu = float(line_in[:10])
     kabs = float(line_in[11:21])
     if kabs < 0.0:
-      n_neg[n_entry] = n_neg[n_entry] + 1
+      n_neg[n_entry-1] = n_neg[n_entry-1] + 1
   line_in = fid_in.readline()
   if line_in == '':
     break
