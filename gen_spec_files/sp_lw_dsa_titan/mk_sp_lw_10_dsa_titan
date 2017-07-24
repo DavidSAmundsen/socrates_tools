@@ -1,0 +1,194 @@
+#!/bin/bash
+
+NBANDS="10" # Number of bands
+SP_ID="dsa_titan" # Spectral file ID
+PT_FILE="pt_titan" # P-T grid
+PT_CONT="pt_cont_titan" # Continuum T grid
+
+# For a 2 bar atmosphere, up to 5% CH4, 1% H2
+COL_CH4="6e+2"
+COL_N2_CH4="4e+3"
+COL_N2_N2="2e+5"
+COL_N2_H2="1e+2"
+
+. ../set_paths_lw
+
+################################################################################
+# Calculate k-coefficients
+################################################################################
+
+echo "Calculating k-coefficients."
+
+# Set paths to files
+HITRAN_CH4="$HITRAN_DIR/06_hit12.par"
+
+if [ $RAD_BIN ] ; then
+  echo "Using code compiled in "$RAD_BIN
+else
+  echo "Path to code not set."
+  exit 1
+fi
+
+# Create skeleton spectral file
+SPECFILE="sp_lw_${NBANDS}_${SP_ID}_skel"
+rm -f ${SPECFILE}
+. mk_sp_lw_${NBANDS}_${SP_ID}_skel > /dev/null
+
+# Create directory for k-coefficients
+mkdir -p ${K_COEFF_DIR}
+
+echo "Jobs running in background:"
+
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBANDS}_1-4l ] ; then
+  echo "CH4 band 1-4"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBANDS}_1-4l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 1 4 -c 2500.0 -i 0.02 -l 6 ${COL_CH4} -t 1.0e-2 \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/ch4_l${NBANDS}_1-4l \
+    -m ${K_COEFF_DIR}/ch4_l${NBANDS}_1-4lm \
+    -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/ch4_l${NBANDS}_1-4log \
+    && echo "CH4 band 1-4 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBANDS}_5-8l ] ; then
+  echo "CH4 band 5-8"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBANDS}_5-8l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 5 8 -c 2500.0 -i 0.02 -l 6 ${COL_CH4} -t 5.0e-3 \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/ch4_l${NBANDS}_5-8l \
+    -m ${K_COEFF_DIR}/ch4_l${NBANDS}_5-8lm \
+    -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/ch4_l${NBANDS}_5-8log \
+    && echo "CH4 band 5-8 done" &
+fi
+if [ ! -s ${K_COEFF_DIR}/ch4_l${NBANDS}_9-10l ] ; then
+  echo "CH4 band 9-10"
+  rm -f ${K_COEFF_DIR}/ch4_l${NBANDS}_9-10l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 \
+    -R 9 10 -c 2500.0 -i 0.02 -l 6 ${COL_CH4} -t 2.0e-2 \
+    -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/ch4_l${NBANDS}_9-10l \
+    -m ${K_COEFF_DIR}/ch4_l${NBANDS}_9-10lm \
+    -L ${ABS_COEFF_DIR}/ch4_lbl_lw_${PT_FILE}.nc \
+    > ${K_COEFF_DIR}/ch4_l${NBANDS}_9-10log \
+    && echo "CH4 band 9-10 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2-ch4_l${NBANDS}_1-${NBANDS}c ] ; then
+  echo "N2-CH4 CIA"
+  rm -f ${K_COEFF_DIR}/n2-ch4_l${NBANDS}_1-${NBANDS}c*
+  Ccorr_k -F ../${PT_CONT} -CIA ${CONT_DIR}/n2-ch4_2011.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 13 6 ${COL_N2_CH4} -t 1.0e-2 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/n2-ch4_l${NBANDS}_1-${NBANDS}c \
+    -m ${K_COEFF_DIR}/n2-ch4_l${NBANDS}_1-${NBANDS}cm \
+    -L ${ABS_COEFF_DIR}/n2-ch4_lbl_lw_${PT_CONT}.nc \
+     > ${K_COEFF_DIR}/n2-ch4_l${NBANDS}_1-${NBANDS}clog \
+     && echo "N2-CH4 CIA done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2-n2_l${NBANDS}_1-10c ] ; then
+  echo "N2-N2 CIA"
+  rm -f ${K_COEFF_DIR}/n2-n2_l${NBANDS}_1-10c*
+  Ccorr_k -F ../${PT_CONT} -CIA ${CONT_DIR}/n2-n2_2011_clean.cia \
+    -R 1 10 -i 1.0 \
+    -ct 13 13 ${COL_N2_N2} -t 1.0e-2 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/n2-n2_l${NBANDS}_1-10c \
+    -m ${K_COEFF_DIR}/n2-n2_l${NBANDS}_1-10cm \
+    -L ${ABS_COEFF_DIR}/n2-n2_lbl_lw_${PT_CONT}.nc \
+     > ${K_COEFF_DIR}/n2-n2_l${NBANDS}_1-10clog \
+     && echo "N2-N2 CIA band 1 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2-h2_l${NBANDS}_1-${NBANDS}c ] ; then
+  echo "N2-H2 CIA"
+  rm -f ${K_COEFF_DIR}/n2-h2_l${NBANDS}_1-${NBANDS}c*
+  Ccorr_k -F ../${PT_CONT} -CIA ${CONT_DIR}/n2-h2_2011.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 13 23 ${COL_N2_H2} -t 1.0e-2 \
+    -k -s ${SPECFILE} +p -lk \
+    -o ${K_COEFF_DIR}/n2-h2_l${NBANDS}_1-${NBANDS}c \
+    -m ${K_COEFF_DIR}/n2-h2_l${NBANDS}_1-${NBANDS}cm \
+    -L ${ABS_COEFF_DIR}/n2-h2_lbl_lw_${PT_CONT}.nc \
+     > ${K_COEFF_DIR}/n2-h2_l${NBANDS}_1-${NBANDS}clog \
+     && echo "N2-H2 CIA done" &
+fi
+
+wait
+echo "Calculation of k-coefficients completed."
+
+################################################################################
+# Create spectral file
+################################################################################
+
+echo "Creating spectral file."
+
+# Create name of spectral file
+SPEC_FILE="sp_lw_${NBANDS}_${SP_ID}"
+
+mkdir -p ${SPEC_FILE_DIR}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}
+rm -f ${SPEC_FILE_DIR}/${SPEC_FILE}_k
+
+# Construct spectral file
+prep_spec << EOF > mk_sp_lw_${NBANDS}_${SP_ID}_out
+sp_lw_${NBANDS}_${SP_ID}_skel
+n
+${SPEC_FILE_DIR}/${SPEC_FILE}
+5
+${K_COEFF_DIR}/ch4_l${NBANDS}_1-10l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBANDS}_5-8l
+5
+y
+${K_COEFF_DIR}/ch4_l${NBANDS}_9-10l
+19
+${K_COEFF_DIR}/n2-ch4_l${NBANDS}_1-${NBANDS}c
+19
+y
+${K_COEFF_DIR}/n2-n2_l${NBANDS}_1-${NBANDS}c
+19
+y
+${K_COEFF_DIR}/n2-h2_l${NBANDS}_1-${NBANDS}c
+6
+n
+t
+1 300
+300
+-1
+EOF
+
+# Rearrange so the major gas is listed first for each band and
+# gases are removed from bands where absorption is very weak.
+tidy_90 << EOF >> mk_sp_lw_${NBANDS}_${SP_ID}_out
+${SPEC_FILE_DIR}/${SPEC_FILE}
+o
+1
+${COL_CH4}
+0.0
+0.0
+${COL_N2_CH4}
+${COL_N2_N2}
+${COL_N2_H2}
+0.99990
+6
+${COL_CH4}
+0.0
+0.0
+${COL_N2_CH4}
+${COL_N2_N2}
+${COL_N2_H2}
+2.0e+05
+n
+-1
+EOF
+
+echo "Spectral file ${SPEC_FILE} created. All done."
+echo "Please check mk_sp_lw_${NBANDS}_${SP_ID}_out for errors."
+
+exit 0

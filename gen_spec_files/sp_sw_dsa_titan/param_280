@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Setting for k-coefficient calculation
+SP_ID="dsa_titan"
+SP_FLDR="dsa_titan"
+NBANDS="280"
+SOLAR_SPEC="sun"
+PT_FILE="pt_titan"
+PT_CONT="pt_cont_titan"
+TOL="-b 1.0e-3"
+
+# For molecules with near-IR absorption, the index of the first band for which
+# to calculate absorption
+BAND_FIRST_CH4="104" # 11501 cm-1 = 8.69423652540053e-07 m
+
+# Column masses for all molecules for k-coefficient calculation
+# N2-dominated, up to 5% CH4, 1% H2
+COL_CH4="6e+2"
+
+# Continuum column masses
+COL_N2_CH4="4e+3"
+COL_N2_N2="2e+5"
+COL_N2_H2="1e+2"

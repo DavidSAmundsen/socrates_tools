@@ -1,0 +1,173 @@
+#!/bin/bash
+
+# Import parameters
+. $1
+
+. ../set_paths_sw
+
+################################################################################
+# Calculate k-coefficients
+################################################################################
+
+echo "Calculating k-coefficients."
+
+# Set paths to files
+HITRAN_CH4="$HITRAN_DIR/06_hit12.par"
+
+if [ $RAD_BIN ] ; then
+  echo "Using code compiled in "$RAD_BIN
+else
+  echo "Path to code not set."
+  exit 1
+fi
+
+# Create skeleton spectral file
+specfile="sp_sw_${NBANDS}_${SP_ID}_skel"
+rm -f $specfile
+. mk_sp_sw_${NBANDS}_${SP_ID}_skel > /dev/null
+
+# Construct weighting argument
+WGT="+S ${SOLAR_SPEC_DIR}/${SOLAR_SPEC}"
+
+# Create directory for k-coefficients
+mkdir -p ${K_COEFF_DIR}
+
+echo "Jobs running in background:"
+
+if [ ! -s ${K_COEFF_DIR}/ch4_s${NBANDS}_l ] || \
+    [ ! -s $SW_DATA/ch4_lbl_sw_${PT_FILE}.nc ] ; then
+  echo "CH4"
+  rm -f ${K_COEFF_DIR}/ch4_s${NBANDS}_l*
+  Ccorr_k -F ../${PT_FILE} -D $HITRAN_CH4 -np 8 \
+    -R ${BAND_FIRST_CH4} ${NBANDS} -c 2500.0 -i 0.2 \
+    -l 6 ${COL_CH4} ${TOL} \
+    -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/ch4_s${NBANDS}_l -m ${K_COEFF_DIR}/ch4_s${NBANDS}_lm \
+    -L $SW_DATA/ch4_lbl_sw_${PT_FILE}.nc \
+     > ${K_COEFF_DIR}/ch4_s${NBANDS}_log && echo "CH4 done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2-ch4_s${NBANDS}_c ] || \
+    [ ! -s $SW_DATA/n2-ch4_lbl_sw_${PT_CONT}.nc ] ; then
+  echo "N2-CH4 CIA"
+  rm -f ${K_COEFF_DIR}/n2-ch4_s${NBANDS}_c*
+  Ccorr_k -F ../${PT_CONT} -CIA ${CONT_DIR}/n2-ch4_2011.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 13 6 ${COL_N2_CH4} -t 1.0e-3 \
+    -k -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/n2-ch4_s${NBANDS}_c \
+    -m ${K_COEFF_DIR}/n2-ch4_s${NBANDS}_cm \
+    -L $SW_DATA/n2-ch4_lbl_sw_${PT_CONT}.nc \
+     > ${K_COEFF_DIR}/n2-ch4_s${NBANDS}_clog \
+     && echo "N2-CH4 CIA done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2-n2_s${NBANDS}_c ] || \
+    [ ! -s $SW_DATA/n2-n2_lbl_sw_${PT_CONT}.nc ] ; then
+  echo "N2-N2 CIA"
+  rm -f ${K_COEFF_DIR}/n2-n2_s${NBANDS}_c*
+  Ccorr_k -F ../${PT_CONT} -CIA ${CONT_DIR}/n2-n2_2011_clean.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 13 13 ${COL_N2_N2} -t 1.0e-3 \
+    -k -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/n2-n2_s${NBANDS}_c \
+    -m ${K_COEFF_DIR}/n2-n2_s${NBANDS}_cm \
+    -L $SW_DATA/n2-n2_lbl_sw_${PT_CONT}.nc \
+     > ${K_COEFF_DIR}/n2-n2_s${NBANDS}_clog \
+     && echo "N2-N2 CIA done" &
+fi
+
+if [ ! -s ${K_COEFF_DIR}/n2-h2_s${NBANDS}_c ] || \
+    [ ! -s $SW_DATA/n2-h2_lbl_sw_${PT_CONT}.nc ] ; then
+  echo "N2-H2 CIA"
+  rm -f ${K_COEFF_DIR}/n2-h2_s${NBANDS}_c*
+  Ccorr_k -F ../${PT_CONT} -CIA ${CONT_DIR}/n2-h2_2011.cia \
+    -R 1 ${NBANDS} -i 1.0 \
+    -ct 13 23 ${COL_N2_H2} -t 1.0e-3 \
+    -k -s $specfile ${WGT} -lk \
+    -o ${K_COEFF_DIR}/n2-h2_s${NBANDS}_c \
+    -m ${K_COEFF_DIR}/n2-h2_s${NBANDS}_cm \
+    -L $SW_DATA/n2-h2_lbl_sw_${PT_CONT}.nc \
+     > ${K_COEFF_DIR}/n2-h2_s${NBANDS}_clog \
+     && echo "N2-H2 CIA done" &
+fi
+
+wait
+echo "Calculation of k-coefficients completed."
+
+################################################################################
+# Create spectral file
+################################################################################
+
+echo "Creating spectral file."
+
+# Create full path to spectral file
+SPEC_FILE="${SPEC_FILE_DIR}/sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}"
+
+mkdir -p ${SPEC_FILE_DIR}
+rm -f ${SPEC_FILE}
+rm -f ${SPEC_FILE}_k
+
+# Construct spectral file with gases
+prep_spec << EOF > mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out
+sp_sw_${NBANDS}_${SP_ID}_skel
+n
+${SPEC_FILE}
+5
+${K_COEFF_DIR}/ch4_s${NBANDS}_l
+19
+${K_COEFF_DIR}/n2-ch4_s${NBANDS}_c
+19
+y
+${K_COEFF_DIR}/n2-n2_s${NBANDS}_c
+19
+y
+${K_COEFF_DIR}/n2-h2_s${NBANDS}_c
+-1
+EOF
+
+# Add solar spectrum and Rayleigh scattering coefficients
+prep_spec << EOF >> mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out
+${SPEC_FILE}
+a
+2
+n
+${SOLAR_SPEC_DIR}/${SOLAR_SPEC}
+y
+3
+c
+a
+-1
+EOF
+
+# Rearrange so the major gas is listed first for each band and
+# gases are removed from bands where absorption is very weak.
+tidy_90 << EOF >> mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out
+${SPEC_FILE}
+o
+1
+${COL_CH4}
+0.0
+0.0
+${COL_N2_CH4}
+${COL_N2_N2}
+${COL_N2_H2}
+0.99990
+6
+${COL_CH4}
+0.0
+0.0
+${COL_N2_CH4}
+${COL_N2_N2}
+${COL_N2_H2}
+2.0e+05
+n
+-1
+EOF
+
+. ../set_permissions
+
+echo "Spectral file sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC} created. All done."
+echo "Please check mk_sp_sw_${NBANDS}_${SP_ID}_${SOLAR_SPEC}_out for errors."
+
+exit 0
